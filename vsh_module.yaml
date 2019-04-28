@@ -22,31 +22,31 @@ modules:
       0xF85DB8AF: ~
   cellDivXDrm:
     functions:
-      0x148F58A7: ~
-      0x21316B3F: ~
-      0x50B38E2B: ~
-      0x7502387C: ~
-      0x844A07C3: ~
-      0x8A71F49D: ~
-      0x9E2BE0D3: ~
-      0xA94A075F: ~
-      0xCA417336: ~
-      0xDB70756A: ~
+      0x148F58A7: cellDivXDrmDecryptAudioFrame
+      0x21316B3F: cellDivXDrmGetRegistrationCode
+      0x50B38E2B: cellDivXDrmSetDrmMemoryName
+      0x7502387C: cellDivXDrmDecryptVideoFrame
+      0x844A07C3: cellDivXDrmInit
+      0x8A71F49D: cellDivXDrmTerm
+      0x9E2BE0D3: cellDivXDrmPrepareDecrypt
+      0xA94A075F: cellDivXDrmFinishDecrypt
+      0xCA417336: cellDivXDrmHookMallocFunctions
+      0xDB70756A: cellDivXDrmAllowDecrypt
   cellMtp:
     functions:
       0x0AD04CB7: ~
       0x1005CBC6: ~
       0x2810C828: ~
-      0x29C846C4: ~
+      0x29C846C4: cellMtpEnd
       0x2A8FBA22: ~
       0x36A09333: ~
       0x415CCC91: ~
-      0x42778D66: ~
-      0x607F56F9: ~
+      0x42778D66: cellMtpGetDeviceStatus
+      0x607F56F9: cellMtpStop
       0x62C15DC8: ~
-      0x673D7B35: ~
+      0x673D7B35: cellMtpSendCommand
       0x67E451E9: ~
-      0x6FFAE9BA: ~
+      0x6FFAE9BA: cellMtpStart
       0x798A0FED: ~
       0x7F8B263D: ~
       0x83FAA367: ~
@@ -54,21 +54,21 @@ modules:
       0x916FC8E0: ~
       0x91BDF213: ~
       0x92E2062A: ~
-      0x9A013AB4: ~
-      0xA0174014: ~
+      0x9A013AB4: cellMtpRecvData
+      0xA0174014: cellMtpRecvResponse
       0xA1A1C278: ~
       0xA4442261: ~
       0xA7506D74: ~
       0xAD7A5247: ~
-      0xB4C43B98: ~
+      0xB4C43B98: cellMtpRecvEvent
       0xB72E5B38: ~
       0xBD6F51B1: ~
       0xC1727CAC: ~
-      0xC2F85C09: ~
+      0xC2F85C09: cellMtpCancelRequest
       0xC31A54E1: ~
       0xC4C75064: ~
       0xC4EF1A25: ~
-      0xC7B20E2A: ~
+      0xC7B20E2A: cellMtpSendData
       0xCE7C8D98: ~
       0xD124BCBC: ~
       0xD3EA7EB6: ~
@@ -77,8 +77,8 @@ modules:
       0xE54A49B7: ~
       0xE667026D: ~
       0xF2F830DF: ~
-      0xF4A52EC2: ~
-      0xF77967F6: ~
+      0xF4A52EC2: cellMtpInit
+      0xF77967F6: cellMtpResetDevice
       0xFCBD741D: ~
     variables:
       0x1A64D47E: ~
@@ -121,50 +121,50 @@ modules:
       0xA828675F: ~
       0xBA12F241: ~
       0xD25AFE28: ~
-      0xDD935969: ~
+      0xDD935969: _ZN3Ime21imeSingleInputContext7getThisEv
       0xE1E3A1D4: ~
       0xE9F48EDF: ~
-      0xFD1AD2B9: ~
+      0xFD1AD2B9: _ZN3Ime21imeSingleInputContext14addEventLisnerEPNS_14OskImeListenerE
   ime_atok:
     functions:
-      0x2683C25D: ~
-      0x38B3CFEA: ~
-      0x40FFD58F: ~
-      0x41A413B3: ~
-      0x66F53C35: ~
-      0x6B29DB39: ~
-      0x765633E1: ~
-      0x8B73A9EF: ~
-      0x8B894DB2: ~
-      0xA6D0376F: ~
-      0xD6D57583: ~
+      0x2683C25D: ATEgetRegWordFirst
+      0x38B3CFEA: ATEgetRegWordNum
+      0x40FFD58F: ATEopen
+      0x41A413B3: ATEcommitPredictiveItem
+      0x66F53C35: ATEgetPredictiveItems
+      0x6B29DB39: ATEregisterWord
+      0x765633E1: ATEgetContextSize
+      0x8B73A9EF: ATEdeleteWordExpr
+      0x8B894DB2: ATEclose
+      0xA6D0376F: ATEdrive
+      0xD6D57583: ATEgetRegWordNext
   ime_zi:
     functions:
-      0x081B4FAE: ~
-      0x18319AC5: ~
-      0x183BB11A: ~
-      0x29C137D8: ~
-      0x3665864A: ~
-      0x42770196: ~
-      0x43775F53: ~
-      0x44980EBF: ~
-      0x4914F70B: ~
-      0x50762986: ~
-      0x5091D738: ~
-      0x62C81C5F: ~
-      0x65704EBD: ~
-      0x77C3067F: ~
-      0x7C409D1D: ~
-      0x7DFAB5E0: ~
+      0x081B4FAE: Zi8SetHighlightedWordW
+      0x18319AC5: Zi8ConvertWC2UC
+      0x183BB11A: Zi8GetCandidatesCount
+      0x29C137D8: Zi8AttachPUD
+      0x3665864A: Zi8AddUsedWordW_ZH
+      0x42770196: Zi8AttachOEMdata
+      0x43775F53: Zi8AddUsedWordW
+      0x44980EBF: Zi8SetLatinSearchOrder
+      0x4914F70B: Zi8AttachUWD
+      0x50762986: Zi8AddUDWordW
+      0x5091D738: Zi8SetDFAthreadCount
+      0x62C81C5F: Zi8GetCharInfo2
+      0x65704EBD: Zi8SetCandidateBufferSize
+      0x77C3067F: Zi8SetPDremoveOpt
+      0x7C409D1D: Zi8GetGlobalDataSize
+      0x7DFAB5E0: Zi8DeleteUDWordW
       0x8A734B77: ~
-      0x989129E7: ~
-      0xA553F394: ~
-      0xB642C61A: ~
-      0xBD5B10C7: ~
-      0xC2F62FF2: ~
-      0xCA6324F0: ~
-      0xE1DF9ABC: ~
-      0xFD774B08: ~
+      0x989129E7: Zi8DetachUWD_ZH
+      0xA553F394: Zi8DetachOEMdata
+      0xB642C61A: Zi8DetachPUD
+      0xBD5B10C7: Zi8ConvertUC2Key
+      0xC2F62FF2: Zi8AttachUWD_ZH
+      0xCA6324F0: Zi8DetachUWD
+      0xE1DF9ABC: Zi8InitializeDynamic
+      0xFD774B08: Zi8GetCandidates
   libps2hdd:
     functions:
       0x0DAE36B0: ~
@@ -694,46 +694,46 @@ modules:
       0x8FFBAA2B: ~
   mms:
     functions:
-      0x007CAE46: ~
-      0x02393512: ~
+      0x007CAE46: _ZN29xMMSMdRelationResolveAccessor15ReleaseMetadataEPv
+      0x02393512: _ZN4xMMS12DestroyQueryEPv
       0x027ED33C: ~
-      0x03159C56: ~
+      0x03159C56: _Z16xcbSetPlugInDataPvS_
       0x0420FB0F: ~
-      0x047ED5F3: ~
+      0x047ED5F3: _ZN13MmsMdAccessor11GetMetadataEyPP11MmsDbRecord
       0x04C7D1A7: ~
-      0x05229228: ~
-      0x06572127: ~
+      0x05229228: _ZN20MmsMdImporterContextD1Ev
+      0x06572127: _ZN4xMMS15AttachThumbnailERK23MmsThumbnailAttachParam
       0x077A6BCE: ~
-      0x078C1325: ~
+      0x078C1325: _Z16xcbGetMusicCodecPvP12MmsCodecType
       0x079863B5: ~
-      0x08C7D637: ~
+      0x08C7D637: _ZN17xCBResultIterator8GetTotalEPi
       0x0AEE41EE: ~
       0x0B9AE260: ~
       0x0BA17F16: ~
       0x0BB2B578: ~
       0x0BE56C67: ~
-      0x0BF9DC65: ~
+      0x0BF9DC65: _Z24xcbGetTargetMetadataTypePvPPh
       0x104DA33E: ~
-      0x118361B1: ~
+      0x118361B1: _Z16xcbReferFileNamePvPPKcPi
       0x11CFB8C4: ~
       0x1352498F: ~
-      0x144999C9: ~
+      0x144999C9: _Z15xcbReferDirPathPvPPKcPi
       0x14F6FD42: ~
       0x159AE047: ~
       0x165BBBEF: ~
-      0x1694F8CA: ~
-      0x16BBECC7: ~
-      0x16E5D60E: ~
-      0x16FCC1BD: ~
-      0x1784C14A: ~
-      0x17BA161B: ~
+      0x1694F8CA: _ZN4xMMS11GetMetadataEyPPv
+      0x16BBECC7: _ZN13MmsMdAccessor17DeleteMetadataSetEjPy
+      0x16E5D60E: _ZN23xMMSMdGeneratorReceiver11GetInstanceEv
+      0x16FCC1BD: _ZN4xMMS17GetNumberOfFieldsEPvPj
+      0x1784C14A: _Z39xcbUpdateProgressAddFinishedCurrentSizePvx
+      0x17BA161B: _ZN4xMMS15GetValuePointerEPvjPS0_
       0x17E96B79: ~
       0x180A4198: ~
-      0x18932F5F: ~
+      0x18932F5F: _Z14xcbGetFileSizePvPy
       0x196D41DC: ~
-      0x19959D90: ~
-      0x1A7A9C16: ~
-      0x1B46E880: ~
+      0x19959D90: _Z19xcbReferRecordValuePvPhPS_
+      0x1A7A9C16: _ZN23xMMSMdGeneratorReceiver20GetMediaInfoFromPathEPKhP21xMMSGenerateStorageId
+      0x1B46E880: _ZN13MmsMdAccessor17InsertMetadataSetEjPP11MmsDbRecordPy
       0x1B8A3198: ~
       0x1C7BCB11: ~
       0x1D7BEA89: ~
@@ -741,30 +741,30 @@ modules:
       0x2046E9A4: ~
       0x204FD192: ~
       0x20DC4967: ~
-      0x210ACA5B: ~
+      0x210ACA5B: _ZN17xCBResultIteratorC2EP16_xCore_InterfaceP4xMMSPvj17_xCB_IteratorType
       0x23E86E79: ~
       0x26008041: ~
-      0x265FCA0C: ~
-      0x2675C91A: ~
+      0x265FCA0C: _ZN4xMMS16DestroySortChainEPv
+      0x2675C91A: _ZN4xMMS10SyncSearchEPvS0_P21xMMSSearchParameter_tPS0_
       0x284E5E7E: ~
-      0x2A9807CD: ~
+      0x2A9807CD: _ZN4xMMS8FinalizeEv
       0x2AB2868F: ~
       0x2ADFD440: ~
-      0x2B8E3B5B: ~
+      0x2B8E3B5B: _ZN4xMMS15ReleaseMetadataEPv
       0x2C3C2942: ~
       0x2D158195: ~
       0x2DB7576C: ~
-      0x2E8BE5E6: ~
+      0x2E8BE5E6: _ZN29xMMSMdRelationResolveAccessor15SetValuePointerEPvjS0_j
       0x2E997BE9: ~
       0x310FEAD1: ~
-      0x31B18521: ~
+      0x31B18521: _ZN4xMMS13GetFieldIdForEPKhPjP15eMmsDbFieldTypePiPb
       0x31FB93A7: ~
       0x32CDBDBB: ~
       0x33DD5837: ~
-      0x3443178E: ~
+      0x3443178E: _Z17xcbSetRecordValuePvPhPKv
       0x34B0CDB7: ~
       0x380942EA: ~
-      0x39592B83: ~
+      0x39592B83: _Z20xcbReferMetadataTypePvPPh
       0x3C8E17B4: ~
       0x3E1DDC52: ~
       0x3FD5951E: ~
@@ -774,57 +774,57 @@ modules:
       0x4087B257: ~
       0x4246AB79: ~
       0x43C021CB: ~
-      0x46B2F111: ~
-      0x476B2221: ~
+      0x46B2F111: _ZN13MmsMdAccessor7GetMridEP11MmsDbRecordPy
+      0x476B2221: _ZN24xMMSMdGeneratorRequester11GetInstanceEv
       0x4792DE30: ~
       0x48CFDE62: ~
-      0x49323F47: ~
-      0x4992D5E8: ~
+      0x49323F47: _Z18xcbGetAbsolutePathPvPcPi
+      0x4992D5E8: _Z17xcbIsStorageMediaPvx
       0x4A766179: ~
       0x4ADCDD1D: ~
       0x4E3B6886: ~
       0x4E9C1781: ~
       0x4ED90126: ~
-      0x4FCA79A3: ~
+      0x4FCA79A3: _ZN4xMMS14CancelGenerateEj
       0x50139CE2: ~
       0x504BF559: ~
       0x50637F69: ~
       0x51CC4AF8: ~
       0x53FEB03C: ~
-      0x54124AA2: ~
+      0x54124AA2: _Z18xcbSetMusicBitratePvi
       0x55DE422B: ~
       0x55E12E36: ~
-      0x55F260BE: ~
-      0x57419947: ~
-      0x58DEE636: ~
-      0x598BE02E: ~
+      0x55F260BE: xCBEnumStrToEnum
+      0x57419947: _Z27xcbAssignDefaultNewFileNamePvS_PKcS1_S1_S1_Pc
+      0x58DEE636: _ZN4xMMS19GetFieldInformationEPvjP22xMMSFieldInformation_t
+      0x598BE02E: _Z13xcbIsCanceledPv
       0x5A67DBFE: ~
       0x5ADF7FE0: ~
-      0x5AE2A0BE: ~
+      0x5AE2A0BE: _Z20xcbReferSourceIdListPvPPKxPi
       0x5C2C78EF: ~
-      0x5C7F2CA4: ~
+      0x5C7F2CA4: _ZN29xMMSMdRelationResolveAccessor13GetFieldIdForEPKhPj
       0x5CCF24B0: ~
-      0x5D37C301: ~
+      0x5D37C301: _ZN13MmsMdAccessor20GetMmsRecordInstanceE18MmsDbMediaCategory15MmsMetadataType
       0x5DD87C8B: ~
       0x5DFEFFFF: ~
       0x5E7884FD: ~
       0x5EB19F7D: ~
       0x5EB7735F: ~
-      0x5FF12E92: ~
+      0x5FF12E92: _ZN4xMMS29CreateGenerateMetadataContextEPP19xMMSGenerateContext
       0x60A3437C: ~
       0x610556D3: ~
       0x621A04DE: ~
       0x650B1BD3: ~
-      0x6574DEE6: ~
+      0x6574DEE6: _ZN29xMMSMdRelationResolveAccessor11GetInstanceEv
       0x65E710CB: ~
       0x65EB251D: ~
       0x66A50910: ~
       0x6741112C: ~
-      0x680EDACC: ~
+      0x680EDACC: _ZN20MmsMdImporterContextC1EP20MmsMdImporterManagerPK17_xMutex_InterfacePvP44_MmsMdImporterGetMetadataCallbackInformation
       0x684593CF: ~
-      0x691A56E4: ~
+      0x691A56E4: _ZN29xMMSMdRelationResolveAccessor17GetMridFromRecordEPvPy
       0x6B6D95C7: ~
-      0x6C0A8512: ~
+      0x6C0A8512: _ZN4xMMS17DeleteMetadataSetEjPy
       0x6C460184: ~
       0x6D446FBA: ~
       0x6D53A984: ~
@@ -835,12 +835,12 @@ modules:
       0x718383E5: ~
       0x71A1133D: ~
       0x71EC20A6: ~
-      0x727FEBB5: ~
-      0x73715D20: ~
+      0x727FEBB5: _Z28xcbGetDestinationContainerIdPvPx
+      0x73715D20: _ZN4xMMS14CreateMetadataEPh15MmsMetadataTypePPv
       0x7383371D: ~
       0x757FA61B: ~
       0x796F7E46: ~
-      0x7A52B303: ~
+      0x7A52B303: _ZN13MmsMdAccessor24ReleaseMmsRecordInstanceEP11MmsDbRecord
       0x7A7C7336: ~
       0x7A86AD15: ~
       0x7B4BC08A: ~
@@ -854,23 +854,23 @@ modules:
       0x8372CDBA: ~
       0x843FB0CD: ~
       0x85AF01AB: ~
-      0x8643AB81: ~
+      0x8643AB81: _Z14xcbGetProgressPvP29_xCB_ContentOperationProgress
       0x8722DED4: ~
       0x87706D11: ~
-      0x878B5986: ~
+      0x878B5986: _ZN13MmsMdAccessor11GetInstanceEv
       0x87FFE7E2: ~
-      0x8867A000: ~
+      0x8867A000: _ZN4xMMS14UpdateMetadataEyPv
       0x8AE0B6F1: ~
       0x8B464EF7: ~
       0x8BAE0989: ~
       0x8C2DDEF5: ~
       0x8E5FB741: ~
       0x8FB38209: ~
-      0x91A43901: ~
+      0x91A43901: _ZN4xMMS11CreateQueryEPPv
       0x928E7447: ~
       0x93763AB0: ~
       0x946F4A5D: ~
-      0x9587CF7C: ~
+      0x9587CF7C: _ZN11xCBInstance14InsertMetaDataEP10_xCB_TablePvPx
       0x95E85337: ~
       0x97121734: ~
       0x97802EE1: ~
@@ -880,22 +880,22 @@ modules:
       0x9A99F122: ~
       0x9AC5528C: ~
       0x9B745611: ~
-      0x9BE4BB91: ~
+      0x9BE4BB91: _ZN17xCBResultIteratorD2Ev
       0x9CA435C3: ~
-      0x9CE5DD90: ~
-      0x9D3984DF: ~
-      0x9D771C6F: ~
+      0x9CE5DD90: _ZN4xMMS11AsyncSearchEPvS0_P21xMMSSearchParameter_tPS0_
+      0x9D3984DF: _ZN4xMMS11GetInstanceEv
+      0x9D771C6F: _ZN34xMMSMdStorageMediaGenerateProducer12EventHandlerEP7_xEventPv
       0x9D933CD2: ~
       0x9DE5B422: ~
-      0x9E51FD20: ~
+      0x9E51FD20: _Z9xcbGetMMSPv
       0x9EA26BCD: ~
       0xA1006414: ~
       0xA18D9F4C: ~
       0xA1CDD951: ~
       0xA23902C7: ~
       0xA31F26E8: ~
-      0xA379140B: ~
-      0xA4B672EF: ~
+      0xA379140B: _ZN29xMMSMdRelationResolveAccessor17DeleteMetadataSetEjPy
+      0xA4B672EF: _ZN23xMMSMdGeneratorReceiver13GetFieldIdForEPKcPj
       0xA4F1445E: ~
       0xA60B6D4D: ~
       0xA61B8A78: ~
@@ -903,29 +903,29 @@ modules:
       0xAB6BD0FD: ~
       0xAC74B094: ~
       0xAD3F88D3: ~
-      0xADB3E294: ~
+      0xADB3E294: _ZN4xMMS14CancelGenerateEP19xMMSGenerateContext
       0xADF7ECCB: ~
       0xAE09F41D: ~
       0xAE57E7B9: ~
-      0xAE95FD09: ~
+      0xAE95FD09: _Z28xcbUpdateProgressSkipContentPv
       0xAF1E33C3: ~
-      0xAF4827B4: ~
+      0xAF4827B4: _ZN4xMMS15GetMridFromFileEPhS0_Py
       0xB0A6F73A: ~
       0xB0AEBAF1: ~
       0xB177A61C: ~
       0xB1CFACB0: ~
       0xB3650F28: ~
-      0xB4449EDC: ~
-      0xB44C7BB5: ~
+      0xB4449EDC: _Z30xcbUpdateProgressFinishContentPv
+      0xB44C7BB5: _ZN4xMMS30DeleteMetadataSetWithThumbnailEjPKy
       0xB4D2F342: ~
-      0xB4E5D585: ~
+      0xB4E5D585: _Z16xcbGetPlugInDataPv
       0xB5C0914D: ~
       0xB5DA17CE: ~
       0xB6325063: ~
       0xB923A1D3: ~
       0xB993E6DA: ~
-      0xB9AA0DCF: ~
-      0xBAABCA85: ~
+      0xB9AA0DCF: _ZN4xMMS15SetValuePointerEPvj15eMmsDbFieldTypeS0_j
+      0xBAABCA85: _ZN4xMMS15GetValuePointerEPvjP15eMmsDbFieldTypePS0_Pj
       0xBB06DB7A: ~
       0xBB21D1D9: ~
       0xBD4EE907: ~
@@ -933,41 +933,41 @@ modules:
       0xC15BE76F: ~
       0xC19DDF8B: ~
       0xC1FCAE25: ~
-      0xC2B49A34: ~
+      0xC2B49A34: _ZN20MmsMdImporterManager15timeToMmsDbDateExPx
       0xC36ED514: ~
-      0xC386C116: ~
-      0xC6EE0260: ~
+      0xC386C116: xCBEnumToNumStr
+      0xC6EE0260: _ZN4xMMS17GetMridFromRecordEPvPy
       0xC7AB2A57: ~
       0xC80D8540: ~
       0xC8C9642A: ~
-      0xC9142131: ~
+      0xC9142131: _ZN29xMMSMdRelationResolveAccessor11GetMetadataEyPPv
       0xC96996E7: ~
       0xCAEF7F34: ~
-      0xCB4F4211: ~
+      0xCB4F4211: _Z30xcbGetSourceStorageMediaRecordPvPS_
       0xCC967341: ~
-      0xCCA3B0D5: ~
+      0xCCA3B0D5: _Z19xcbGetOperationTypePvP25_xCB_ContentOperationType
       0xCCF9F7AC: ~
       0xCD480D5C: ~
-      0xCD75BA15: ~
+      0xCD75BA15: _ZN11xCBInstance27GetMetadataGenerationConfigEv
       0xCDB86271: ~
-      0xCF23DE13: ~
+      0xCF23DE13: _Z14xcbNotifyErrorPv7xResultS_PKcS2_S2_
       0xD016E2E2: ~
       0xD0DEF50D: ~
       0xD1B01B13: ~
       0xD2203900: ~
-      0xD29BE6FF: ~
+      0xD29BE6FF: _ZN34xMMSMdStorageMediaGenerateProducer11GetInstanceEv
       0xD3FAE830: ~
-      0xD4F23753: ~
+      0xD4F23753: _ZN4xMMS13GetFieldIdForEPKhPj
       0xD577698C: ~
       0xD6464675: ~
       0xD6924B26: ~
       0xD7802885: ~
       0xD84A42E0: ~
-      0xD8BFCC6C: ~
-      0xD8C04EAE: ~
+      0xD8BFCC6C: _Z25xcbGetExtensionFromRecordPvPcPi
+      0xD8C04EAE: _ZN4xMMS17InsertMetadataSetEjPPvPy
       0xD9A02959: ~
       0xDA95B465: ~
-      0xDD0991D2: ~
+      0xDD0991D2: _ZN4xMMS8GetTotalEPvPi
       0xDF6D6060: ~
       0xE031AEFB: ~
       0xE2ECDD5B: ~
@@ -977,31 +977,31 @@ modules:
       0xE6B46AF8: ~
       0xE6D50477: ~
       0xE7E05DBC: ~
-      0xE9BEE64D: ~
+      0xE9BEE64D: _ZN4xMMS20GetMridFromDirectoryEPhS0_Py
       0xEB36DD3C: ~
-      0xEBDBCA6D: ~
+      0xEBDBCA6D: _ZN4xMMS30DestroyGenerateMetadataContextEP19xMMSGenerateContext
       0xEBE554D4: ~
       0xECE75285: ~
       0xED74F831: ~
-      0xEDFC8A87: ~
-      0xEE867D9F: ~
+      0xEDFC8A87: _Z16xcbSetMusicCodecPv12MmsCodecType
+      0xEE867D9F: _ZN17xCBResultIterator6CancelEv
       0xEEB2FEB4: ~
       0xEEB6D4FF: ~
       0xEEBE3AD0: ~
       0xF14D8D09: ~
       0xF1C94596: ~
-      0xF28D2811: ~
+      0xF28D2811: _Z32xcbGetDestinationContainerRecordPvPS_
       0xF37FF52C: ~
       0xF3A40DA3: ~
       0xF44148CB: ~
       0xF5152A22: ~
-      0xF51953F0: ~
-      0xF5C605E3: ~
+      0xF51953F0: _Z13xcbReferTitlePvPPKcPi
+      0xF5C605E3: _Z35xcbGetDestinationStorageMediaRecordPvPS_
       0xF6448C4E: ~
-      0xF65EFFC9: ~
+      0xF65EFFC9: _ZN4xMMS15CreateSortChainEPPv
       0xF6E91256: ~
       0xF73672CD: ~
-      0xF7BE0678: ~
+      0xF7BE0678: _Z32xcbResolveDefaultDestinationPathPvS_PcS0_
       0xF8BA4716: ~
       0xF8C6B8C8: ~
       0xF9CD635C: ~
@@ -1014,24 +1014,24 @@ modules:
       0xFF5023F8: ~
       0xFFD82A4C: ~
     variables:
-      0x05705EF3: ~
+      0x05705EF3: _ZN24xMMSMdGeneratorRequester16mImporterManagerE
       0x0C147620: ~
       0x254193C1: ~
-      0x29B89426: ~
+      0x29B89426: fe_png
       0x2E3C38D0: ~
       0x3C5FF2AF: ~
       0x3CEE1A1F: ~
       0x49043E0A: ~
-      0x4A60029E: ~
-      0x5E2A49FE: ~
+      0x4A60029E: fe_gif
+      0x5E2A49FE: fe_jpeg
       0x8C77977D: ~
       0x91389142: ~
       0xA4287648: ~
       0xBDE7B458: ~
       0xC82578ED: ~
       0xD55472DD: ~
-      0xDA60FD98: ~
-      0xF8FD5CCB: ~
+      0xDA60FD98: fe_bmp
+      0xF8FD5CCB: fe_tiff
   mms_db_full:
     functions:
       0x2C99F1D5: ~
@@ -1040,8 +1040,8 @@ modules:
       0x68A2A4BE: ~
       0x6941A781: ~
       0x695240BC: ~
-      0x8008F4ED: ~
-      0x816D716B: ~
+      0x8008F4ED: _ZN19MmsDbEditableSchema6FreezeEv
+      0x816D716B: _ZN19MmsDbEditableSchema8AddFieldEPK14MmsDbFieldDataPj
       0x81B8FF28: ~
       0x8212FED5: ~
       0xA33EACBA: ~
@@ -1068,139 +1068,139 @@ modules:
       0xFA607CF3: ~
   msmw1:
     functions:
-      0x00C97209: ~
+      0x00C97209: smf_FRead
       0x0271ABCA: ~
       0x04A4EA76: ~
       0x08144742: ~
       0x090E9559: ~
       0x09A9C918: ~
       0x0A4926D4: ~
-      0x0A66ACE6: ~
+      0x0A66ACE6: smf_ApPs_GetMediaType
       0x0A875C20: ~
       0x0AB6A429: ~
       0x0BD4D59A: ~
-      0x0C839804: ~
-      0x0D4FCF86: ~
-      0x0E7BAC9E: ~
-      0x0F19F1E0: ~
+      0x0C839804: smf_ApPs_GetSampleSize
+      0x0D4FCF86: smf_ApRc_WriteMovieRes
+      0x0E7BAC9E: smf_ApPs_ReadFileProperty2
+      0x0F19F1E0: smf_ApPl_GetSampleNoByTime
       0x103D5618: ~
-      0x10B543D8: ~
+      0x10B543D8: smf_ApPl_InitPlayStatus
       0x11BD7EEE: ~
       0x1231CC28: ~
-      0x127716F0: ~
+      0x127716F0: smf_ApRc_GetAtomPosition
       0x13E23844: ~
       0x161DD60A: ~
       0x163476CC: ~
-      0x1767F185: ~
-      0x17EA6FFF: ~
+      0x1767F185: smf_ApCm_ChangeTimeScale
+      0x17EA6FFF: smf_ApPs_ReadFileProperty
       0x18617A25: ~
       0x1908480D: ~
-      0x1B449418: ~
+      0x1B449418: smf_ApPl_GetMediaTimeBySampleNo
       0x1B7D29C7: ~
       0x1D097295: ~
       0x1D856EE0: ~
       0x1E164134: ~
       0x207114D0: ~
-      0x239FFCC4: ~
+      0x239FFCC4: smf_ApRc_SetFileProfileInfo
       0x23B8D1C0: ~
       0x23C2B6A2: ~
       0x2503B776: ~
       0x265D4213: ~
       0x26FCABA4: ~
-      0x27B5EF53: ~
+      0x27B5EF53: smf_ApPs_GetTrackPresentationType
       0x28AA0363: ~
       0x29C0AE27: ~
-      0x2ACE61B8: ~
-      0x2B842467: ~
-      0x2BAB7F9C: ~
-      0x2BBB6B52: ~
-      0x2CEB945C: ~
+      0x2ACE61B8: smf_ApPs_GetGraphSampleDes
+      0x2B842467: smf_ApPs_GetMpeg4ESDesInfo
+      0x2BAB7F9C: smf_FSetValidSize
+      0x2BBB6B52: smf_FSeek
+      0x2CEB945C: smf_FTell
       0x305E1ECD: ~
       0x309A00EE: ~
       0x318E2ABD: ~
       0x33070FFE: ~
-      0x34A93B01: ~
-      0x34C3DA27: ~
+      0x34A93B01: msmw_Init
+      0x34C3DA27: smf_FOpen_M
       0x36C66ED2: ~
-      0x371A6F89: ~
+      0x371A6F89: smf_ApPs_GetSampleNum
       0x383082E4: ~
-      0x384C2F1E: ~
-      0x396EA886: ~
-      0x3CD9935B: ~
+      0x384C2F1E: smf_ApRc_SetVideoProfileInfo
+      0x396EA886: smf_ApPs_GetSoundSampleDes2
+      0x3CD9935B: smf_FGetLastError
       0x3D35F294: ~
       0x3E04D011: ~
       0x3EF355EF: ~
       0x3F87F940: ~
-      0x40C4523A: ~
+      0x40C4523A: smf_ApRc_AddCompatibleBrand
       0x416B172A: ~
       0x4193E9D0: ~
       0x426041A3: ~
       0x437EBEE0: ~
-      0x450A4946: ~
+      0x450A4946: smf_FCancel
       0x452E959F: ~
-      0x4549CCF6: ~
-      0x45652CFD: ~
+      0x4549CCF6: smf_ApPs_GetAVCSeqParamSetSize
+      0x45652CFD: smf_ApPs_GetMediaTimeScale
       0x45E5607B: ~
       0x4806DE78: ~
       0x484F5865: ~
-      0x4CEE577B: ~
-      0x4DDD79EA: ~
-      0x5004DF1E: ~
-      0x50DD56FD: ~
+      0x4CEE577B: smf_ApPs_GetODHndl
+      0x4DDD79EA: smf_ApPs_GetMetaData
+      0x5004DF1E: msmw_ReplaceFileIo
+      0x50DD56FD: smf_ApPs_GetTransformationMatrix
       0x51D09499: ~
       0x51E2FA5D: ~
       0x53791697: ~
       0x53B5C402: ~
       0x5593A1E3: ~
-      0x568A9D13: ~
+      0x568A9D13: smf_ApPs_GetIPMPDesInfo
       0x572CDB0F: ~
       0x57CEDF7A: ~
       0x59F15384: ~
-      0x5C0801CA: ~
+      0x5C0801CA: smf_FSetpos
       0x5E29B592: ~
-      0x61146857: ~
-      0x61CA5726: ~
-      0x620FE2E9: ~
-      0x62D51012: ~
-      0x63783C96: ~
-      0x6403D96E: ~
-      0x67794933: ~
-      0x67EB4153: ~
+      0x61146857: smf_ApPs_ReadMovieRes_M
+      0x61CA5726: smf_FClose_M
+      0x620FE2E9: msmw_LockCreate
+      0x62D51012: smf_ApPs_GetTrackInfo2
+      0x63783C96: smf_ApRc_AddDataRef
+      0x6403D96E: smf_ApPl_GetSampleInfo_M
+      0x67794933: smf_ApRc_SetAudioProfileInfo
+      0x67EB4153: smf_ApPs_GetAC3SpecificInfo
       0x68A3B478: ~
       0x690216E5: ~
       0x6B86BD8D: ~
       0x6C70A076: ~
       0x6DC739F3: ~
-      0x6DCEAFCA: ~
+      0x6DCEAFCA: smf_ApPs_GetMovieDuration
       0x6E62CE93: ~
       0x6F321149: ~
-      0x6FADEFAD: ~
+      0x6FADEFAD: smf_ApPs_GetTrackNum
       0x6FC247EE: ~
-      0x701F6FC6: ~
-      0x72C2D9F7: ~
+      0x701F6FC6: smf_ApPs_GetAVCDecoderConfigInfoExt
+      0x72C2D9F7: msmw_LockDestroy
       0x7379BEB2: ~
-      0x7396BD2F: ~
+      0x7396BD2F: smf_ApPl_SchSyncSampleNo
       0x759E4ACB: ~
       0x7C11A6B0: ~
-      0x7D32C4D3: ~
+      0x7D32C4D3: smf_ApPs_GetMediaDuration
       0x7E5C8181: ~
       0x7EA3FE86: ~
       0x7FCCCCB3: ~
       0x806C25A6: ~
-      0x825B730A: ~
-      0x827272D8: ~
+      0x825B730A: smf_ApPs_GetDataRefLocStrLen
+      0x827272D8: smf_ApRc_SetTrackPresentationType
       0x82779F5B: ~
       0x87C81054: ~
-      0x88419ECE: ~
+      0x88419ECE: smf_FOpenWithCacheSizeA
       0x897FBB6E: ~
       0x8C824629: ~
-      0x8EBEB176: ~
+      0x8EBEB176: msmw_LockLock
       0x8EC84244: ~
       0x8FA81D69: ~
       0x9180CFB6: ~
-      0x92D85178: ~
-      0x950B38BC: ~
-      0x951D8EA1: ~
+      0x92D85178: smf_ApPs_GetODInfo
+      0x950B38BC: smf_FOpenWithCacheSize
+      0x951D8EA1: smf_FInit
       0x963AF95D: ~
       0x974AE6C8: ~
       0x9790B47E: ~
@@ -1209,23 +1209,23 @@ modules:
       0x9B00040E: ~
       0x9BD633B3: ~
       0x9D6EA518: ~
-      0x9E4FC70D: ~
+      0x9E4FC70D: smf_ApPs_GetFileProfileInfo
       0x9F1B8788: ~
       0x9F2F7C31: ~
       0xA0148889: ~
       0xA042E8DC: ~
-      0xA058E135: ~
+      0xA058E135: msmw_LockUnlock
       0xA05C3F35: ~
       0xA1CCC6E1: ~
-      0xA1CD2220: ~
+      0xA1CD2220: smf_ApPs_GetMovieTimeScale
       0xA3D8AB6F: ~
       0xA4530C51: ~
       0xA4C48F89: ~
       0xA5A7D37C: ~
       0xA5BCEF5B: ~
-      0xA614EB27: ~
-      0xA7917351: ~
-      0xAAF30841: ~
+      0xA614EB27: smf_ApPs_ReadMovieRes2
+      0xA7917351: smf_ApPs_GetODNum
+      0xAAF30841: smf_ApPs_GetAudioProfileInfo
       0xACD17DD8: ~
       0xAE24C113: ~
       0xAE3D68FF: ~
@@ -1239,19 +1239,19 @@ modules:
       0xB61D0BCB: ~
       0xB648DDBB: ~
       0xB840E968: ~
-      0xB874CADD: ~
+      0xB874CADD: smf_ApPs_GetAVCSeqParamSetExt
       0xBAA0EFC6: ~
       0xBB5B636B: ~
       0xBBC972A8: ~
-      0xBC04264B: ~
+      0xBC04264B: smf_ApPl_IsCompatibleBrand
       0xC1979B15: ~
       0xC1CDE23F: ~
       0xC27EEA57: ~
       0xC3E51134: ~
       0xC42E7654: ~
       0xC571E85B: ~
-      0xC5D63632: ~
-      0xC84E7A2A: ~
+      0xC5D63632: smf_ApPs_GetBrand
+      0xC84E7A2A: smf_ApCm_DeleteMovie
       0xC8846F7C: ~
       0xC8EA430E: ~
       0xC906E9D8: ~
@@ -1261,31 +1261,31 @@ modules:
       0xCF5C63B5: ~
       0xCFBB11EA: ~
       0xD1A498BA: ~
-      0xD5A2B947: ~
+      0xD5A2B947: smf_ApPs_GetTrackHndl
       0xD6728F73: ~
-      0xD6A007B6: ~
+      0xD6A007B6: smf_FWrite
       0xD7082C2E: ~
       0xD72F58BB: ~
-      0xDD671E79: ~
-      0xE106CB7B: ~
+      0xDD671E79: smf_ApPs_GetDecoderSpecificInfo
+      0xE106CB7B: smf_ApPs_GetVideoProfileInfo
       0xE1573422: ~
-      0xE2E821B5: ~
+      0xE2E821B5: smf_ApCm_NewMovie
       0xE3B3A975: ~
       0xE42B5B85: ~
-      0xE5E22558: ~
+      0xE5E22558: smf_FGetFileSize
       0xE5E4C481: ~
-      0xE769581A: ~
+      0xE769581A: smf_ApPs_GetIPMPSystemData
       0xE76C5610: ~
       0xE954A23B: ~
-      0xEA51ADEC: ~
-      0xEA58B5D3: ~
+      0xEA51ADEC: smf_ApCm_SetFileDescriptor
+      0xEA58B5D3: smf_ApPs_GetCttsBoxAvailability
       0xEA9714FC: ~
-      0xEC6CF274: ~
+      0xEC6CF274: smf_ApPs_GetVideoSampleDes2
       0xEE3CBED9: ~
-      0xEED6C265: ~
+      0xEED6C265: smf_ApRc_AddMetaData
       0xEF2C6CBD: ~
       0xEF2DFA8F: ~
-      0xF23F7052: ~
+      0xF23F7052: smf_ApRc_SetMpeg4ESDesByParam
       0xF2FA984B: ~
       0xF425BF66: ~
       0xF7208C72: ~
@@ -1293,9 +1293,9 @@ modules:
       0xF9EF7587: ~
       0xFA248D0B: ~
       0xFF1EDE38: ~
-      0xFF3208FE: ~
-      0xFF7D187F: ~
-      0xFFCF4DED: ~
+      0xFF3208FE: smf_ApPs_GetAVCDecoderConfigInfo
+      0xFF7D187F: smf_ApPs_GetAVCSeqParamSet
+      0xFFCF4DED: smf_ApPs_GetSampleDesHndl
     variables:
       0x027505AD: ~
       0x0CFB1F7B: ~
@@ -1327,13 +1327,13 @@ modules:
   msmw2:
     functions:
       0x0336B788: ~
-      0x0758CCB2: ~
-      0x0B6CCC14: ~
+      0x0758CCB2: cellMgVideoGetLicenseInfo
+      0x0B6CCC14: cellMgVideoEncryptSample
       0x0C899B8A: ~
       0x0D8E853A: ~
-      0x0E12FF44: ~
+      0x0E12FF44: cellMgVideoInitMovie
       0x12588B17: ~
-      0x141F0CC1: ~
+      0x141F0CC1: cellMgVideoSetThreadPriority
       0x1488BD51: ~
       0x15AD33D2: ~
       0x161B8F0D: ~
@@ -1348,9 +1348,9 @@ modules:
       0x1D6C7359: ~
       0x1F810F17: ~
       0x2090EDCC: ~
-      0x20FA6FB7: ~
-      0x211D38B6: ~
-      0x239C2EF8: ~
+      0x20FA6FB7: cellMgVideoNetBindLicense
+      0x211D38B6: cellMgVideoInitTrack
+      0x239C2EF8: cellMgVideoDecryptSample
       0x26849AE0: ~
       0x28A5657E: ~
       0x2AFAA8D3: ~
@@ -1367,17 +1367,17 @@ modules:
       0x3A9A585A: ~
       0x3C0E3EEC: ~
       0x418D46E4: ~
-      0x425E8440: ~
+      0x425E8440: cellMgVideoClearMACList
       0x427FD902: ~
       0x429F7C4F: ~
-      0x42BAABB8: ~
+      0x42BAABB8: cellMgVideoAuth
       0x4305F197: ~
       0x4317F2DD: ~
       0x43DFCBB4: ~
       0x453BACB3: ~
       0x45455D96: ~
       0x4A9C4175: ~
-      0x4C9F8F7A: ~
+      0x4C9F8F7A: cellMgVideoUpdateICV
       0x4EA84CC3: ~
       0x513D3DD8: ~
       0x51A60228: ~
@@ -1386,7 +1386,7 @@ modules:
       0x5960B357: ~
       0x5E8E6997: ~
       0x5EC17E6D: ~
-      0x6051351D: ~
+      0x6051351D: cellMgVideoCheckICV
       0x6293B76C: ~
       0x62FA0B0F: ~
       0x63805AEB: ~
@@ -1401,7 +1401,7 @@ modules:
       0x7649308A: ~
       0x7722F782: ~
       0x78064A5D: ~
-      0x78AD303F: ~
+      0x78AD303F: cellMgVideoEndTrack
       0x78CE81FB: ~
       0x796C39D2: ~
       0x7B38904A: ~
@@ -1416,10 +1416,10 @@ modules:
       0x844246A4: ~
       0x851DDC27: ~
       0x86F512A4: ~
-      0x872A225C: ~
+      0x872A225C: cellMgVideoEndMovie
       0x878B6567: ~
       0x8A43B432: ~
-      0x8A491559: ~
+      0x8A491559: cellMgVideoFormatICV
       0x8B51C6CF: ~
       0x8B913B9F: ~
       0x8E0B4762: ~
@@ -1439,14 +1439,14 @@ modules:
       0xA9AA185D: ~
       0xAB07D325: ~
       0xB15A9878: ~
-      0xB2347C83: ~
+      0xB2347C83: cellMgVideoGetDefaultEKB
       0xB29356BF: ~
       0xB34EF265: ~
       0xB49CD56F: ~
       0xB70665CB: ~
       0xB87FCA76: ~
       0xB96219F9: ~
-      0xBB918CC2: ~
+      0xBB918CC2: cellMgVideoBindLicense
       0xBC6C7885: ~
       0xC121CFF2: ~
       0xC12DA3F2: ~
@@ -1459,7 +1459,7 @@ modules:
       0xC9AF1E8B: ~
       0xC9F91A4B: ~
       0xCA7A0C95: ~
-      0xCCB06176: ~
+      0xCCB06176: cellMgVideoDisconnect
       0xCE8DE9DD: ~
       0xCF2B7B26: ~
       0xD0374639: ~
@@ -1473,7 +1473,7 @@ modules:
       0xDB15AD81: ~
       0xDB6BB904: ~
       0xDDFE48C9: ~
-      0xE1E3DF5F: ~
+      0xE1E3DF5F: cellMgVideoConnect
       0xE25FA4B7: ~
       0xE2B55367: ~
       0xE324AAAB: ~
@@ -1526,50 +1526,50 @@ modules:
       0x169AFF8D: ~
       0x253E1372: ~
       0x2FED2E71: ~
-      0x31D9F435: ~
+      0x31D9F435: sceNpFbUtilAbortTransaction
       0x32098396: ~
       0x32A35E80: ~
       0x38044A04: ~
       0x4EAA029D: ~
       0x4ED547BD: ~
       0x5C40DE8D: ~
-      0x5E499A12: ~
+      0x5E499A12: sceNpFbUtilTerm
       0x626F32C0: ~
       0x64B69979: ~
       0x67AB96B4: ~
       0x81FC3A7D: ~
       0x834E71B8: ~
-      0x8A61B8A8: ~
-      0x8C3337BC: ~
-      0x9180E77C: ~
+      0x8A61B8A8: sceNpFbUtilCreateTransaction
+      0x8C3337BC: sceNpFbUtilDestroyTransaction
+      0x9180E77C: sceNpFbUtilInit
       0x9E178AD2: ~
       0xCB824EBB: ~
-      0xDE4BE899: ~
-      0xF12CE769: ~
-      0xFB07BD72: ~
+      0xDE4BE899: sceNpFbUtilGetSignature
+      0xF12CE769: sceNpFbUtilStreamPublish
+      0xFB07BD72: sceNpFbUtilStreamPublishExt
   np_trophy_util:
     functions:
       0x07903E40: ~
       0x0924B2EB: ~
-      0x0D9545D6: ~
+      0x0D9545D6: npTrophyUtilCreateTitleCtx
       0x112EB043: ~
-      0x194C2895: ~
+      0x194C2895: npTrophyNetTitleGetFlagConfByArray
       0x1CE45735: ~
       0x1DF5D823: ~
       0x1E61180C: ~
       0x1F6EF32C: ~
       0x21823BD8: ~
-      0x28167B32: ~
+      0x28167B32: npTrophyUtilDestroyTitleCtx
       0x282549B2: ~
       0x2898A653: ~
       0x2ECD652E: ~
       0x2F4C4542: ~
-      0x361EDAEE: ~
+      0x361EDAEE: npTrophyUtilTerm
       0x37C9C1EE: ~
       0x3A17F615: ~
       0x3D49F10C: ~
       0x3E728AE5: ~
-      0x42F690D2: ~
+      0x42F690D2: npTrophyNetTitleGetFlagArray
       0x45E970CC: ~
       0x48CA3C94: ~
       0x50AB20C9: ~
@@ -1577,10 +1577,10 @@ modules:
       0x545DAC82: ~
       0x59F8A567: ~
       0x63E43780: ~
-      0x658D8982: ~
-      0x6784C652: ~
+      0x658D8982: npTrophyUtilGetNetTitleList
+      0x6784C652: npTrophyUtilInit
       0x7250EEB3: ~
-      0x726B8588: ~
+      0x726B8588: npTrophyUtilDestroyCtx
       0x74574E2F: ~
       0x75602138: ~
       0x78354893: ~
@@ -1602,10 +1602,10 @@ modules:
       0xDC91F93F: ~
       0xDD769EE6: ~
       0xDDC396DE: ~
-      0xE173BD90: ~
+      0xE173BD90: npTrophyUtilCreateCtx
       0xE33848F8: ~
       0xE3628781: ~
-      0xE3D63D30: ~
+      0xE3D63D30: npTrophyNetTitleGetFlagDataByArray
       0xEE242457: ~
       0xF122C33C: ~
       0xF5B5C355: ~
@@ -1614,214 +1614,214 @@ modules:
     functions:
       0x022D70C2: ~
       0x03A53221: ~
-      0x061CAD23: ~
+      0x061CAD23: _ZNK3paf7PhMicon10GetBGColorEv
       0x06CEFD11: ~
       0x07601F9D: ~
-      0x0EF0A387: ~
+      0x0EF0A387: _ZN3paf7PhMiconD2Ev
       0x1050D416: ~
       0x108BA237: ~
-      0x11498CDF: ~
-      0x15084E9A: ~
-      0x153DA7D8: ~
+      0x11498CDF: _ZN3paf7PhMicon4StopEv
+      0x15084E9A: _ZNK3paf7PhMicon8GetWidthEv
+      0x153DA7D8: _ZN3paf7PhModel8SetFrameEf
       0x15C59F81: ~
-      0x1648672A: ~
-      0x1877A414: ~
-      0x20DC18B5: ~
+      0x1648672A: _ZN3paf7PhMiconC2EPNS_8PhWidgetEPNS_8PhAppearEP12malloc_state
+      0x1877A414: _ZNK3paf10PhSaveData15GetRotationRateEv
+      0x20DC18B5: _ZN3paf7PhMiconD0Ev
       0x2214E6C9: ~
       0x238ED22D: ~
-      0x23A168EA: ~
-      0x25D7B3B3: ~
-      0x29206AE0: ~
-      0x295A7374: ~
-      0x2F336853: ~
-      0x2F73BC40: ~
-      0x3191108C: ~
-      0x39700DEF: ~
+      0x23A168EA: _ZNK3paf10PhSaveData13GetFrameSpeedEv
+      0x25D7B3B3: _ZN3paf7PhMicon7SetCropERK4rect
+      0x29206AE0: _ZNK3paf10PhSaveData11GetSaveDataERNS_13SaveDataRCPtrINS_16SaveDataResourceEEE
+      0x295A7374: _ZN3paf7PhMiconD1Ev
+      0x2F336853: _ZN3paf10PhSaveData12SetFrameRateEf
+      0x2F73BC40: _ZNK3paf10PhSaveData11GetRotationEv
+      0x3191108C: _ZNK3paf7PhMicon7GetLoopEv
+      0x39700DEF: _ZNK3paf7PhMicon11GetDurationEv
       0x3B92AD10: ~
-      0x3D41CC84: ~
+      0x3D41CC84: _ZN3paf10PhSaveData10SetBGColorEiRK4vec4
       0x43A3ACBB: ~
-      0x4A48FC30: ~
-      0x4A75680B: ~
+      0x4A48FC30: _ZN3paf7PhMicon14SetVolumeDeltaEf
+      0x4A75680B: _ZN3paf7PhMicon5PauseEv
       0x4B239B73: ~
-      0x4E6D10A5: ~
-      0x4E9C5713: ~
+      0x4E6D10A5: _ZNK3paf10PhSaveData12GetFrameLoopERfS1_
+      0x4E9C5713: _ZNK3paf7PhMicon7GetCropEv
       0x512A326D: ~
-      0x565ABD7E: ~
-      0x5ADA82A5: ~
-      0x5E1BEA06: ~
-      0x62CB35B1: ~
+      0x565ABD7E: _ZN3paf10PhSaveData11SetSaveDataERKNS_13SaveDataRCPtrINS_16SaveDataResourceEEE
+      0x5ADA82A5: _ZN3paf7PhMicon9SetVolumeEf
+      0x5E1BEA06: _ZN3paf10PhSaveData16SetLightPositionEiRK4vec4
+      0x62CB35B1: _ZN3paf12MiconPointee7ReleaseEv
       0x65A929E3: ~
       0x65F1A4B2: ~
-      0x68904EC2: ~
-      0x696B71F4: ~
-      0x6A336A8C: ~
+      0x68904EC2: _ZN3paf7PhMicon12SetMovieTypeEi
+      0x696B71F4: _ZN3paf15SaveDataPointee7ReleaseEv
+      0x6A336A8C: _ZNK3paf10PhSaveData16GetRotationSpeedEv
       0x6DED42A9: ~
-      0x70078E2D: ~
+      0x70078E2D: _ZNK3paf7PhMicon9IsEnabledEi
       0x70B59BC2: ~
       0x72240DF1: ~
       0x75273298: ~
-      0x7692C9C7: ~
-      0x7789A015: ~
-      0x7797B150: ~
-      0x78C2B936: ~
-      0x7A2DD431: ~
+      0x7692C9C7: _ZN3paf7PhModel14SetFrameRepeatEi
+      0x7789A015: _ZN3paf7PhMicon7SetLoopEff
+      0x7797B150: _ZNK3paf7PhMicon13GetWidgetTypeEv
+      0x78C2B936: _ZNK3paf10PhSaveData8GetFrameEv
+      0x7A2DD431: _ZNK3paf7PhMicon9GetVolumeEv
       0x7B1C0C17: ~
       0x7BC2E244: ~
-      0x7F155BBA: ~
-      0x82218722: ~
-      0x82567DC3: ~
+      0x7F155BBA: _ZN3paf10PhSaveData18SetCurrentLightingEii
+      0x82218722: _ZN3paf10PhSaveData15SetRotationRateEf
+      0x82567DC3: _ZN3paf10PhSaveData16SetRotationSpeedEf
       0x84ACE3E4: ~
-      0x867120A1: ~
-      0x87790DD7: ~
-      0x8B8F6C76: ~
+      0x867120A1: _ZN3paf16SaveDataResourceC1ERKSs
+      0x87790DD7: _ZN3paf7PhModel8SetModelEPvi
+      0x8B8F6C76: _ZNK3paf7PhMicon14GetVolumeDeltaEv
       0x8BC05532: ~
-      0x8C3DEAC5: ~
+      0x8C3DEAC5: _ZN3paf7PhMicon10WidgetTypeEv
       0x8D80EC22: ~
-      0x8DD1CBB0: ~
-      0x8E4FEF6E: ~
+      0x8DD1CBB0: _ZNK3paf7PhMicon9IsPlayingEi
+      0x8E4FEF6E: _ZNK3paf7PhMicon9IsInheritEPKc
       0x8F42BFA1: ~
-      0x96D1A97D: ~
+      0x96D1A97D: _ZN3paf7PhMicon10SetBGColorERK4vec4
       0x97438277: ~
-      0x9924F11A: ~
-      0x9BDBC48F: ~
-      0xA5E3A555: ~
-      0xA709A39E: ~
+      0x9924F11A: _ZN3paf7PhModel12SetFrameRateEf
+      0x9BDBC48F: _ZNK3paf7PhModel16GetCurrentMotionEv
+      0xA5E3A555: _ZN3paf10PhSaveDataC1EPNS_8PhWidgetEPNS_8PhAppearEP12malloc_state
+      0xA709A39E: _ZN3paf7PhMicon11SetChannelsEi
       0xA73391AD: ~
-      0xAACB825F: ~
-      0xAB2B0674: ~
-      0xAB743FE4: ~
+      0xAACB825F: _ZNK3paf10PhSaveData12GetFrameRateEv
+      0xAB2B0674: _ZN3paf10PhSaveData11SetRotationEf
+      0xAB743FE4: _ZN3paf7PhMiconC1EPNS_8PhWidgetEPNS_8PhAppearEP12malloc_state
       0xAC668BB5: ~
-      0xAE3205B7: ~
+      0xAE3205B7: _ZN3paf7PhMicon20GetActivePlayerCountEv
       0xB2D63769: ~
-      0xB5E55F6C: ~
+      0xB5E55F6C: _ZNK3paf7PhMicon11GetChannelsEv
       0xB6BBDF67: ~
-      0xBA6B47F2: ~
-      0xC193AEFD: ~
-      0xC1CA854A: ~
-      0xC313A3A5: ~
-      0xC5CD1ED0: ~
-      0xC6BAFADE: ~
-      0xCBA8AA7C: ~
+      0xBA6B47F2: _ZNK3paf7PhMicon9GetRepeatEv
+      0xC193AEFD: _ZNK3paf10PhSaveData13IsPS2SaveDataEv
+      0xC1CA854A: _ZN3paf10PhSaveData12SetFrameLoopEff
+      0xC313A3A5: _ZN3paf10PhSaveData13SetLightColorEiRK4vec4
+      0xC5CD1ED0: _ZNK3paf7PhModel8GetFrameEv
+      0xC6BAFADE: _ZN3paf7PhModel16SetCurrentMotionEif
+      0xCBA8AA7C: _ZN3paf16SaveDataResourceC1EPvjRKSsb
       0xCBDBB6C5: ~
-      0xD1E1C04D: ~
+      0xD1E1C04D: _ZN3paf7PhMicon4PlayEv
       0xD9458593: ~
       0xD996FAF9: ~
       0xDA77E02D: ~
       0xDD59CA0D: ~
       0xE5AC5CFC: ~
       0xE61A341D: ~
-      0xE8FE972B: ~
-      0xE90AF838: ~
-      0xEDD39FD7: ~
+      0xE8FE972B: _ZN3paf7PhMicon6EnableEib
+      0xE90AF838: _ZN3paf10PhSaveData13SetFrameSpeedEf
+      0xEDD39FD7: _ZN3paf10PhSaveData8SetFrameEf
       0xF0E9D4E1: ~
-      0xF2B730FB: ~
-      0xF4524A9C: ~
-      0xF56E1FBD: ~
-      0xF57E3590: ~
-      0xF6C178E6: ~
-      0xF7F08CB2: ~
+      0xF2B730FB: _ZN3paf12MiconPointee6AddRefEv
+      0xF4524A9C: _ZNK3paf7PhMicon9GetHeightEv
+      0xF56E1FBD: _ZN3paf7PhModelC1EPNS_8PhWidgetEPNS_8PhAppearE
+      0xF57E3590: _ZN3paf7PhMicon9SetRepeatEi
+      0xF6C178E6: _ZN3paf15SaveDataPointee6AddRefEv
+      0xF7F08CB2: _ZNK3paf7PhMicon7GetTimeEv
       0xFFB35373: ~
   paf_psjs:
     functions:
-      0x0275C3D5: ~
-      0x05FC94FF: ~
-      0x0E6B6616: ~
-      0x20B940B3: ~
-      0x26A34820: ~
-      0x26F90ED8: ~
-      0x2A384E95: ~
-      0x2AE5330D: ~
-      0x2D7C1B40: ~
-      0x31D9894A: ~
-      0x343E0DAF: ~
-      0x3C5C886D: ~
-      0x3D0E1B43: ~
-      0x3FDB44BB: ~
-      0x41EF8D0F: ~
-      0x42A615C8: ~
-      0x47D8CE7C: ~
-      0x493A2E6D: ~
-      0x50808C54: ~
-      0x50A5A6D3: ~
-      0x550BA039: ~
-      0x5BA7853B: ~
-      0x5BB83612: ~
-      0x5F6F3AD3: ~
-      0x6080E864: ~
-      0x636169FF: ~
-      0x66603923: ~
-      0x70FEA77E: ~
-      0x7221BAFB: ~
-      0x7BF509AF: ~
-      0x7C3602B7: ~
-      0x83531F72: ~
-      0x837CAE6A: ~
-      0x8462FA93: ~
-      0x8572802A: ~
-      0x891CC76B: ~
-      0x8A6B3741: ~
-      0x8B532D16: ~
-      0x8BF263CE: ~
-      0x8E3A093F: ~
-      0x8F1E4506: ~
-      0x90EC7BF6: ~
-      0x929496B3: ~
-      0x934BC624: ~
-      0x98BB0131: ~
-      0x9B3D45E9: ~
-      0x9B8558F4: ~
-      0x9BC97762: ~
-      0xA1D49EE6: ~
-      0xA4AC8FF6: ~
-      0xA67BA4C5: ~
-      0xAA1D51F6: ~
-      0xB1D76416: ~
-      0xB340EFC4: ~
-      0xB7282DC4: ~
-      0xBD069EC5: ~
-      0xBF7FBF01: ~
-      0xC93A60A8: ~
-      0xCB7D484E: ~
-      0xD822049A: ~
-      0xD88051BD: ~
-      0xE42DDD59: ~
-      0xEB017934: ~
-      0xEB66C2F7: ~
-      0xEBB6E16F: ~
-      0xF64B7CD4: ~
-      0xF6A4706B: ~
-      0xF7375854: ~
+      0x0275C3D5: _ZN9PSJSValue6AssignERK11PSJSContextP13PSJSValueImpl
+      0x05FC94FF: _ZN10PSJSObjectdlEPv
+      0x0E6B6616: _ZN10psjsvectorC1EjPf
+      0x20B940B3: _Z9PSJS_Exitv
+      0x26A34820: _ZN8PSJSHeap12private_freeEPv
+      0x26F90ED8: _ZN8psjsnameC1ERK11PSJSContextPKti
+      0x2A384E95: _ZN10PSJSObjectnwEj
+      0x2AE5330D: _ZN11PSJSContext22SetHeapIsEmptyCallbackEPFvPvES0_
+      0x2D7C1B40: _ZNK10PSJSObject10IsSubClassEPKt
+      0x31D9894A: _ZNK10PSJSObject11ToPrimitiveE15ToPrimitiveHint
+      0x343E0DAF: _ZN11PSJSContextC1Ev
+      0x3C5C886D: _ZN11PSJSContext22SetExecMonitorCallbackEjPFbbPvES0_
+      0x3D0E1B43: _ZN11PSJSContext17SetStdErrCallbackEPFvPKtiPvES2_
+      0x3FDB44BB: _Z9PSJS_Initv
+      0x41EF8D0F: _ZN8PSJSHeapD1Ev
+      0x42A615C8: _ZNK9PSJSValue8ToStringEv
+      0x47D8CE7C: _ZNK10PSJSObject7IsClassEPKt
+      0x493A2E6D: _ZN11PSJSContext12RegistGlobalEPKci
+      0x50808C54: _ZN13PSJSValueImpl11NewFromPoolERK11PSJSContextRK10psjsvector
+      0x50A5A6D3: _ZN15psjsstring_impl6DecRefEv
+      0x550BA039: _ZNK10PSJSObject12GetClassTypeEv
+      0x5BA7853B: _ZN8PSJSHeapC1EPvj
+      0x5BB83612: _ZN10psjsvectorC1EjPfPNS_12ELEMENT_TYPEE
+      0x5F6F3AD3: _ZNK11PSJSContext11GetUserDataEv
+      0x6080E864: _ZN11PSJSContext17SetStdOutCallbackEPFvPKtiPvES2_
+      0x636169FF: _ZN11PSJSContext4LoadEPK8PSJSFile
+      0x66603923: _ZN10PSJSObject7SetAttrEiRK9PSJSValue
+      0x70FEA77E: _ZN9PSJSValueaSEP13PSJSValueImpl
+      0x7221BAFB: _Z13PSJS_ExecFuncRK11PSJSContextRK9PSJSValueRS2_iPS2_S6_
+      0x7BF509AF: _ZN11PSJSContext17RegistMethodToObjER9PSJSValuePK12PSJSAPIEntry
+      0x7C3602B7: _ZN11PSJSContextD1Ev
+      0x83531F72: _ZN13PSJSValueImpl11NewFromPoolERK11PSJSContext
+      0x837CAE6A: _Z30PSJS_BuildValueImpl_NativeFuncRK11PSJSContextPFbS1_R9PSJSValue12PSJSCallTypeiPS2_S5_Eh
+      0x8462FA93: _ZNK10PSJSObject7GetAttrEiP9PSJSValue
+      0x8572802A: _Z25PSJS_ClassType_NativeFuncv
+      0x891CC76B: _ZN11PSJSContext12RegistGlobalEPKcP13PSJSValueImpl
+      0x8A6B3741: _ZN10PSJSObjectC2ERK11PSJSContext
+      0x8B532D16: _Z9PSJS_ExecRK11PSJSContext
+      0x8BF263CE: _ZN8psjsnameC1ERK11PSJSContextPKt
+      0x8E3A093F: _ZNK9PSJSValue8ToNumberERK11PSJSContext
+      0x8F1E4506: _ZN11PSJSContext11SetUserDataEPv
+      0x90EC7BF6: _ZN10PSJSObject7DelAttrERK8psjsname
+      0x929496B3: _Z26PSJS_BuildValueImpl_ObjectRK11PSJSContext
+      0x934BC624: _ZN13PSJSValueImpl11NewFromPoolERK11PSJSContexti
+      0x98BB0131: _ZN13psjsname_impl6DecRefEv
+      0x9B3D45E9: _ZN13PSJSValueImpl11NewFromPoolERK11PSJSContextf
+      0x9B8558F4: _ZN13PSJSValueImpl11NewFromPoolERK11PSJSContextb
+      0x9BC97762: _ZN11PSJSContextC1ERKS_
+      0xA1D49EE6: _ZNK9PSJSValue6ToBoolEv
+      0xA4AC8FF6: _ZN9PSJSValueaSERKS_
+      0xA67BA4C5: _Z9PSJS_ExecRK11PSJSContextP9PSJSValue
+      0xAA1D51F6: _ZN9PSJSValue7SetAttrERK8psjsnameRKS_
+      0xB1D76416: _ZN8PSJSHeap12get_heapareaEPPcPj
+      0xB340EFC4: _ZN11PSJSContext12SetExceptionERK9PSJSValue
+      0xB7282DC4: _Z25PSJS_ClassType_ScriptFuncv
+      0xBD069EC5: _ZN9PSJSValuedaEPv
+      0xBF7FBF01: _ZNK9PSJSValue7IsClassEPKt
+      0xC93A60A8: _ZN10PSJSObject7DelAttrEi
+      0xCB7D484E: _ZNK11PSJSContext10FindGlobalEPKc
+      0xD822049A: _ZN11PSJSContext14RegistStandardEv
+      0xD88051BD: _Z25PSJS_BuildValueImpl_ErrorRK11PSJSContext19PSJS_EXCEPTION_TYPEPKc
+      0xE42DDD59: _ZNK10PSJSObject7GetAttrERK8psjsnameP9PSJSValue
+      0xEB017934: _ZNK9PSJSValue7ToFloatEv
+      0xEB66C2F7: _ZN13PSJSValueImpl6DecRefEv
+      0xEBB6E16F: _ZN13PSJSValueImpl11NewFromPoolERK11PSJSContextP10PSJSObject
+      0xF64B7CD4: _ZN9PSJSValuenaEj
+      0xF6A4706B: _ZN13PSJSValueImpl11NewFromPoolERK11PSJSContext13PSJSValueType
+      0xF7375854: _ZN10PSJSObject7SetAttrERK8psjsnameRK9PSJSValue
     variables:
-      0x5BDF7A0E: ~
-      0x6E90F532: ~
-      0x6FC89B7C: ~
-      0xB19AF3D6: ~
-      0xC15FF9E3: ~
-      0xE193A466: ~
+      0x5BDF7A0E: _ZN8PSJSHeap7heap_idE
+      0x6E90F532: _ZN10psjsstring18null_psjs_char_strE
+      0x6FC89B7C: _ZN10psjsvector13element_shiftE
+      0xB19AF3D6: _ZN10PSJSObject10method_tblE
+      0xC15FF9E3: _ZN8psjsname18null_psjs_char_strE
+      0xE193A466: _ZTV10PSJSObject
   paf_web:
     functions:
       0x02611CF4: ~
       0x02CE5D4C: ~
-      0x059D01A6: ~
+      0x059D01A6: _ZN3paf5PhWeb33SetChangeNavigationStatusCallbackEPFvPS0_NS0_20CEPhNavigationStatusEE
       0x0683DA47: ~
-      0x07B37EB7: ~
+      0x07B37EB7: _ZN3paf5PhWeb25SetNotifyShutdownCallbackEPFvPS0_bE
       0x0A6F3AA6: ~
       0x0B95DB7D: ~
-      0x0DC5F8AB: ~
-      0x0DF5ACF4: ~
+      0x0DC5F8AB: _ZN3paf5PhWeb22SetTargetBlankCallbackEPFvPS0_PKwE
+      0x0DF5ACF4: _ZNK3paf5PhWeb16GetCharactorSizeEv
       0x1519F29D: ~
-      0x1524811A: ~
-      0x1535232D: ~
+      0x1524811A: _ZN3paf5PhWeb25SetPaintFocusRectCallbackEPFvPS0_ffffE
+      0x1535232D: _ZNK3paf5PhWeb26IsNavigationStatusCompleteEv
       0x168D191A: ~
       0x17A9E9CA: ~
       0x17B2C549: ~
-      0x17F4C727: ~
+      0x17F4C727: _ZN3paf5PhWeb13SetPointerPosEff
       0x1AB117C7: ~
       0x1B0EDDAA: ~
       0x1B899743: ~
       0x1D486754: ~
       0x1E48B2E1: ~
-      0x22BE98E4: ~
+      0x22BE98E4: _ZN3paf5PhWeb12SetOskResultEPKw
       0x2338C528: ~
       0x2343891E: ~
       0x254AC434: ~
@@ -1830,8 +1830,8 @@ modules:
       0x26E0A56A: ~
       0x2A1FA76F: ~
       0x2AB522C0: ~
-      0x2AE9F5B2: ~
-      0x2BD8F812: ~
+      0x2AE9F5B2: _ZN3paf5PhWeb17SetDialogCallbackEPFiNS0_12UISessionPtrEPKwS3_Ei
+      0x2BD8F812: _ZN3paf8PhCanvas4lockEv
       0x2CC28D3B: ~
       0x2FC937A1: ~
       0x32E8C73C: ~
@@ -1842,8 +1842,8 @@ modules:
       0x3A1C80FE: ~
       0x3AC5A344: ~
       0x3AF21EC6: ~
-      0x3B7BD1AC: ~
-      0x3DC0DA39: ~
+      0x3B7BD1AC: _ZN3paf5PhWeb9UISession5replyENS1_9ReplyCodeE
+      0x3DC0DA39: _ZN3paf5PhWeb8SetFocusEPNS_7PhEventEi
       0x3E18B7D0: ~
       0x3FBCCC8D: ~
       0x41263A47: ~
@@ -1856,39 +1856,39 @@ modules:
       0x4D2B8F5D: ~
       0x4FFF125E: ~
       0x50E1BC6A: ~
-      0x5367AE32: ~
-      0x53D68A12: ~
+      0x5367AE32: _ZN3paf5PhWeb16SetCharactorSizeEi
+      0x53D68A12: _ZN3paf7WebCore13IsInitializedEv
       0x542F9E03: ~
       0x544A9418: ~
       0x550AAEE1: ~
       0x55F12614: ~
       0x599FEC47: ~
-      0x61951E4A: ~
+      0x61951E4A: _ZN3paf5PhWeb11SetEncodingEib
       0x66384A75: ~
       0x6A8D2FAF: ~
-      0x6CAEBFD9: ~
-      0x7177FF24: ~
+      0x6CAEBFD9: _ZN3paf5PhWeb17RemoveAllCallbackEv
+      0x7177FF24: _ZN3paf5PhWeb22SetChangeTitleCallbackEPFvPS0_PKwE
       0x71D11BE7: ~
       0x739949CB: ~
       0x75AB69CF: ~
-      0x778F2E4D: ~
+      0x778F2E4D: _ZNK3paf8PhCanvas9GetStatusEv
       0x7847A0FD: ~
       0x79015AD8: ~
       0x7A562F4D: ~
       0x7C771F10: ~
       0x7CF58870: ~
       0x7D08CC58: ~
-      0x7EB8896A: ~
+      0x7EB8896A: _ZN3paf5PhWeb9UISession5replyENS1_9ReplyCodeEPKw
       0x8030B43A: ~
       0x807E009F: ~
-      0x833EF607: ~
+      0x833EF607: _ZN3paf8PhCanvas6unlockEPv
       0x83E06816: ~
       0x898C66D5: ~
       0x89DE77DD: ~
       0x8CFD3E5E: ~
       0x8ED5A4F3: ~
       0x8F13A7D3: ~
-      0x901204F9: ~
+      0x901204F9: _ZN3paf5PhWeb9UISession5replyEPKwi
       0x911FD739: ~
       0x92236826: ~
       0x922E6FF2: ~
@@ -1903,182 +1903,182 @@ modules:
       0xA156AF9D: ~
       0xA2B8F831: ~
       0xA364C2D7: ~
-      0xA3896A75: ~
+      0xA3896A75: _ZNK3paf5PhWeb7HasNextEv
       0xA5234DBE: ~
       0xA5B0F2F9: ~
       0xA5B58289: ~
-      0xA7561A3F: ~
+      0xA7561A3F: _ZN3paf5PhWeb6ReloadEv
       0xA8BB872B: ~
       0xAACE9707: ~
-      0xAC5563CC: ~
+      0xAC5563CC: _ZN3paf5PhWeb4NextEv
       0xAC8DC12C: ~
-      0xAF9AF4F4: ~
-      0xAFBBD0B7: ~
+      0xAF9AF4F4: _ZN3paf5PhWeb20SetChangeUrlCallbackEPFvPS0_PKwE
+      0xAFBBD0B7: _ZNK3paf5PhWeb7HasPrevEv
       0xB497439D: ~
       0xB813B72F: ~
       0xB9E64A43: ~
-      0xBBD06A2A: ~
+      0xBBD06A2A: _ZNK3paf5PhWeb11GetEncodingEv
       0xBDBF54C3: ~
       0xC1864795: ~
       0xC18F19BD: ~
       0xC1E5DBC3: ~
       0xC26C7B59: ~
       0xC544101E: ~
-      0xC763FEB7: ~
+      0xC763FEB7: _ZN3paf5PhWeb4PrevEv
       0xC7E2B09D: ~
       0xC8852701: ~
       0xC8ACB83C: ~
-      0xC923924A: ~
+      0xC923924A: _ZN3paf5PhWeb13SetWindowSizeEii
       0xC9AE1DE9: ~
-      0xCD707F5B: ~
+      0xCD707F5B: _ZN3paf5PhWeb14getWindowWidthEv
       0xCE4A22FA: ~
-      0xCEF919B4: ~
-      0xCF84FC8B: ~
-      0xD02C89C9: ~
-      0xD223286B: ~
+      0xCEF919B4: _ZNK3paf5PhWeb9UISession16getDefaultStringEv
+      0xCF84FC8B: _ZN3paf17PhAppearAsyncDrawC1EPKNS_8PhWidgetE
+      0xD02C89C9: _ZN3paf7WebCore10InitializeEPNS_10HeapMemoryE
+      0xD223286B: _ZN3paf5PhWeb28SetHistoryEnumeratedCallbackEPFvPS0_PKwS3_E
       0xD356F0D3: ~
       0xD3FE0886: ~
-      0xD4A00AE7: ~
+      0xD4A00AE7: _ZN3paf5PhWeb12UISessionPtrD1Ev
       0xD58BA15B: ~
-      0xD6808BD8: ~
+      0xD6808BD8: _ZN3paf5PhWeb10WidgetTypeEv
       0xD768FF2B: ~
-      0xD951ED2D: ~
-      0xDA1A7C4C: ~
+      0xD951ED2D: _ZN3paf5PhWeb16EnableJavaScriptEb
+      0xDA1A7C4C: _ZN3paf8PhCanvas8FinalizeEi
       0xDE2EFCE5: ~
       0xDFF4FB2A: ~
-      0xE084E017: ~
+      0xE084E017: _ZN3paf5PhWeb5CloseEv
       0xE20EC93E: ~
       0xE2EFD559: ~
-      0xE513DBB0: ~
+      0xE513DBB0: _ZN3paf8PhCanvasD2Ev
       0xE5D0CF28: ~
       0xE60DB552: ~
       0xE61F5F3D: ~
       0xE658B095: ~
       0xE6D66643: ~
       0xEB71806B: ~
-      0xEBE26C5E: ~
+      0xEBE26C5E: _ZNK3paf8PhCanvas9IsInheritEPKc
       0xEC563830: ~
-      0xED87189C: ~
-      0xF2EC7374: ~
+      0xED87189C: _ZNK3paf5PhWeb13GetFocusedUrlEv
+      0xF2EC7374: _ZN3paf5PhWeb15getWindowHeightEv
       0xF5A743ED: ~
-      0xF69F1EC1: ~
+      0xF69F1EC1: _ZN3paf5PhWeb27SetChangeFocusedUrlCallbackEPFvPS0_PKwE
       0xF6B57537: ~
-      0xFACEACC7: ~
+      0xFACEACC7: _ZN3paf5PhWeb4StopEv
       0xFDE2633D: ~
-      0xFE8F1361: ~
+      0xFE8F1361: _ZN3paf5PhWeb8JumpPageEPKw
     variables:
-      0x3D439489: ~
+      0x3D439489: _ZN3paf7WebCore9instance_E
   post_nr:
     functions:
-      0x3A7075F2: ~
-      0x40868AF4: ~
-      0x486DAFF2: ~
-      0x4E74D383: ~
-      0xD56E27AF: ~
-      0xD9F7CC7A: ~
+      0x3A7075F2: cellPostNrExec
+      0x40868AF4: cellPostNrOpen
+      0x486DAFF2: cellPostNrInitialize
+      0x4E74D383: cellPostNrFinalize
+      0xD56E27AF: cellPostNrClose
+      0xD9F7CC7A: cellPostNrQueryAttributes
   print_canon_library:
     functions:
-      0x0290C402: ~
+      0x0290C402: canonPrintGetPrintableArea
       0x03AD3213: ~
       0x09A8E05F: ~
       0x0B54CD1A: ~
       0x0D375074: ~
       0x12A3E7A4: ~
-      0x13C22F55: ~
-      0x2347890D: ~
+      0x13C22F55: canonPrintGetPrinterInfo
+      0x2347890D: canonPrintEndPage
       0x3D9EACE4: ~
-      0x40748720: ~
+      0x40748720: canonPrintCancelPage
       0x53B5FABB: ~
-      0x5817B841: ~
+      0x5817B841: canonPrintEndJob
       0x59AA4E18: ~
       0x59CC06DE: ~
       0x5A7DB374: ~
       0x5BD386E8: ~
-      0x5E662299: ~
+      0x5E662299: canonPrintSendBand
       0x76D0ED2E: ~
       0x7AA66961: ~
       0x7DA5A0F9: ~
       0x8A72766B: ~
-      0x8A858E7C: ~
+      0x8A858E7C: canonPrintCancelJob
       0x8E882324: ~
-      0x8F324E06: ~
+      0x8F324E06: canonPrintGetPrintParam
       0x91074718: ~
-      0x91C274F8: ~
+      0x91C274F8: canonPrintStartPage
       0x96CB53DB: ~
       0x971080D1: ~
-      0x9C48D244: ~
+      0x9C48D244: canonPrintCancelSearchPrinter
       0xA138CBD5: ~
-      0xA912E4F2: ~
+      0xA912E4F2: canonPrintSearchPrinter
       0xAB2003B8: ~
       0xAC2F9549: ~
       0xAC3663A8: ~
-      0xADAB4B10: ~
+      0xADAB4B10: canonPrintGetStatus
       0xB0708A5F: ~
       0xBD6E8659: ~
-      0xC7595924: ~
-      0xC8C508DE: ~
-      0xC91B9E46: ~
+      0xC7595924: canonPrintGetString
+      0xC8C508DE: canonPrintContinue
+      0xC91B9E46: canonPrintSetPrinter
       0xCC80B19B: ~
       0xDC62DE5B: ~
       0xE6FEE3FE: ~
       0xE986A130: ~
-      0xFB764A9D: ~
-      0xFF128226: ~
+      0xFB764A9D: canonPrintInitDriver
+      0xFF128226: canonPrintStartJob
   print_dlna_library:
     functions:
-      0x02D834DA: ~
+      0x02D834DA: dlnaPrintSetPrinter
       0x2B8E1813: ~
       0x446C54E1: ~
-      0x48760C1C: ~
-      0x4D1A1BC3: ~
-      0x5457E0B2: ~
-      0x57D952B1: ~
+      0x48760C1C: dlnaPrintGetPrintParam
+      0x4D1A1BC3: dlnaPrintStartJob
+      0x5457E0B2: dlnaPrintSearchPrinterEx
+      0x57D952B1: dlnaPrintCancelJob
       0x584FAAF7: ~
-      0x58FF49AC: ~
-      0x66C95B10: ~
-      0x745C2147: ~
-      0x76FDF075: ~
-      0x8463730C: ~
-      0x84F84BD5: ~
-      0x8B9DD4E7: ~
-      0x9558C9C7: ~
-      0x9B1A2D56: ~
+      0x58FF49AC: dlnaPrintStartPage
+      0x66C95B10: dlnaPrintGetPrinterInfo
+      0x745C2147: dlnaPrintEndPage
+      0x76FDF075: dlnaPrintGetStatus
+      0x8463730C: dlnaPrintEndJob
+      0x84F84BD5: dlnaPrintInitDriver
+      0x8B9DD4E7: dlnaPrintContinue
+      0x9558C9C7: dlnaPrintCancelSearchPrinter
+      0x9B1A2D56: dlnaPrintNotifyIpChanged
       0xA57913ED: ~
-      0xA626F180: ~
+      0xA626F180: dlnaPrintCancelPage
       0xB1FCA1E9: ~
-      0xB3EB7AFB: ~
+      0xB3EB7AFB: dlnaPrintGetString
       0xB9CA05EB: ~
       0xBB69077E: ~
-      0xBCE9B3D4: ~
-      0xDBBA2DDE: ~
+      0xBCE9B3D4: dlnaPrintGetPrintableArea
+      0xDBBA2DDE: dlnaPrintSendBand
       0xEA199009: ~
-      0xF99FCE24: ~
+      0xF99FCE24: dlnaPrintSearchPrinter
   print_epson_library:
     functions:
-      0x04FF12AB: ~
-      0x05832DC9: ~
+      0x04FF12AB: epsonPrintInitDriver
+      0x05832DC9: epsonPrintStartPage
       0x075E8E4C: ~
-      0x0DCB4FF2: ~
+      0x0DCB4FF2: epsonPrintGetPrintParam
       0x13B7B051: ~
       0x168C3C4A: ~
-      0x2183EA78: ~
-      0x21E9CF83: ~
-      0x21F0BF7A: ~
+      0x2183EA78: epsonPrintSearchPrinter
+      0x21E9CF83: epsonPrintCancelPage
+      0x21F0BF7A: epsonPrintGetString
       0x21F0D370: ~
       0x38F845A9: ~
       0x4194976B: ~
-      0x46DA529A: ~
-      0x5FE71606: ~
-      0x63F74723: ~
-      0xAFA94E18: ~
-      0xB6DF2D46: ~
-      0xBB8F0615: ~
+      0x46DA529A: epsonPrintGetStatus
+      0x5FE71606: epsonPrintEndJob
+      0x63F74723: epsonPrintGetPrintableArea
+      0xAFA94E18: epsonPrintCancelSearchPrinter
+      0xB6DF2D46: epsonPrintStartJob
+      0xBB8F0615: epsonPrintContinue
       0xC1CE0DBF: ~
-      0xC362273E: ~
-      0xD4B256E0: ~
-      0xF18986C1: ~
-      0xF5839C09: ~
-      0xFFF3A1C9: ~
+      0xC362273E: epsonPrintSendBand
+      0xD4B256E0: epsonPrintCancelJob
+      0xF18986C1: epsonPrintGetPrinterInfo
+      0xF5839C09: epsonPrintEndPage
+      0xFFF3A1C9: epsonPrintSetPrinter
   qgl_base:
     functions:
       0x007D2D02: ~
@@ -2446,17 +2446,17 @@ modules:
       0xFFFCEE7A: ~
   raf:
     functions:
-      0x064A1816: ~
-      0x1131F36B: ~
-      0x22496C93: ~
-      0x290893FB: ~
-      0x4AE98BFC: ~
-      0x507A76AC: ~
-      0x57C25178: ~
+      0x064A1816: rafUpdate
+      0x1131F36B: rafUnload
+      0x22496C93: rafSetFade
+      0x290893FB: rafStart
+      0x4AE98BFC: rafExit
+      0x507A76AC: rafRequestUnload
+      0x57C25178: rafInit
       0x6BDD7EE8: ~
-      0x7CDF2F53: ~
+      0x7CDF2F53: rafLoadFromFile
       0xAB768711: ~
-      0xB4E13C7A: ~
+      0xB4E13C7A: rafSetResolution
   sacd:
     functions:
       0x1A404BBF: ~
@@ -2490,13 +2490,13 @@ modules:
       0xFFB5CD35: ~
   sceNpOauth:
     functions:
-      0x18A67FB5: ~
+      0x18A67FB5: sceNpOAuthVshAbortRequest
       0x8C24C4FF: ~
-      0x9912065D: ~
+      0x9912065D: sceNpOAuthVshTerm
       0xA193A4AA: ~
-      0xB90A805F: ~
-      0xD8703A3F: ~
-      0xDEA09D91: ~
+      0xB90A805F: sceNpOAuthVshInit
+      0xD8703A3F: sceNpOAuthVshCreateRequest
+      0xDEA09D91: sceNpOAuthVshGetAuthorizationCode
   silk:
     functions:
       0x16C3B212: ~
@@ -2508,7 +2508,7 @@ modules:
   silk_base:
     functions:
       0x011FBEB6: ~
-      0x01E3CDE3: ~
+      0x01E3CDE3: CEComGetClassObject
       0x03E870BB: ~
       0x057EFE6C: ~
       0x074D9735: ~
@@ -2517,36 +2517,36 @@ modules:
       0x09F3CA02: ~
       0x09F90681: ~
       0x0A2FDDE2: ~
-      0x0B33B2CF: ~
-      0x0B4F2475: ~
+      0x0B33B2CF: CEULock_acquire
+      0x0B4F2475: CEULock_destroy
       0x0C810660: ~
       0x0DC10663: ~
       0x0E0F11BD: ~
       0x0EA15672: ~
       0x0EF3F34D: ~
       0x115EEA57: ~
-      0x11BECCE5: ~
+      0x11BECCE5: CEUQueue_create
       0x11E8AA74: ~
       0x12918184: ~
       0x132826F2: ~
       0x137618FA: ~
       0x16948BFF: ~
-      0x169A4182: ~
+      0x169A4182: sqlite3_errmsg
       0x16C3B212: ~
       0x16E019EA: ~
       0x18CCCCE0: ~
       0x1906347A: ~
       0x1910F9B7: ~
       0x195D124F: ~
-      0x19869469: ~
+      0x19869469: CEComRealloc
       0x19968839: ~
-      0x19A2ABEC: ~
+      0x19A2ABEC: CEComInitialize
       0x19C27A2C: ~
-      0x19E20E7B: ~
+      0x19E20E7B: CEComISPrintf
       0x19EB4098: ~
       0x1A06259A: ~
       0x1B5DCB3F: ~
-      0x1BA0444D: ~
+      0x1BA0444D: sqlite3_value_type
       0x1C26A015: ~
       0x1C2D9BF4: ~
       0x1D1897FE: ~
@@ -2554,7 +2554,7 @@ modules:
       0x1E4D1A96: ~
       0x1F3B0A06: ~
       0x20106EAC: ~
-      0x211A3AA5: ~
+      0x211A3AA5: CEUSemaphore_wait
       0x211A8290: ~
       0x21B60B24: ~
       0x228706A6: ~
@@ -2562,41 +2562,41 @@ modules:
       0x23DC35F8: ~
       0x242153EE: ~
       0x255D63AF: ~
-      0x258D003C: ~
+      0x258D003C: CEUQueue_clear
       0x271BCF35: ~
       0x27B82A58: ~
       0x28B8B8AE: ~
       0x29B63AD2: ~
       0x29EC913D: ~
       0x29FC2BC3: ~
-      0x2AED8936: ~
+      0x2AED8936: sqlite3_finalize
       0x2C2D720B: ~
-      0x2CCE2184: ~
-      0x2CEA5781: ~
+      0x2CCE2184: ceapartment_CEDllCanUnloadNow
+      0x2CEA5781: sqlite3_column_bytes
       0x2D79B23E: ~
       0x2F15141C: ~
       0x2F6C33E7: ~
       0x2F7A05A4: ~
       0x2FA47CA3: ~
       0x304FC246: ~
-      0x30F4959C: ~
+      0x30F4959C: sqlite3_column_value
       0x3161F84F: ~
       0x336F788A: ~
-      0x33726893: ~
+      0x33726893: CEUQueue_dequeue
       0x3397C9F2: ~
       0x349AA780: ~
-      0x354B1125: ~
+      0x354B1125: CEUThread_create
       0x3672416D: ~
       0x36950F16: ~
       0x3758C367: ~
       0x3764B63C: ~
       0x3867008F: ~
       0x387B2EA6: ~
-      0x3892A800: ~
+      0x3892A800: sqlite3_bind_parameter_count
       0x3A38D47E: ~
       0x3AA9780C: ~
       0x3B133EC1: ~
-      0x3C01BDD8: ~
+      0x3C01BDD8: sqlite3_bind_null
       0x3C6CEA1C: ~
       0x3C8A1457: ~
       0x3C9DF83D: ~
@@ -2609,27 +2609,27 @@ modules:
       0x41D221A6: ~
       0x428F8C47: ~
       0x42DC3F0F: ~
-      0x44C23303: ~
+      0x44C23303: sqlite3_data_count
       0x45F57F26: ~
       0x4600C287: ~
       0x47EBDD33: ~
       0x496CE46D: ~
       0x49F7D26D: ~
       0x4AA1F7B8: ~
-      0x4ABA7A3D: ~
+      0x4ABA7A3D: sqlite3_last_insert_rowid
       0x4AD1D84E: ~
-      0x4B52553B: ~
+      0x4B52553B: ceapartment_CEDllMain
       0x4C5CFC41: ~
       0x4F608F2A: ~
       0x4F741048: ~
       0x4FB20A3A: ~
       0x50BB8AF6: ~
       0x522BEDA3: ~
-      0x53375995: ~
+      0x53375995: ceapartment_CEDllGetClassObject
       0x53FC1C93: ~
-      0x54459CA3: ~
+      0x54459CA3: sqlite3_changes
       0x54E49B2C: ~
-      0x551BEDA8: ~
+      0x551BEDA8: CEULock_release
       0x562A9DA1: ~
       0x56B14EF9: ~
       0x56BC8D62: ~
@@ -2638,75 +2638,75 @@ modules:
       0x582DA3EC: ~
       0x59A88F90: ~
       0x5AB8A9AF: ~
-      0x5AFC22C3: ~
+      0x5AFC22C3: CEUSemaphore_destroy
       0x5B3E0420: ~
       0x5C89C71B: ~
       0x5F21566D: ~
-      0x5F6817FA: ~
+      0x5F6817FA: sqlite3_open16
       0x6015FC3D: ~
       0x603020DA: ~
       0x60D1B0D0: ~
       0x60EA10D4: ~
       0x6130A6AC: ~
       0x64E535E7: ~
-      0x667C75B5: ~
-      0x671990F3: ~
+      0x667C75B5: CEUSemaphore_post
+      0x671990F3: CEUSemaphore_create
       0x676D1184: ~
-      0x67CB1BDA: ~
-      0x67ECB719: ~
+      0x67CB1BDA: CEUThread_self
+      0x67ECB719: CEULock_create
       0x689ED775: ~
       0x69589BC3: ~
       0x695BC9B7: ~
-      0x6C512004: ~
-      0x6CBD0B0F: ~
+      0x6C512004: CEComDebugVPrintf
+      0x6CBD0B0F: CEUQueue_delete
       0x6DBC57A6: ~
       0x6DEC1A8E: ~
       0x6DEFD2EF: ~
       0x6E853CDC: ~
-      0x6F325C2D: ~
+      0x6F325C2D: CEComDetachThread
       0x6F670D7E: ~
       0x6FC9A2F2: ~
       0x705732F0: ~
-      0x70625CDB: ~
+      0x70625CDB: sqlite3_column_blob
       0x70915679: ~
       0x71117FCA: ~
       0x72C0D86F: ~
       0x73617480: ~
-      0x73E074C8: ~
+      0x73E074C8: CEUQueue_enqueue
       0x75B1856F: ~
       0x763451FC: ~
       0x7785EB7E: ~
       0x7794A207: ~
       0x779A3336: ~
-      0x77A4C328: ~
+      0x77A4C328: sqlite3_value_text16
       0x78A5869B: ~
       0x7B92CA95: ~
-      0x7B96F1EE: ~
+      0x7B96F1EE: sqlite3_bind_text16
       0x7BACA30F: ~
       0x7D732695: ~
       0x7D8A359D: ~
       0x7D9FFDAD: ~
-      0x7DD4A974: ~
+      0x7DD4A974: sqlite3_errcode
       0x7E30A60B: ~
-      0x7EBFEDD9: ~
-      0x7FBD8376: ~
+      0x7EBFEDD9: CEComGetThreadContext
+      0x7FBD8376: sqlite3_bind_blob
       0x7FCFF71E: ~
       0x8511BDDD: ~
       0x85EE7EBA: ~
-      0x860B6C39: ~
+      0x860B6C39: sqlite3_prepare16_v2
       0x86C37BCE: ~
       0x899A719C: ~
       0x89AFB074: ~
       0x8AA1D11B: ~
       0x8B16A286: ~
-      0x8CE7166D: ~
-      0x8DCD9B71: ~
+      0x8CE7166D: CEComFree
+      0x8DCD9B71: sqlite3_bind_int64
       0x8EFB4898: ~
       0x901D1123: ~
-      0x914CFE31: ~
+      0x914CFE31: sqlite3_expired
       0x916F5567: ~
       0x953748AF: ~
-      0x95D0A26D: ~
+      0x95D0A26D: sqlite3_column_int
       0x973732A0: ~
       0x978C27F1: ~
       0x97DA6E9B: ~
@@ -2717,8 +2717,8 @@ modules:
       0x9D7BF9E8: ~
       0x9D7D132B: ~
       0x9F2363CD: ~
-      0x9FAE7F38: ~
-      0xA0EDD9E8: ~
+      0x9FAE7F38: CEComDebugPrintf
+      0xA0EDD9E8: sqlite3_busy_timeout
       0xA0F5ADF7: ~
       0xA13C1464: ~
       0xA2CACB3C: ~
@@ -2728,12 +2728,12 @@ modules:
       0xA5CAC1F0: ~
       0xA5FFFA8D: ~
       0xA605E8B9: ~
-      0xA79E286A: ~
+      0xA79E286A: CEComCalloc
       0xA7B0DB23: ~
       0xA8A0BD83: ~
       0xA9C44985: ~
-      0xAC80DB63: ~
-      0xADD46D8E: ~
+      0xAC80DB63: CEComGetMaxHeapSize
+      0xADD46D8E: CESysCloseHandle
       0xAE65EED0: ~
       0xAF176F8B: ~
       0xAF36F3F1: ~
@@ -2746,10 +2746,10 @@ modules:
       0xB46D7B12: ~
       0xB5962143: ~
       0xB5DAC425: ~
-      0xB75B2E7B: ~
+      0xB75B2E7B: sqlite3_reset
       0xB964E4F4: ~
       0xB98B52FA: ~
-      0xBA50640E: ~
+      0xBA50640E: sqlite3_bind_double
       0xBADA5767: ~
       0xBAE069CD: ~
       0xBAE4A76B: ~
@@ -2759,11 +2759,11 @@ modules:
       0xBDE7620F: ~
       0xBE558EEC: ~
       0xC211FAFC: ~
-      0xC26A0417: ~
-      0xC47BFF32: ~
+      0xC26A0417: sqlite3_step
+      0xC47BFF32: sqlite3_close
       0xC4C2F328: ~
       0xC6A13A31: ~
-      0xC6B51854: ~
+      0xC6B51854: sqlite3_value_double
       0xC6BCE960: ~
       0xC9AC40A9: ~
       0xC9AFE268: ~
@@ -2772,7 +2772,7 @@ modules:
       0xCA556C84: ~
       0xCAEF00A4: ~
       0xCB67F105: ~
-      0xCE48FE0F: ~
+      0xCE48FE0F: CEUThread_postMessage
       0xCE99443F: ~
       0xCF3D98A8: ~
       0xCFF0AB45: ~
@@ -2782,14 +2782,14 @@ modules:
       0xD2EEC34C: ~
       0xD37BE63B: ~
       0xD422420B: ~
-      0xD42CC7B3: ~
+      0xD42CC7B3: CEUThread_destroy
       0xD4329F62: ~
-      0xD4837487: ~
+      0xD4837487: CEComMalloc
       0xD57EAF94: ~
       0xD5954001: ~
       0xD5E27BC7: ~
-      0xD657D01F: ~
-      0xD676552B: ~
+      0xD657D01F: CEComAttachThread
+      0xD676552B: sqlite3_set_authorizer
       0xD7E3ABF6: ~
       0xD821DCB5: ~
       0xD92C5B59: ~
@@ -2797,12 +2797,12 @@ modules:
       0xDA207CC0: ~
       0xDB6A4371: ~
       0xDB73A4DD: ~
-      0xDBDC6E45: ~
+      0xDBDC6E45: sqlite3_column_name16
       0xDCC06C31: ~
       0xDD49F10F: ~
       0xE015CBF3: ~
       0xE08DC6D9: ~
-      0xE0CEE623: ~
+      0xE0CEE623: CEComUninitialize
       0xE1428252: ~
       0xE17EDD29: ~
       0xE34EA2BF: ~
@@ -2819,18 +2819,18 @@ modules:
       0xE71C0A16: ~
       0xE7BC385E: ~
       0xE809B1D3: ~
-      0xE84D6197: ~
+      0xE84D6197: sqlite3_column_int64
       0xE88CE618: ~
       0xE977C704: ~
       0xEC3FD246: ~
-      0xEC504BDF: ~
+      0xEC504BDF: ceurl_create
       0xEDDBF6C9: ~
       0xEE66793E: ~
       0xEF054054: ~
       0xF0D3060C: ~
       0xF0DDD8A1: ~
       0xF253D355: ~
-      0xF2A1D63F: ~
+      0xF2A1D63F: CEUQueue_remove
       0xF2EBC661: ~
       0xF43E59F0: ~
       0xF57FB3E7: ~
@@ -2839,11 +2839,11 @@ modules:
       0xF7561C03: ~
       0xF7985F03: ~
       0xF81F745A: ~
-      0xF86531E0: ~
+      0xF86531E0: sqlite3_column_text16
       0xF9BA05F8: ~
       0xFB0F282C: ~
       0xFB598F4F: ~
-      0xFE1369A3: ~
+      0xFE1369A3: CEComSetMaxHeapSize
       0xFEF683D0: ~
   silk_mrcommon:
     functions:
@@ -2855,24 +2855,24 @@ modules:
       0xF2871AEA: ~
   silk_npflashplayer:
     functions:
-      0x33717C32: ~
+      0x33717C32: NP_GetMIMEDescription
       0x483D8862: ~
-      0x4D717F12: ~
-      0x604D3131: ~
+      0x4D717F12: NP_Initialize
+      0x604D3131: NP_GetValue
       0xDFC8577A: ~
-      0xEB6A3945: ~
+      0xEB6A3945: NP_Shutdown
   silk_npflashplayer9:
     functions:
-      0x0B712E67: ~
-      0x33717C32: ~
+      0x0B712E67: set_npflashplayer9_dllentry
+      0x33717C32: NP_GetMIMEDescription
       0x483D8862: ~
-      0x4D717F12: ~
+      0x4D717F12: NP_Initialize
       0x4FC39E50: ~
-      0x604D3131: ~
+      0x604D3131: NP_GetValue
       0xDD9F59EB: ~
       0xDFC8577A: ~
       0xE9B3FEDE: ~
-      0xEB6A3945: ~
+      0xEB6A3945: NP_Shutdown
   silk_webkit:
     functions:
       0x2F3B2D64: ~
@@ -2894,31 +2894,31 @@ modules:
       0x0173F4D8: ~
       0x02D2F31B: ~
       0x04C10CA5: ~
-      0x08975E23: ~
-      0x08D631C8: ~
+      0x08975E23: scePS2McIconSys_GetLightDir2
+      0x08D631C8: scePS2McIconSys_GetBgColor3
       0x0E9189A6: ~
-      0x1057762D: ~
+      0x1057762D: scePS2McIconSys_GetDeleteIconFileName
       0x10798D02: ~
-      0x12B5CE8A: ~
+      0x12B5CE8A: scePS2McIconSys_GetBgColor1
       0x16F7320D: ~
       0x1EF4034A: ~
-      0x207D2B68: ~
-      0x218372FB: ~
+      0x207D2B68: scePS1McHeader_CheckHeader
+      0x218372FB: scePS2McIconSys_GetLightColor2
       0x227A9CFF: ~
       0x24AC66A9: ~
       0x29E49951: ~
-      0x2CB7F94B: ~
+      0x2CB7F94B: scePS2McIconSys_GetBgColor2
       0x2D5B8416: ~
-      0x33EE813D: ~
-      0x345579CF: ~
+      0x33EE813D: scePS2Icon_Setup
+      0x345579CF: scePS2McIconSys_Attribute
       0x349045A5: ~
       0x350B7EF3: ~
       0x3568D629: ~
       0x38B0BC63: ~
       0x390B3480: ~
       0x3C04506F: ~
-      0x3DFFB641: ~
-      0x40B33058: ~
+      0x3DFFB641: scePS2McIconSys_GetBgAlpha
+      0x40B33058: scePS2McIconSys_GetLightColor1
       0x465F7726: ~
       0x467A1D5C: ~
       0x46A68A14: ~
@@ -2926,7 +2926,7 @@ modules:
       0x4C6EE1C9: ~
       0x4DB427C6: ~
       0x4FB06A1A: ~
-      0x50575E6F: ~
+      0x50575E6F: scePS2McIconSys_IconFileName
       0x50D9993E: ~
       0x5A0E6EE0: ~
       0x5B9FB14E: ~
@@ -2934,9 +2934,9 @@ modules:
       0x61F9BE4A: ~
       0x6265510B: ~
       0x636D45FE: ~
-      0x6669C4F0: ~
-      0x68403E83: ~
-      0x6A2D9F0C: ~
+      0x6669C4F0: scePS2OSD_IsYourSysConf
+      0x68403E83: scePS1Icon_Setup
+      0x6A2D9F0C: scePS2McIconSys_CopyIconFileName
       0x6B260439: ~
       0x6B721839: ~
       0x6BB679AF: ~
@@ -2946,71 +2946,71 @@ modules:
       0x7C976114: ~
       0x7D7A5664: ~
       0x85D81402: ~
-      0x86069C54: ~
+      0x86069C54: scePS1McHeader_IsPDA
       0x861E0C1C: ~
-      0x8AC6EDEE: ~
+      0x8AC6EDEE: scePS2McIconSys_GetLightDir0
       0x8DBA7FC6: ~
-      0x8DEC0DE7: ~
+      0x8DEC0DE7: scePS2Icon_GetAnimationFrame
       0x8FEA93F0: ~
       0x8FED949B: ~
-      0x8FF22D5A: ~
+      0x8FF22D5A: scePS2McIconSys_GetAmbientColor
       0x90895175: ~
       0x910E11BE: ~
       0x91B7074C: ~
-      0x945A7661: ~
+      0x945A7661: scePS2OSD_TitleWordWrapGB18030
       0x95457C4A: ~
       0x992DE964: ~
       0x9E388BF1: ~
-      0xA77421C0: ~
-      0xAC9E2BC9: ~
-      0xAFC5D265: ~
-      0xB076F41F: ~
+      0xA77421C0: scePS1McHeader_GetTitleName
+      0xAC9E2BC9: scePS2OSD_TitleWordWrapSJIS
+      0xAFC5D265: scePS2IconCalcSize
+      0xB076F41F: scePS2McIconSys_GetLightDir1
       0xB1E816F0: ~
       0xB2CF6637: ~
-      0xBD9360B8: ~
+      0xBD9360B8: scePS1McHeader_IsPDAExec
       0xC0F0EF42: ~
-      0xC9641B0F: ~
+      0xC9641B0F: scePS2McIconSys_TitleName
       0xD14AE7AE: ~
       0xD93B4B05: ~
       0xDA1974F5: ~
       0xDAEDEC77: ~
-      0xDBA27BC1: ~
-      0xDCEC6671: ~
+      0xDBA27BC1: scePS1McHeader_GetTitleNameForChina
+      0xDCEC6671: scePS2OSD_SarchEntryNamePath
       0xDD8333D2: ~
-      0xE0A73B54: ~
-      0xE4B07F1E: ~
+      0xE0A73B54: scePS2McIconSys_GetLightColor0
+      0xE4B07F1E: scePS2McIconSys_DeleteIconFileName
       0xE928F5F6: ~
       0xEA21A47D: ~
-      0xEAEAC87D: ~
+      0xEAEAC87D: scePS2McIconSys_GetCopyIconFileName
       0xED57FF6E: ~
-      0xEEDEBDFD: ~
+      0xEEDEBDFD: scePS2McIconSys_GetBgColor0
       0xEFA73FDC: ~
       0xEFB4AD14: ~
       0xF83E6B1C: ~
       0xF9615451: ~
       0xFDAC0B70: ~
-      0xFFDEAFDB: ~
+      0xFFDEAFDB: scePS2McIconSys_GetIconFileName
     variables:
       0xBC64A790: ~
       0xC8975058: ~
   vshmain_ext:
     functions:
-      0x0CC64396: ~
+      0x0CC64396: _ZN3vsh11ContentInfo10SetTextureERKN3paf12SurfaceRCPtrINS1_7SurfaceEEEi
       0x114F1917: ~
-      0x1877D62E: ~
+      0x1877D62E: _ZN3vsh11ContentInfo9GetWidgetEi
       0x2B3CF0A6: ~
       0x2E44275C: ~
       0x373E77C4: ~
       0x404216FB: ~
       0x49B91B5A: ~
-      0x5FCF36DD: ~
+      0x5FCF36DD: _ZN3vsh11ContentInfo6DeleteEff
       0x6646C4AF: ~
       0x6E7A95CC: ~
       0x847C1B12: ~
       0x84B39BA0: ~
       0x87D8A9F2: ~
-      0x888BE764: ~
-      0x9BE84C11: ~
+      0x888BE764: _ZN3vsh11ContentInfo4MenuEff
+      0x9BE84C11: _ZN3vsh11ContentInfo7SetTextERKSbIwSt11char_traitsIwESaIwEEi
       0xA0F81543: ~
       0xB25E2660: ~
       0xB44EA8BE: ~
@@ -3021,23 +3021,23 @@ modules:
       0xC215B175: ~
       0xC2C3D0E9: ~
       0xCA34E5EB: ~
-      0xCEB85584: ~
-      0xD615B9BD: ~
+      0xCEB85584: _ZN3vsh11ContentInfoC1EiPN3paf8PhWidgetES3_
+      0xD615B9BD: _ZN3vsh11ContentInfo9SetLayoutEi
       0xDBCB4121: ~
       0xDE90D359: ~
-      0xE7276F50: ~
+      0xE7276F50: _ZN3vsh11ContentInfo4HomeEff
       0xE9D302E3: ~
       0xEB02E1AF: ~
       0xEBF056A2: ~
-      0xF490B679: ~
+      0xF490B679: _ZN3vsh11ContentInfo4InfoEff
       0xF672F777: ~
-      0xF733525E: ~
+      0xF733525E: _ZN3vsh11ContentInfo4ShowEff
       0xF7C7A411: ~
       0xFB2D1CE4: ~
       0xFB9C516C: ~
-      0xFD693130: ~
+      0xFD693130: _ZN3vsh11ContentInfo7InitPosEv
       0xFE637DBC: ~
-      0xFEB981E6: ~
+      0xFEB981E6: _ZN3vsh11ContentInfo4HideEff
     variables:
       0x556BE382: ~
   vshmain_util:
@@ -3073,9 +3073,9 @@ modules:
       0xDFDE5543: ~
   x3_gntoc:
     functions:
-      0x1E969735: ~
-      0x3EB7807B: ~
-      0x4AE8AEF5: ~
+      0x1E969735: gnpc_resp_get_count
+      0x3EB7807B: gnpc_resp_get_integers
+      0x4AE8AEF5: gnpc_req_init
       0x4E4C65CD: ~
       0x5CEF9B28: ~
       0x673C61DC: ~
@@ -3083,13 +3083,13 @@ modules:
       0x761031BD: ~
       0x82AC6172: ~
       0x96E12976: ~
-      0x97CC91B8: ~
-      0xA4133486: ~
+      0x97CC91B8: gnpc_resp_get_integer
+      0xA4133486: gnpc_resp_get_child
       0xB0B2F029: ~
-      0xB12F5364: ~
+      0xB12F5364: gnpc_resp_get_bytes
       0xC0963F0C: ~
       0xC5D2332A: ~
-      0xC79F8B0D: ~
+      0xC79F8B0D: gnpc_get_req_buffer_size
       0xCDDF2B9D: ~
       0xD6A228A4: ~
       0xF0079846: ~

@@ -2,211 +2,211 @@ firmware: 4.84
 modules:
   _cellAudio:
     functions:
-      0x04AF134E: ~
-      0x0ADF8089: ~
-      0x0B168F92: ~
-      0x1170A5EA: ~
-      0x12DF5AF5: ~
-      0x17D1213B: ~
-      0x28740582: ~
-      0x28BC1409: ~
-      0x2B9AA0F5: ~
-      0x2B9BD9AD: ~
-      0x31211F6B: ~
-      0x377E0CD9: ~
-      0x38B28212: ~
-      0x3DBCA1EB: ~
-      0x3F1FEAFB: ~
-      0x4109D08C: ~
-      0x4129FE2D: ~
-      0x43FB5836: ~
-      0x4636DE94: ~
-      0x46E2924C: ~
-      0x49CC902D: ~
-      0x4D1ADD21: ~
+      0x04AF134E: cellAudioCreateNotifyEventQueue
+      0x0ADF8089: _cellAudioOutputBufferGetAddr
+      0x0B168F92: cellAudioInit
+      0x1170A5EA: _cellAudioSetAudioEventCallback_pathThrough
+      0x12DF5AF5: _cellAudioPathThroughLRCK_getIndexAddr
+      0x17D1213B: cellAudioSendAck
+      0x28740582: _cellAudioSysSpuChainRemoveId
+      0x28BC1409: cellAudioUnsetPersonalDevice
+      0x2B9AA0F5: _cellAudioCloseAdmin
+      0x2B9BD9AD: cellAudioRemoveNotifyEventQueueEx
+      0x31211F6B: cellAudioMiscSetAccessoryVolume
+      0x377E0CD9: cellAudioSetNotifyEventQueue
+      0x38B28212: _cellAudioPathThroughSpdifSetEventCallback
+      0x3DBCA1EB: _cellAudioPathThroughLRCK_open
+      0x3F1FEAFB: _cellAudioPathThruSpdifGetByteOffset
+      0x4109D08C: cellAudioGetPortTimestamp
+      0x4129FE2D: cellAudioPortClose
+      0x43FB5836: _cellAudioSetDownMixer
+      0x4636DE94: _cellAudioPathThroughLRCK_setBufferForm
+      0x46E2924C: _cellAudioOpenAdmin
+      0x49CC902D: _cellAudioAudioPathThroughLRCK_returnToNormal
+      0x4D1ADD21: _cellAudioSetDownMixer86
       0x4FF3E9AE: ~
       0x53E91DCB: ~
-      0x56178BAA: ~
-      0x5676F81C: ~
-      0x56DFE179: ~
+      0x56178BAA: _cellAudioSetRsxRelayedSetting
+      0x5676F81C: cellAudioSetPersonalDevice
+      0x56DFE179: cellAudioSetPortLevel
       0x59BD335D: ~
-      0x5B1E2C73: ~
-      0x68A843EC: ~
+      0x5B1E2C73: cellAudioPortStop
+      0x68A843EC: _cellAudioPathThruSpdifGetIndexPtr
       0x6E6C9CE2: ~
-      0x74A66AF0: ~
+      0x74A66AF0: cellAudioGetPortConfig
       0x772065EA: ~
-      0x7C549350: ~
+      0x7C549350: _cellAudio_sharedMemory_mapInPPU
       0x7CDFC8D6: ~
-      0x7F6BE69F: ~
-      0x832DF17E: ~
+      0x7F6BE69F: _cellAudioSetAppDuckingLevel
+      0x832DF17E: cellAudioAdd6chData
       0x869860E7: ~
-      0x89BE28F2: ~
+      0x89BE28F2: cellAudioPortStart
       0x95E90F95: ~
       0x97521DBC: ~
-      0x98C9D162: ~
-      0x9A968EEA: ~
-      0x9E4B1DB8: ~
-      0xA4AEC2CF: ~
-      0xA4C9BA65: ~
-      0xA82399B6: ~
-      0xABE64FF6: ~
-      0xB56EF5A1: ~
+      0x98C9D162: _cellAudioSysSpuChainSetId
+      0x9A968EEA: _cellAudioStartRSX
+      0x9E4B1DB8: cellAudioAdd2chData
+      0xA4AEC2CF: _cellAudioPathThroughSpdifControl
+      0xA4C9BA65: cellAudioCreateNotifyEventQueueEx
+      0xA82399B6: _cellAudioOutputBufferGetCommonInfo
+      0xABE64FF6: _cellAudioSetAppBgmLevel
+      0xB56EF5A1: cellAudioSetNotifyEventQueueEx
       0xB83B80A9: ~
       0xB8C3BB95: ~
-      0xCA5AC370: ~
+      0xCA5AC370: cellAudioQuit
       0xCB5EE382: ~
-      0xCD7BC431: ~
+      0xCD7BC431: cellAudioPortOpen
       0xD0B1F484: ~
-      0xD1842209: ~
+      0xD1842209: _cellAudioSetBitStreamEncoder
       0xD6605E9B: ~
-      0xD82B5FA4: ~
-      0xD8928B9A: ~
-      0xDAB029AA: ~
+      0xD82B5FA4: _cellAudioStopRSX
+      0xD8928B9A: _cellAudioPathThroughSpdifGetShmInfo
+      0xDAB029AA: cellAudioAddData
       0xDB72C3BF: ~
-      0xE4046AFE: ~
+      0xE4046AFE: cellAudioGetPortBlockTag
       0xE49783DE: ~
-      0xED8B6D76: ~
+      0xED8B6D76: _cellAudioAudioPathThroughLRCK_start
       0xFA6C7961: ~
-      0xFC9EB3A3: ~
-      0xFF3626FD: ~
+      0xFC9EB3A3: _cellAudioPathThruSpdifGetInfo
+      0xFF3626FD: cellAudioRemoveNotifyEventQueue
   cellATRAC3enc:
     functions:
-      0x17B93503: ~
-      0x1989C62B: ~
-      0x56584B4C: ~
+      0x17B93503: at3enc_get_version
+      0x1989C62B: at3enc_query_input_pcm_bytes
+      0x56584B4C: at3enc_query_work_memory_bytes
       0x70CF2AED: ~
-      0xBDC43FA9: ~
-      0xC342369F: ~
-      0xE6791C06: ~
-      0xEDABE7DB: ~
+      0xBDC43FA9: at3enc_open
+      0xC342369F: at3enc_free
+      0xE6791C06: at3enc_proc
+      0xEDABE7DB: at3enc_init
   cellATRAC3enc_spurs:
     functions:
-      0x17B93503: ~
-      0x1989C62B: ~
-      0x56584B4C: ~
-      0xBDC43FA9: ~
-      0xC342369F: ~
-      0xE6791C06: ~
-      0xEDABE7DB: ~
+      0x17B93503: at3enc_get_version
+      0x1989C62B: at3enc_query_input_pcm_bytes
+      0x56584B4C: at3enc_query_work_memory_bytes
+      0xBDC43FA9: at3enc_open
+      0xC342369F: at3enc_free
+      0xE6791C06: at3enc_proc
+      0xEDABE7DB: at3enc_init
   cellATRACXenc:
     functions:
-      0x06FE4FAD: ~
-      0x080A92FA: ~
-      0x0BDDE97F: ~
-      0x13A37C83: ~
-      0x1B410ED1: ~
-      0x30DEE7B7: ~
-      0x366CB5EB: ~
-      0x3820170B: ~
-      0x627A7BB9: ~
-      0x6773950B: ~
-      0x6BE01849: ~
-      0x6D704447: ~
-      0x754E8776: ~
-      0x8ACE971E: ~
-      0x90710B9D: ~
-      0x9B45DE35: ~
-      0x9C8CE182: ~
-      0x9D2C8317: ~
-      0xA0657A3D: ~
-      0xA183EA88: ~
-      0xAAF04D5A: ~
-      0xAAFEC23E: ~
+      0x06FE4FAD: atxenc_set_sinusoid_encode_flag
+      0x080A92FA: atx_encode
+      0x0BDDE97F: atx_free_encode_global_table
+      0x13A37C83: atxenc_get_bitrate
+      0x1B410ED1: atxenc_get_handle
+      0x30DEE7B7: atxenc_get_channels
+      0x366CB5EB: atx_free_encode
+      0x3820170B: atxenc_set_config_info
+      0x627A7BB9: atx_init_encode
+      0x6773950B: atxenc_set_config_data
+      0x6BE01849: atx_get_encode_setting
+      0x6D704447: atxenc_get_nbytes
+      0x754E8776: atxenc_get_version
+      0x8ACE971E: atxenc_get_bandwidth
+      0x90710B9D: atx_init_encode_global_table
+      0x9B45DE35: atxenc_query_input_pcm_bytes
+      0x9C8CE182: atxenc_query_work_memory_bytes
+      0x9D2C8317: atxenc_get_error_code
+      0xA0657A3D: atxenc_get_build_condition
+      0xA183EA88: atxenc_cmode_to_channels
+      0xAAF04D5A: atxenc_get_block_error_code
+      0xAAFEC23E: atxenc_get_sinusoid_encode_flag
       0xC5A462FA: ~
-      0xCC57093A: ~
-      0xCCEC5E4E: ~
-      0xD10FEB7E: ~
-      0xDE9FA7E0: ~
-      0xED497B3C: ~
-      0xF9C7D56C: ~
+      0xCC57093A: atxenc_get_config_info
+      0xCCEC5E4E: atx_flush_encode
+      0xD10FEB7E: atxenc_get_max_nbytes
+      0xDE9FA7E0: atxenc_get_config_data
+      0xED497B3C: atx_get_encode_setting_num
+      0xF9C7D56C: atxenc_free_handle
   cellApostSrc:
     functions:
-      0x24F4ECD3: ~
-      0x24FA3789: ~
-      0x35506005: ~
-      0x7156446D: ~
-      0x736513CA: ~
-      0x752E10C4: ~
-      0x827CB70E: ~
-      0x8A6D4227: ~
-      0x9AAA0039: ~
-      0xA87B5742: ~
-      0xB3226E6A: ~
-      0xC4248C51: ~
+      0x24F4ECD3: cellApostSrcGetWorksize
+      0x24FA3789: cellApostSrcProcessHandle
+      0x35506005: cellApostSrcProcessAsync
+      0x7156446D: cellApostSrcInitialize3
+      0x736513CA: cellApostSrcAdjustFirst
+      0x752E10C4: cellApostSrcProcess
+      0x827CB70E: cellApostSrcFinalizeHandle
+      0x8A6D4227: cellApostSrcSetSPURSParam
+      0x9AAA0039: cellApostSrcInitialize2
+      0xA87B5742: cellApostSrcInitializeHandle
+      0xB3226E6A: cellApostSrcTruncateHandle
+      0xC4248C51: cellApostSrcAdjustLast
       0xCAA48B00: ~
-      0xCB3974E7: ~
-      0xCF350A4C: ~
-      0xF960FCA7: ~
+      0xCB3974E7: cellApostSrcInitialize
+      0xCF350A4C: cellApostSrcFinalize
+      0xF960FCA7: cellApostSrcTruncate
   cellApostSrcEQAlc:
     functions:
       0x165C611B: ~
       0x1A680679: ~
-      0x24F4ECD3: ~
-      0x24FA3789: ~
-      0x35506005: ~
+      0x24F4ECD3: cellApostSrcGetWorksize
+      0x24FA3789: cellApostSrcProcessHandle
+      0x35506005: cellApostSrcProcessAsync
       0x69149F59: ~
       0x6FFB5DE3: ~
-      0x7156446D: ~
-      0x736513CA: ~
-      0x752E10C4: ~
-      0x827CB70E: ~
-      0x8A6D4227: ~
-      0x9AAA0039: ~
-      0xA87B5742: ~
+      0x7156446D: cellApostSrcInitialize3
+      0x736513CA: cellApostSrcAdjustFirst
+      0x752E10C4: cellApostSrcProcess
+      0x827CB70E: cellApostSrcFinalizeHandle
+      0x8A6D4227: cellApostSrcSetSPURSParam
+      0x9AAA0039: cellApostSrcInitialize2
+      0xA87B5742: cellApostSrcInitializeHandle
       0xABABCD57: ~
-      0xB3226E6A: ~
+      0xB3226E6A: cellApostSrcTruncateHandle
       0xBC86EA6B: ~
-      0xC4248C51: ~
+      0xC4248C51: cellApostSrcAdjustLast
       0xCAA48B00: ~
-      0xCB3974E7: ~
-      0xCF350A4C: ~
-      0xF960FCA7: ~
+      0xCB3974E7: cellApostSrcInitialize
+      0xCF350A4C: cellApostSrcFinalize
+      0xF960FCA7: cellApostSrcTruncate
   cellAsfParser:
     functions:
       0x2B82C29A: ~
-      0x31B9397B: ~
-      0x5BEBB477: ~
-      0x5C273469: ~
+      0x31B9397B: cellAsfReadUChar8
+      0x5BEBB477: cellAsfReadData
+      0x5C273469: cellAsfCheckNeedMem
       0x628E455D: ~
-      0x9729B069: ~
+      0x9729B069: cellAsfInitParser
       0xB0C0BAA1: ~
-      0xB42C66DF: ~
-      0xBEB72963: ~
-      0xD38ACB22: ~
-      0xFAE77B82: ~
+      0xB42C66DF: cellAsfGetFrameData
+      0xBEB72963: cellAsfSeekTime
+      0xD38ACB22: cellAsfGetNonStreamObjectInfo
+      0xFAE77B82: cellAsfGetStreamObjectInfo
   cellAsfParser2:
     functions:
       0x19846DD6: ~
-      0x210F6245: ~
+      0x210F6245: cellAsfParser2CheckNeedMem
       0x21668704: ~
       0x28343AAF: ~
-      0x2D820D7F: ~
-      0x318A477A: ~
-      0x37A1A412: ~
+      0x2D820D7F: cellAsfParser2ReadData
+      0x318A477A: cellAsfParser2SeekPacketNumber
+      0x37A1A412: cellAsfParser2SeekPacketOffset
       0x3F3A1524: ~
-      0x48462FA1: ~
-      0x496C8B70: ~
+      0x48462FA1: cellAsfParser2InitParser
+      0x496C8B70: cellAsfParser2GetPacketInfo
       0x54688472: ~
-      0x547E4DFB: ~
+      0x547E4DFB: cellAsfParser2GetNonStreamObjectInfo
       0x74665F3B: ~
-      0x8F4DE106: ~
-      0xA00E044B: ~
-      0xA0517CDA: ~
-      0xA453D91B: ~
-      0xCAFD4F96: ~
+      0x8F4DE106: cellAsfParser2ReadUChar8
+      0xA00E044B: cellAsfParser2GetNextFrameInfo
+      0xA0517CDA: cellAsfParser2SkipFrameData
+      0xA453D91B: cellAsfParser2GetStreamObjectInfo
+      0xCAFD4F96: cellAsfParser2SeekTime
       0xF033F210: ~
-      0xF3FBE44A: ~
+      0xF3FBE44A: cellAsfParser2GetFrameData
   cellAtracXdecMod:
     variables:
-      0xD4303F4D: ~
+      0xD4303F4D: adec_core_ops_atracx_mod
   cellChnnlsv:
     functions:
-      0x142F63AA: ~
-      0x548048F6: ~
-      0x93678562: ~
-      0xA7F04A24: ~
+      0x142F63AA: sceSdGetLastIndex
+      0x548048F6: sceSdCreateList
+      0x93678562: sceSdSetMember
+      0xA7F04A24: sceSdSetIndex
       0xEF7A58EA: ~
-      0xFD86FFC1: ~
+      0xFD86FFC1: sceSdRemoveValue
   cellDDLenc2:
     functions:
       0x02BCDE74: ~
@@ -215,24 +215,24 @@ modules:
       0x690D00FD: ~
   cellDSEE:
     functions:
-      0x0C90E37C: ~
-      0x3AF9CA99: ~
-      0x4C15E592: ~
-      0x7BE83674: ~
-      0xA3501595: ~
-      0xC391FCCB: ~
+      0x0C90E37C: cellDSEEGetHandle
+      0x3AF9CA99: cellDSEEQueryMemorySize
+      0x4C15E592: cellDSEEInit
+      0x7BE83674: cellDSEEProcess
+      0xA3501595: cellDSEEGetVersion
+      0xC391FCCB: cellDSEEFreeHandle
       0xD21CD264: ~
-      0xF0078891: ~
+      0xF0078891: cellDSEEChangeConfig
   cellDTSHDdec:
     functions:
-      0xF3AF1093: ~
+      0xF3AF1093: _SceAdecCorrectPtsValue_DtsHd
     variables:
-      0x51AC2B6C: ~
+      0x51AC2B6C: adec_core_ops_dtshd
   cellDTSLBRdec:
     functions:
-      0x185591D6: ~
+      0x185591D6: _SceAdecCorrectPtsValue_DtsLbr
     variables:
-      0x8C50AF52: ~
+      0x8C50AF52: adec_core_ops_dts_lbr
   cellDTSenc2:
     functions:
       0x09D3DA9A: ~
@@ -241,43 +241,43 @@ modules:
       0x9084D41F: ~
   cellExif:
     functions:
-      0x0014ED13: ~
-      0x09DF2E43: ~
+      0x0014ED13: cellExifSetDirectory
+      0x09DF2E43: cellExifOpenJpegFile
       0x1007F6AF: ~
-      0x2582FDE6: ~
-      0x65FE1C86: ~
+      0x2582FDE6: cellExifClose
+      0x65FE1C86: cellExifOpenTiffFile
       0x78D111AD: ~
-      0x8627BA8C: ~
-      0x8A367B04: ~
-      0x8A4FEA82: ~
-      0xECB02EBE: ~
-      0xF7B1B2A0: ~
+      0x8627BA8C: cellExifReadThumbnailJpeg
+      0x8A367B04: cellExifNumberOfDirectories
+      0x8A4FEA82: cellExifPrintDirectory
+      0xECB02EBE: cellExifSetSubDirectory
+      0xF7B1B2A0: cellExifGetField
   cellFt2d:
     functions:
-      0x088100F8: ~
-      0x55E0D461: ~
-      0x57B89164: ~
-      0x58D88914: ~
-      0x844C7E10: ~
-      0x91412F37: ~
-      0xA2A344A7: ~
-      0xAACB0761: ~
-      0xAC77BA69: ~
-      0xBC04348D: ~
-      0xC8D4B025: ~
-      0xCCC891CA: ~
-      0xD6ABD5BF: ~
-      0xE74FAB55: ~
-      0xEEBD35E2: ~
-      0xFEAC6F53: ~
+      0x088100F8: cellFt2dRotation
+      0x55E0D461: cellFt2dVariance
+      0x57B89164: cellFt2dExtCreate
+      0x58D88914: cellFt2dPermuteComponent
+      0x844C7E10: cellFt2dDestroy
+      0x91412F37: cellFt2dOpen
+      0xA2A344A7: cellFt2dClose
+      0xAACB0761: cellFt2dMean
+      0xAC77BA69: cellFt2dScaling
+      0xBC04348D: cellFt2dCreate
+      0xC8D4B025: cellFt2dFiltering
+      0xCCC891CA: cellFt2dHistogram
+      0xD6ABD5BF: cellFt2dTransformFormat
+      0xE74FAB55: cellFt2dBitBltImm
+      0xEEBD35E2: cellFt2dBitBltSrc
+      0xFEAC6F53: cellFt2dMeanVariance
   cellGamePs1Emu:
     functions:
       0x61CE2BCD: ~
   cellM2AACdec:
     functions:
-      0x7CBA9865: ~
+      0x7CBA9865: _SceAdecCorrectPtsValue_Aac
     variables:
-      0xAC2F0831: ~
+      0xAC2F0831: adec_core_ops_Aac
   cellM4AacDec2chmod:
     functions:
       0x156FE2F0: ~
@@ -290,34 +290,34 @@ modules:
       0x1228E9F1: ~
   cellMP3Sdec:
     functions:
-      0x73A2C895: ~
+      0x73A2C895: _SceAdecCorrectPtsValue_Mp3s
     variables:
-      0x292CDF0A: ~
+      0x292CDF0A: adec_core_ops_mp3s
   cellMcadpt:
     functions:
-      0x11EEAC9E: ~
-      0x3B6A4A2F: ~
+      0x11EEAC9E: cellMcadptGetInfo
+      0x3B6A4A2F: cellMcadptUnregisterCallback
       0x462E3D0C: ~
       0x46B49EF9: ~
       0x507CBA8A: ~
       0x55FAF7A1: ~
       0x5D575697: ~
       0x90A425E7: ~
-      0x9F730445: ~
+      0x9F730445: cellMcadptRegisterCallback
       0xA0592CFE: ~
-      0xC0D66609: ~
-      0xCB24A2FB: ~
+      0xC0D66609: cellMcadptEnd
+      0xCB24A2FB: cellMcadptInit
       0xF0AC5319: ~
   cellMp3Enc:
     functions:
-      0x37C3B5A0: ~
-      0x51BC81E8: ~
-      0x59859D36: ~
-      0x750813C6: ~
-      0x9C4C131A: ~
-      0x9F0D254E: ~
-      0xAC16154E: ~
-      0xF8B2FE75: ~
+      0x37C3B5A0: cellMp3EncClose
+      0x51BC81E8: cellMp3EncStartSeq
+      0x59859D36: cellMp3EncOpen
+      0x750813C6: cellMp3EncWaitForOutput
+      0x9C4C131A: cellMp3EncEndSeq
+      0x9F0D254E: cellMp3EncEncode
+      0xAC16154E: cellMp3EncOpenExt
+      0xF8B2FE75: cellMp3EncQueryAttr
   cellSysconfPs1emu:
     functions:
       0x639ABBDE: ~
@@ -326,24 +326,24 @@ modules:
       0xEFDDAF6C: ~
   cellTRHDdec:
     functions:
-      0x75080F7B: ~
+      0x75080F7B: _SceAdecCorrectPtsValue_truehd
     variables:
-      0xE88E381B: ~
+      0xE88E381B: adec_core_ops_truehd
   cellTiffDec:
     functions:
-      0x2406F7D7: ~
-      0x30BA63C2: ~
-      0x5A317E50: ~
-      0x62B3B135: ~
+      0x2406F7D7: cellTiffDecExtSetParameter
+      0x30BA63C2: cellTiffDecExtDecodeData
+      0x5A317E50: cellTiffDecOpen
+      0x62B3B135: cellTiffDecDecodeData
       0x6349E4D0: ~
-      0x640806D0: ~
-      0x8BA9AE83: ~
-      0x923DB0DA: ~
-      0xA3D7EF1A: ~
-      0xAB2F6D64: ~
-      0xDE7B1BBD: ~
-      0xE2ACCD6C: ~
-      0xE3522BD7: ~
+      0x640806D0: cellTiffDecExtReadHeader
+      0x8BA9AE83: cellTiffDecClose
+      0x923DB0DA: cellTiffDecReadHeader
+      0xA3D7EF1A: cellTiffDecSetParameter
+      0xAB2F6D64: cellTiffDecDestroy
+      0xDE7B1BBD: cellTiffDecExtCreate
+      0xE2ACCD6C: cellTiffDecExtOpen
+      0xE3522BD7: cellTiffDecCreate
   cellUsbd:
     functions:
       0x074DBB39: cellUsbdAllocateMemory
@@ -373,7 +373,7 @@ modules:
       0xBD554BCB: cellUsbdRegisterExtraLdd2
       0xBDBD2428: cellUsbdGetDeviceSpeed
       0xC24AF1D7: cellUsbdSetThreadPriority
-      0xC9FFC854: ~
+      0xC9FFC854: cellUsbdEnableWakeOn
       0xCE0773CF: ~
       0xD0E766FE: cellUsbdInit
       0xD5263DEA: cellUsbdGetThreadPriority
@@ -383,82 +383,82 @@ modules:
       0xDE58C4C2: cellUsbdIsochronousTransfer
   cellVoiceInternal:
     functions:
-      0x02466FE1: ~
-      0x0A563878: ~
-      0x18D3DF30: ~
-      0x1BA194A2: ~
-      0x20BAFE31: ~
-      0x2A01013E: ~
-      0x2DE54871: ~
-      0x2F24FEA3: ~
-      0x30F0B5AB: ~
-      0x35D84910: ~
-      0x36472C57: ~
+      0x02466FE1: cellVoiceReduceSystemOverhead
+      0x0A563878: cellVoiceStart
+      0x18D3DF30: cellVoiceDisconnectIPortFromOPort
+      0x1BA194A2: cellVoiceDebugCpuUsage
+      0x20BAFE31: cellVoiceDebugTopology
+      0x2A01013E: cellVoiceCreateNotifyEventQueue
+      0x2DE54871: cellVoiceCreatePort
+      0x2F24FEA3: cellVoiceUpdatePort
+      0x30F0B5AB: cellVoiceWriteToIPortEx
+      0x35D84910: cellVoiceSetNotifyEventQueue
+      0x36472C57: cellVoiceReadFromOPort
       0x3C4624BF: ~
-      0x3DAD26E7: ~
-      0x474609E2: ~
-      0x54AC3519: ~
-      0x762DC193: ~
-      0x7BF17B15: ~
-      0x7E60ADC6: ~
-      0x7F3963F7: ~
-      0x87C71B06: ~
-      0x9D0F4AF1: ~
-      0x9F70C475: ~
-      0xAC0EF565: ~
-      0xAE6A21D5: ~
-      0xBEF53A2B: ~
-      0xC4F573B8: ~
-      0xC7CF1182: ~
-      0xD14E784D: ~
-      0xD3A84BE1: ~
-      0xD4D80EA5: ~
-      0xD5AE37D8: ~
-      0xD6811AA7: ~
-      0xDD000886: ~
-      0xDDE35A0C: ~
-      0xE0E1AE12: ~
-      0xF629ED67: ~
-      0xFF0FA43A: ~
+      0x3DAD26E7: cellVoiceWriteToIPort
+      0x474609E2: cellVoiceGetMuteFlag
+      0x54AC3519: cellVoiceGetPortInfo
+      0x762DC193: cellVoiceGetVolume
+      0x7BF17B15: cellVoiceResumePort
+      0x7E60ADC6: cellVoiceSetBitRate
+      0x7F3963F7: cellVoiceResumePortAll
+      0x87C71B06: cellVoicePausePort
+      0x9D0F4AF1: cellVoiceSetPortAttr
+      0x9F70C475: cellVoiceDeletePort
+      0xAC0EF565: cellVoiceAdjustThreadPriority
+      0xAE6A21D5: cellVoiceConnectIPortToOPort
+      0xBEF53A2B: cellVoiceGetBitRate
+      0xC4F573B8: cellVoiceWriteToIPortEx2
+      0xC7CF1182: cellVoiceInit
+      0xD14E784D: cellVoicePausePortAll
+      0xD3A84BE1: cellVoiceStop
+      0xD4D80EA5: cellVoiceSetMuteFlagAll
+      0xD5AE37D8: cellVoiceSetVolume
+      0xD6811AA7: cellVoiceGetSignalState
+      0xDD000886: cellVoiceRemoveNotifyEventQueue
+      0xDDE35A0C: cellVoiceSetMuteFlag
+      0xE0E1AE12: cellVoiceEnd
+      0xF629ED67: cellVoiceGetPortAttr
+      0xFF0FA43A: cellVoiceResetPort
   cellVpost_internal:
     functions:
-      0x10EF39F6: ~
-      0x40524325: ~
-      0x95E788C3: ~
-      0x9F1795DF: ~
-      0xABB8CC3D: ~
-      0xCD33F3E2: ~
+      0x10EF39F6: cellVpostClose
+      0x40524325: cellVpostOpenEx
+      0x95E788C3: cellVpostQueryAttr
+      0x9F1795DF: cellVpostOpenExt
+      0xABB8CC3D: cellVpostExec
+      0xCD33F3E2: cellVpostOpen
   fs_utility_diag:
     functions:
-      0x06C53986: ~
-      0x15419000: ~
-      0x3E01CA80: ~
+      0x06C53986: cellFsUtilityGetFsInfoSize
+      0x15419000: cellFsUtilitySetupHddAllForPs3
+      0x3E01CA80: cellFsUtilitySetupHdd10GBForLinux
       0x44CAF2CE: ~
       0x4EA0999E: ~
-      0x6F90AAF9: ~
-      0x7DA5AB2D: ~
-      0xB37A85EE: ~
-      0xD39A61E4: ~
+      0x6F90AAF9: cellFsUtilityGetFsInfo
+      0x7DA5AB2D: cellFsUtilGetFsInfo
+      0xB37A85EE: cellFsUtilityEraseHddData
+      0xD39A61E4: cellFsUtilitySetupHdd10GBForPs3
       0xDFADD19E: ~
-      0xDFE4ADF3: ~
+      0xDFE4ADF3: cellFsUtilGetFsInfoSize
   fs_utility_full:
     functions:
       0x0A3213FB: ~
       0x0AFC5130: ~
       0x1720A05D: ~
-      0x4BDE1A5A: ~
+      0x4BDE1A5A: cellFsUtilitySetIoBuffer
       0x56243833: ~
       0x5B6395AD: ~
-      0x76E73DB2: ~
-      0x8443023A: ~
+      0x76E73DB2: cellFsUtilityGetTotalForUser
+      0x8443023A: cellFsUtilitySetFakeSize
       0x84654B95: ~
       0x90DB59B0: ~
-      0x9BE42C17: ~
+      0x9BE42C17: cellFsUtilityEraseHddDataWithCallback
       0xA15BE259: ~
-      0xD26351AF: ~
+      0xD26351AF: cellFsUtilitySetupHddAllForPs3WithCallback
       0xE2F2EA38: ~
-      0xE4992B11: ~
-      0xE562F820: ~
+      0xE4992B11: cellFsUtilitySetupHdd10GBForPs3WithCallback
+      0xE562F820: cellFsUtilitySetupHdd10GBForLinuxWithCallback
       0xE84F1C06: ~
       0xFF9215AE: ~
   fs_utility_init:
@@ -473,87 +473,87 @@ modules:
       0xF691D443: ~
   libdivx311dec:
     functions:
-      0x3DCEA4DF: ~
-      0x5209A062: ~
-      0x74444EF2: ~
-      0x974DF255: ~
-      0xA1521D39: ~
-      0xB3C52B97: ~
-      0xB4FD7E9B: ~
-      0xBD6092C4: ~
-      0xD7764198: ~
+      0x3DCEA4DF: divx311DecGetPicture
+      0x5209A062: divx311DecClose
+      0x74444EF2: divx311DecFlushPicture
+      0x974DF255: divx311DecDecodeAu
+      0xA1521D39: divx311DecQueryAttr
+      0xB3C52B97: divx311DecReleasePicture
+      0xB4FD7E9B: divx311DecReset
+      0xBD6092C4: divx311DecOpen
+      0xD7764198: divx311DecGetNumOfPictures
   mios2_Client:
     functions:
-      0x0ED9FAD9: ~
-      0x1851073A: ~
+      0x0ED9FAD9: mios2_Client_SendAsync
+      0x1851073A: mios2_Client_VirtualDestroy
       0x1E100B60: ~
-      0x1F1778A0: ~
-      0x276E33DC: ~
-      0x3DC6D270: ~
+      0x1F1778A0: mios2_Client_Initialize
+      0x276E33DC: mios2_Client_Finalize
+      0x3DC6D270: mios2_Client_Send
       0x496A6DCD: ~
-      0x4C019248: ~
-      0x520FF627: ~
-      0x7B9DDCBC: ~
-      0x83490423: ~
-      0x97BF0029: ~
-      0x9E9005D5: ~
+      0x4C019248: mios2_Client_SharedMemoryFree
+      0x520FF627: mios2_Client_VirtualCreate
+      0x7B9DDCBC: mios2_Client_SendBlocking
+      0x83490423: mios2_Client_SharedMemoryAllocate
+      0x97BF0029: mios2_Client_SendAsyncWait
+      0x9E9005D5: mios2_Client_SharedMemoryMap
       0xDB53CB2C: ~
   sys_fs_utility:
     functions:
-      0x06C53986: ~
-      0x09F4CCFE: ~
+      0x06C53986: cellFsUtilityGetFsInfoSize
+      0x09F4CCFE: cellFsUtilityGetMountInfo
       0x0AFC5130: ~
       0x0D5CCC40: ~
-      0x15419000: ~
-      0x1714D098: ~
+      0x15419000: cellFsUtilitySetupHddAllForPs3
+      0x1714D098: cellFsUtilGetMountInfoSize
       0x1720A05D: ~
       0x18EF767F: ~
-      0x1B8D4287: ~
-      0x1EAC97C3: ~
+      0x1B8D4287: cellFsUtilSync
+      0x1EAC97C3: cellFsUtilityNewfs
       0x1F3CD9F1: ~
-      0x233791FE: ~
+      0x233791FE: cellFsUtilNewfs
       0x263172B8: ~
-      0x294AF36E: ~
-      0x30B5530B: ~
-      0x339A7508: ~
-      0x33ACD759: ~
-      0x3E01CA80: ~
+      0x294AF36E: cellFsUtilityGetMountInfoSize
+      0x30B5530B: cellFsUtilityDf
+      0x339A7508: cellFsUtilityForceUmount
+      0x33ACD759: cellFsUtilUmount
+      0x3E01CA80: cellFsUtilitySetupHdd10GBForLinux
       0x44CAF2CE: ~
       0x4EA0999E: ~
-      0x53E57474: ~
-      0x612496AA: ~
+      0x53E57474: cellFsUtilForceUmount
+      0x612496AA: cellFsUtilGetMountInfo
       0x665DF255: ~
       0x6B5896B0: ~
-      0x6F90AAF9: ~
+      0x6F90AAF9: cellFsUtilityGetFsInfo
       0x71BBE625: ~
-      0x76E73DB2: ~
-      0x7C5A1812: ~
-      0x7DA5AB2D: ~
-      0x8443023A: ~
+      0x76E73DB2: cellFsUtilityGetTotalForUser
+      0x7C5A1812: cellFsUtilityGetFakeSize
+      0x7DA5AB2D: cellFsUtilGetFsInfo
+      0x8443023A: cellFsUtilitySetFakeSize
       0x84654B95: ~
       0x90DB59B0: ~
-      0x9BE42C17: ~
-      0x9C4E9B5C: ~
+      0x9BE42C17: cellFsUtilityEraseHddDataWithCallback
+      0x9C4E9B5C: cellFsUtilitySync
       0x9C6EEE24: ~
       0xA15BE259: ~
       0xA9B04535: ~
       0xAF44BFBF: ~
-      0xB37A85EE: ~
+      0xB37A85EE: cellFsUtilityEraseHddData
       0xB517EC40: ~
-      0xCFD2CA7D: ~
-      0xD26351AF: ~
-      0xD39A61E4: ~
+      0xCFD2CA7D: cellFsUtilityUmount
+      0xD26351AF: cellFsUtilitySetupHddAllForPs3WithCallback
+      0xD39A61E4: cellFsUtilitySetupHdd10GBForPs3
       0xD42045F9: ~
       0xD5B38646: ~
       0xDFADD19E: ~
-      0xDFE4ADF3: ~
-      0xE413CD78: ~
-      0xE44F29F4: ~
-      0xE4992B11: ~
-      0xE562F820: ~
+      0xDFE4ADF3: cellFsUtilGetFsInfoSize
+      0xE413CD78: cellFsUtilDf
+      0xE44F29F4: cellFsUtilityMount
+      0xE4992B11: cellFsUtilitySetupHdd10GBForPs3WithCallback
+      0xE562F820: cellFsUtilitySetupHdd10GBForLinuxWithCallback
       0xE7563CE6: ~
       0xE84F1C06: ~
-      0xFF4A1633: ~
+      0xFF4A1633: cellFsUtilMount
       0xFF9215AE: ~
   sys_fs_utility2:
     functions:

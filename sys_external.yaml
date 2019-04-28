@@ -63,44 +63,44 @@ modules:
       0xF088280B: ~
   cellApostSrcMini:
     functions:
-      0x24F4ECD3: ~
-      0x24FA3789: ~
-      0x35506005: ~
-      0x7156446D: ~
-      0x736513CA: ~
-      0x752E10C4: ~
-      0x827CB70E: ~
-      0x8A6D4227: ~
-      0x9AAA0039: ~
-      0xA87B5742: ~
-      0xB3226E6A: ~
-      0xC4248C51: ~
+      0x24F4ECD3: cellApostSrcGetWorksize
+      0x24FA3789: cellApostSrcProcessHandle
+      0x35506005: cellApostSrcProcessAsync
+      0x7156446D: cellApostSrcInitialize3
+      0x736513CA: cellApostSrcAdjustFirst
+      0x752E10C4: cellApostSrcProcess
+      0x827CB70E: cellApostSrcFinalizeHandle
+      0x8A6D4227: cellApostSrcSetSPURSParam
+      0x9AAA0039: cellApostSrcInitialize2
+      0xA87B5742: cellApostSrcInitializeHandle
+      0xB3226E6A: cellApostSrcTruncateHandle
+      0xC4248C51: cellApostSrcAdjustLast
       0xCAA48B00: ~
-      0xCB3974E7: ~
-      0xCF350A4C: ~
-      0xF960FCA7: ~
+      0xCB3974E7: cellApostSrcInitialize
+      0xCF350A4C: cellApostSrcFinalize
+      0xF960FCA7: cellApostSrcTruncate
   cellAsfParser2AStd:
     functions:
       0x00C3C7E0: ~
       0x03BB1E7E: ~
       0x2E6F232B: ~
-      0x34944F04: ~
-      0x3E1F2192: ~
-      0x452B09FB: ~
-      0x475C64F0: ~
+      0x34944F04: cellAsfParser2AStdGetNonStreamObjectInfo
+      0x3E1F2192: cellAsfParser2AStdSeekPacketOffset
+      0x452B09FB: cellAsfParser2AStdSeekPacketNumber
+      0x475C64F0: cellAsfParser2AStdCheckNeedMem
       0x4D6BF37A: ~
-      0x54D414BE: ~
-      0x94F52C91: ~
-      0x9FDD0A84: ~
-      0xA0126AA6: ~
+      0x54D414BE: cellAsfParser2AStdReadData
+      0x94F52C91: cellAsfParser2AStdReadUChar8
+      0x9FDD0A84: cellAsfParser2AStdSkipFrameData
+      0xA0126AA6: cellAsfParser2AStdGetNextFrameInfo
       0xA17B4C9D: ~
-      0xB9944334: ~
-      0xBD473829: ~
+      0xB9944334: cellAsfParser2AStdGetStreamObjectInfo
+      0xBD473829: cellAsfParser2AStdGetFrameData
       0xBEDDECC9: ~
-      0xC226F142: ~
-      0xE12F7196: ~
+      0xC226F142: cellAsfParser2AStdInitParser
+      0xE12F7196: cellAsfParser2AStdSeekTime
       0xE53B246A: ~
-      0xFF4BD923: ~
+      0xFF4BD923: cellAsfParser2AStdGetPacketInfo
   cellAtrac:
     functions:
       0x006016DA: cellAtracGetBitrate
@@ -129,10 +129,10 @@ modules:
       0xFA293E88: cellAtracCreateDecoder
   cellAtrac3dec:
     variables:
-      0x60487D65: ~
+      0x60487D65: adec_core_ops_atrac3
   cellAtrac3multidec:
     variables:
-      0xC20C6BD7: ~
+      0xC20C6BD7: adec_core_ops_atrac3_multi
   cellAtracMulti:
     functions:
       0x0FFB4665: cellAtracMultiCreateDecoder
@@ -162,16 +162,16 @@ modules:
       0xF8B1AB0C: cellAtracMultiIsSecondBufferNeeded
   cellAtracXdec:
     variables:
-      0x076B33AB: ~
-      0x1D210EAA: ~
-      0x4944AF9A: ~
-      0xE9A86E54: ~
+      0x076B33AB: adec_core_ops_atracx_2ch
+      0x1D210EAA: adec_core_ops_atracx_6ch
+      0x4944AF9A: adec_core_ops_atracx
+      0xE9A86E54: adec_core_ops_atracx_8ch
   cellAtracXdec2:
     variables:
-      0x076B33AB: ~
-      0x1D210EAA: ~
-      0x4944AF9A: ~
-      0xE9A86E54: ~
+      0x076B33AB: adec_core_ops_atracx_2ch
+      0x1D210EAA: adec_core_ops_atracx_6ch
+      0x4944AF9A: adec_core_ops_atracx
+      0xE9A86E54: adec_core_ops_atracx_8ch
   cellAudio:
     functions:
       0x04AF134E: cellAudioCreateNotifyEventQueue
@@ -202,93 +202,93 @@ modules:
       0xFF3626FD: cellAudioRemoveNotifyEventQueue
   cellAuthDialogUtility:
     functions:
-      0x395EF8D7: ~
-      0x975D4824: ~
-      0xEB27885B: ~
+      0x395EF8D7: cellAuthDialogOpen
+      0x975D4824: cellAuthDialogClose
+      0xEB27885B: cellAuthDialogAbort
   cellAvcEnc:
     functions:
       0x00ACD051: ~
-      0x0A10C8D1: ~
-      0x11F1DCDB: ~
-      0x19F7C8D1: ~
+      0x0A10C8D1: cellAvcEncOpenEx
+      0x11F1DCDB: cellAvcEncGetVersion
+      0x19F7C8D1: cellAvcEncGetResult
       0x271914A7: ~
-      0x28F8D898: ~
-      0x35D6B9CC: ~
-      0x42D04FC8: ~
+      0x28F8D898: cellAvcEncRestart
+      0x35D6B9CC: cellAvcEncClose
+      0x42D04FC8: cellAvcEncReopen
       0x45819DB2: ~
-      0x482ADDB7: ~
+      0x482ADDB7: cellAvcEncOpen
       0x4C3321AD: ~
-      0x501FE972: ~
-      0x58AA86CD: ~
-      0x5E06172D: ~
-      0x62526063: ~
+      0x501FE972: cellAvcEncReleaseLocalDecodedFrame
+      0x58AA86CD: cellAvcEncQueryResource
+      0x5E06172D: cellAvcEncEncodeFrame
+      0x62526063: cellAvcEncGetStream
       0x631DA12D: ~
       0x642217C3: ~
-      0x9412E394: ~
+      0x9412E394: cellAvcEncQueryPresetParameter
       0xA145FD82: ~
       0xA40EFEA0: ~
-      0xA8144A35: ~
-      0xA93E4417: ~
-      0xAFA1DB9B: ~
+      0xA8144A35: cellAvcEncOpenExt
+      0xA93E4417: cellAvcEncSetEndPoint
+      0xAFA1DB9B: cellAvcEncCancelAuInfo
       0xB07DC83F: ~
-      0xB68CCFE8: ~
+      0xB68CCFE8: cellAvcEncGetLocalDecodedFrame
       0xC70852E1: ~
-      0xD6A8C7F9: ~
-      0xE25F7DDA: ~
-      0xE792E34A: ~
-      0xEAD8FDBD: ~
+      0xD6A8C7F9: cellAvcEncCancelStream
+      0xE25F7DDA: cellAvcEncGetFrameForInput
+      0xE792E34A: cellAvcEncCancelLocalDecodedFrame
+      0xEAD8FDBD: cellAvcEncCancelFrame
       0xEC6AE3E8: ~
       0xF2C54F19: ~
       0xF35F477C: ~
-      0xFDCC4831: ~
-      0xFF14D87E: ~
+      0xFDCC4831: cellAvcEncGetAuInfo
+      0xFF14D87E: cellAvcEncSendEncCommand
   cellAvcEncSmall:
     functions:
-      0x012AC753: ~
+      0x012AC753: cellAvcEncSmallGetAuInfo
       0x2754D1BA: ~
       0x2E45E639: ~
-      0x3442CB43: ~
+      0x3442CB43: cellAvcEncSmallCancelStream
       0x3B9F1828: ~
       0x469AEB02: ~
       0x4E3E873A: ~
-      0x5D18B1E7: ~
+      0x5D18B1E7: cellAvcEncSmallOpen
       0x6138E01E: ~
       0x6515ED2C: ~
-      0x6B33A335: ~
-      0x74FCED35: ~
-      0x76BC4FDF: ~
-      0x7C210A32: ~
+      0x6B33A335: cellAvcEncSmallRestart
+      0x74FCED35: cellAvcEncSmallReopen
+      0x76BC4FDF: cellAvcEncSmallClose
+      0x7C210A32: cellAvcEncSmallSendEncCommand
       0x7DB43EEF: ~
-      0x83BC6489: ~
+      0x83BC6489: cellAvcEncSmallQueryResource
       0x86B90F60: ~
-      0x8EFD6C85: ~
+      0x8EFD6C85: cellAvcEncSmallCancelLocalDecodedFrame
       0x9B749202: ~
-      0xA447A781: ~
+      0xA447A781: cellAvcEncSmallQueryPresetParameter
       0xA5E2B77D: ~
-      0xA9E12457: ~
-      0xBF9B2B61: ~
-      0xCB0F348A: ~
-      0xCD4C4935: ~
-      0xDF6A5E21: ~
-      0xE21F35DE: ~
+      0xA9E12457: cellAvcEncSmallOpenEx
+      0xBF9B2B61: cellAvcEncSmallReleaseLocalDecodedFrame
+      0xCB0F348A: cellAvcEncSmallGetVersion
+      0xCD4C4935: cellAvcEncSmallEncodeFrame
+      0xDF6A5E21: cellAvcEncSmallGetStream
+      0xE21F35DE: cellAvcEncSmallCancelFrame
       0xE58F551D: ~
-      0xED337B94: ~
-      0xED73D859: ~
-      0xF81BCE0F: ~
-      0xF89B1D92: ~
-      0xFAFAC547: ~
+      0xED337B94: cellAvcEncSmallGetLocalDecodedFrame
+      0xED73D859: cellAvcEncSmallCancelAuInfo
+      0xF81BCE0F: cellAvcEncSmallGetResult
+      0xF89B1D92: cellAvcEncSmallOpenExt
+      0xFAFAC547: cellAvcEncSmallSetEndPoint
       0xFD5D8533: ~
-      0xFDEB276A: ~
+      0xFDEB276A: cellAvcEncSmallGetFrameForInput
   cellAvchatJpgDec:
     functions:
-      0x0E520B15: ~
-      0x4644B39A: ~
-      0x4D99E6DF: ~
-      0x720B2726: ~
-      0x80A28D48: ~
-      0x943A6675: ~
-      0xEF9E83D2: ~
-      0xFD51609E: ~
+      0x0E520B15: cellAvchatJpgDecQueryAttr
+      0x4644B39A: cellAvchatJpgDecGetDecodeStatus
+      0x4D99E6DF: cellAvchatJpgDecSetEventInfo
+      0x720B2726: cellAvchatJpgDecDecodeData
+      0x80A28D48: cellAvchatJpgDecOpen
+      0x943A6675: cellAvchatJpgDecOpenExt
+      0xEF9E83D2: cellAvchatJpgDecDecodeData2
+      0xFD51609E: cellAvchatJpgDecClose
   cellBGDLUtility:
     functions:
       0x2AB0D183: cellBGDLGetInfo2
@@ -342,9 +342,9 @@ modules:
       0xFA160F24: cellCameraIsOpen
   cellCelp8Dec:
     functions:
-      0x881583C3: ~
+      0x881583C3: _SceAdecCorrectPtsValue_Celp8
     variables:
-      0xF0190C6C: ~
+      0xF0190C6C: adec_core_ops_celp8
   cellCelp8Enc:
     functions:
       0x0F6AB57B: cellCelp8EncStart
@@ -358,9 +358,9 @@ modules:
       0xFD2566B4: cellCelp8EncClose
   cellCelpDec:
     functions:
-      0xE4B8FC4D: ~
+      0xE4B8FC4D: _SceAdecCorrectPtsValue_Celp
     variables:
-      0xFFE42C22: ~
+      0xFFE42C22: adec_core_ops_celp
   cellCelpEnc:
     functions:
       0x15EC0CCA: cellCelpEncClose
@@ -378,14 +378,14 @@ modules:
       0x37E1F502: cellCrossControllerInitialize
   cellDDPdec:
     functions:
-      0xEE2731D3: ~
+      0xEE2731D3: _SceAdecCorrectPtsValue_Ddp
     variables:
-      0xF5E9C15C: ~
+      0xF5E9C15C: adec_core_ops_ddp
   cellDTSLBRdec:
     functions:
-      0x185591D6: ~
+      0x185591D6: _SceAdecCorrectPtsValue_DtsLbr
     variables:
-      0x8C50AF52: ~
+      0x8C50AF52: adec_core_ops_dts_lbr
   cellDaisy:
     functions:
       0x0563627C: _ZN4cell5Daisy17LFQueue2PushCloseEPNS0_8LFQueue2EPFiPvjE
@@ -442,37 +442,37 @@ modules:
       0xFA46FD99: _QN4cell5Daisy22ScatterGatherInterlock7releaseEv
   cellDecPsnvideoUtility:
     functions:
-      0x05152522: ~
-      0x1702D114: ~
-      0x2B68C241: ~
-      0x30555A9C: ~
-      0x3DC47B71: ~
-      0x3E96C348: ~
-      0x42AA294E: ~
-      0x4C6FF56E: ~
-      0x4FB7E4D5: ~
-      0x55C5280D: ~
-      0x66130F5D: ~
-      0x6AAA1E97: ~
-      0x7321BADB: ~
-      0x745DB631: ~
-      0x74D32DAF: ~
-      0x7A33E82A: ~
-      0x802A1BE8: ~
-      0x9278A8AB: ~
-      0x9D935729: ~
-      0xA22DBEA5: ~
-      0xAA5A7DEF: ~
-      0xAD873915: ~
-      0xAFCB91BC: ~
-      0xB4338C59: ~
-      0xB489C8C3: ~
-      0xC2E45C8B: ~
-      0xD42475CF: ~
-      0xD89A6BCE: ~
-      0xED2CBC23: ~
-      0xF1219EF4: ~
-      0xF50F41C4: ~
+      0x05152522: cellMarlinDRMDeleteLicense
+      0x1702D114: cellMarlinDLInit
+      0x2B68C241: cellMarlinDRMActionDescribe
+      0x30555A9C: cellDecPsnvideoEvaluateLicense
+      0x3DC47B71: cellMarlinDRMActionPerform
+      0x3E96C348: cellMarlinDRMActionCheck
+      0x42AA294E: cellMarlinDLExecActivation
+      0x4C6FF56E: cellDecPsnvideoFinalize
+      0x4FB7E4D5: cellDecPsnvideoAllocProfiler
+      0x55C5280D: cellMarlinUtilityFinalize
+      0x66130F5D: cellDecPsnvideoOpenTrack
+      0x6AAA1E97: cellMarlinDRMInitTrack
+      0x7321BADB: cellMarlinDRMFinTrack
+      0x745DB631: cellMarlinUtilityInitialize
+      0x74D32DAF: cellDecPsnvideoGetLicenseInfo
+      0x7A33E82A: cellMarlinDRMFinSession
+      0x802A1BE8: cellMarlinDRMInit
+      0x9278A8AB: cellMarlinDRMSetLicense
+      0x9D935729: cellMarlinDRMInitSession
+      0xA22DBEA5: cellMarlinDRMDecryptWithOffset
+      0xAA5A7DEF: cellMarlinDLLicenseDownloadAndSave
+      0xAD873915: cellDecPsnvideoGetSignalControlInfo
+      0xAFCB91BC: cellDecPsnvideoInitialize
+      0xB4338C59: cellDecPsnvideoCloseTrack
+      0xB489C8C3: cellDecPsnvideoFreeProfiler
+      0xC2E45C8B: cellMarlinDRMFin
+      0xD42475CF: cellMarlinDRMcencGetCID
+      0xD89A6BCE: cellDecPsnvideoDecryptSample
+      0xED2CBC23: cellMarlinDLCheckActivationStatus
+      0xF1219EF4: cellMarlinDRMcencParsePsshBox
+      0xF50F41C4: cellMarlinDLFin
   cellDmux:
     functions:
       0x002E8DA2: cellDmuxPeekAuEx
@@ -498,8 +498,8 @@ modules:
       0xF6C23560: cellDmuxOpenEx
   cellDmuxPamf:
     variables:
-      0x28B2B7B2: ~
-      0x9728A0E9: ~
+      0x28B2B7B2: g_dmux_adp_ops_pamf
+      0x9728A0E9: g_dmux_adp_ops_es
   cellDtcpIpUtility:
     functions:
       0x0836F1F7: cellDtcpIpRead
@@ -517,26 +517,26 @@ modules:
       0xFB12B7FC: cellDtcpIpSuspendActivationForDebug
   cellDtcpIpUtilityClearTextByte:
     functions:
-      0x0AA9D63F: ~
-      0x1EC068FB: ~
-      0x2070C99E: ~
-      0x2F87926F: ~
-      0x545E08CB: ~
-      0x550D3527: ~
-      0x65A86A64: ~
-      0x7F4A8B0E: ~
-      0x97619DB5: ~
+      0x0AA9D63F: cellDtcpIpStartAuthentication
+      0x1EC068FB: cellDtcpIpFinalizeAuthentication
+      0x2070C99E: cellDtcpIpSetByteSeekRange
+      0x2F87926F: cellDtcpIpOpenContentEx
+      0x545E08CB: cellDtcpIpInitializeEx
+      0x550D3527: cellDtcpIpStopAuthentication
+      0x65A86A64: cellDtcpIpGetHttpStatusCode
+      0x7F4A8B0E: cellDtcpIpInitializeAuthentication
+      0x97619DB5: cellDtcpIpCloseContent
   cellDtcpIpUtilityEx:
     functions:
-      0x4654188A: ~
-      0xB17436B5: ~
+      0x4654188A: cellDtcpIpOpenEx
+      0xB17436B5: cellDtcpIpSetEncryptedDataEx
   cellDtcpIpUtilityMove:
     functions:
-      0x269A634B: ~
-      0x9A219C98: ~
-      0xA98DEADE: ~
-      0xCA87F652: ~
-      0xF4EF1B28: ~
+      0x269A634B: cellDtcpIpMoveOpenEx
+      0x9A219C98: cellDtcpIpMoveCommitment
+      0xA98DEADE: cellDtcpIpMoveClose
+      0xCA87F652: cellDtcpIpMoveRead
+      0xF4EF1B28: cellDtcpIpMoveOpen
   cellFiber:
     functions:
       0x01036193: cellFiberPpuContextReturnToThread
@@ -623,7 +623,7 @@ modules:
       0x59EF0073: cellFontGetGlyphExpandBufferInfo
       0x5ABD8B1E: cellFontGetLibrary
       0x66A23100: cellFontBindRenderer
-      0x67E805C3: ~
+      0x67E805C3: cellFontsetUSleep
       0x698897F8: cellFontGetVerticalLayout
       0x6BAD7A69: cellFontVertexesGlyphRelocate
       0x6BF6F832: cellFontSetFontsetOpenMode
@@ -695,42 +695,42 @@ modules:
       0x2E267B28: FTFaceH_FontFamilyName
       0x329DAD93: FTManager_OpenStreamFace
       0x32AB10BC: ~
-      0x333AFF1A: ~
+      0x333AFF1A: FTRenderBuf_SetupByScalePixel
       0x38750386: FTCacheStream_Init
-      0x3D19BF5E: ~
+      0x3D19BF5E: FTFaceH_FT_Face
       0x3EAAAD1C: FTCacheStream_CalcCacheIndexSize
       0x3F9A35FD: FTFaceH_GetCompositeCodes
       0x400B7E88: FTFaceH_GetGlyphMetrics
       0x407A3F34: ~
       0x40DCBC8D: ~
-      0x4208BC69: ~
+      0x4208BC69: FTFaceH_SelectCharMap
       0x42A0789F: ~
-      0x45C89206: ~
+      0x45C89206: FTFaceH_GetEffectAdditionalWidth
       0x4B478CDD: FTFaceH_GetAscender
       0x4FBE1CB3: ~
       0x529AFC47: FTFaceH_SetRenderScalePoint
       0x53E38FF2: FTFaceH_GetRenderEffectSlant
-      0x57872CAA: ~
+      0x57872CAA: FTRenderBuf_Release
       0x5CF9C3F0: FTManager_SetFontOpenMode
       0x5E89C269: FTManager_OpenMemFace
       0x5EAA5C26: ~
       0x65E27CB3: FTFaceH_GetGlyphImage
-      0x6FFDE2CB: ~
+      0x6FFDE2CB: FTRenderSurface_Init
       0x70B52CD6: ~
       0x71F86685: FTFaceH_GetBoundingBoxMinX
       0x73209D59: FTFaceH_GetRenderScalePoint
       0x75960E0C: ~
-      0x773BC9A9: ~
+      0x773BC9A9: FTRenderBuf_Init
       0x77A94FA7: FTFaceH_SetRenderEffectWeight
       0x7A0A83C4: cellFontInitLibraryFreeTypeWithRevision
-      0x7EE448D6: ~
-      0x80065642: ~
-      0x80161336: ~
-      0x81B07782: ~
+      0x7EE448D6: FTFaceH_GetEffectAdditionalHeight
+      0x80065642: FTRenderBuf_GetRenderMetrics
+      0x80161336: FTRenderBuf_Reset
+      0x81B07782: FTFaceH_IsOnMemory
       0x8373BD2D: ~
       0x862012C4: ~
       0x8BB8A16A: FTFaceH_GetRenderScale
-      0x8DF2765A: ~
+      0x8DF2765A: FTRenderBuf_RenderGlyphImage
       0x8DFABC0A: FTCacheStream_CacheInit
       0x8F7AEA15: FTFaceH_GetRenderBufferSize
       0x9306D15B: FTFaceH_GetRenderScalePixel
@@ -739,23 +739,23 @@ modules:
       0x9A556A5F: FTFaceH_Close
       0x9AB05121: ~
       0x9D792718: FTFaceH_SetCompositeCodes
-      0x9ED96570: ~
-      0x9F0A5F5D: ~
-      0x9FA1F4C1: ~
+      0x9ED96570: FTFaceH_GetDescender
+      0x9F0A5F5D: FTRenderBuf_SetupByScalePoint
+      0x9FA1F4C1: FTFaceH_FT_Memory
       0xA4F73351: FTFaceH_GetBoundingBoxMinY
       0xA52C0070: ~
       0xA595A0A4: ~
-      0xA5979570: ~
-      0xA91EA22B: ~
-      0xADD2E49F: ~
+      0xA5979570: FTManager_FT_Memory
+      0xA91EA22B: FTRenderBuf_RenderGlyphImageVertical
+      0xADD2E49F: Struct_FTRenderBuf
       0xB5017E5B: ~
       0xB6A6AD5A: FTFaceH_GetBoundingBoxMaxY
-      0xB76E9937: ~
-      0xB90AE607: ~
+      0xB76E9937: FTRenderBuf_Adjust
+      0xB90AE607: FTRenderBuf_End
       0xB97EC10D: ~
       0xBC7553F5: ~
       0xBD8EA1CD: ~
-      0xC01CF9BA: ~
+      0xC01CF9BA: FTFaceH_GlyphMetrics
       0xC1CCB950: ~
       0xC25D60F0: FTFaceH_GetBoundingBoxHeight
       0xD0762FD3: ~
@@ -763,7 +763,7 @@ modules:
       0xD5006F80: ~
       0xD5637FCF: ~
       0xD632BCBF: FTManager_Done_FreeType
-      0xD97C7372: ~
+      0xD97C7372: FTRenderSurface_SetSissorRect
       0xDA0FB37E: FTFaceH_FontStyleName
       0xDBF3D33F: ~
       0xDC6F1924: ~
@@ -809,20 +809,20 @@ modules:
       0xF52639EA: cellGameBootCheck
   cellGameExec:
     functions:
-      0x34B74160: ~
+      0x34B74160: cellGameDeleteGame
       0x38579EC9: cellGameSetExitParam
       0x59B1EDE1: cellGameGetHomeDataExportPath
       0x59BBEBD4: cellGameGetHomePath
       0x72CC6CF7: cellGameGetHomeDataImportPath
       0x7767C4E3: ~
-      0x93D4AE69: ~
+      0x93D4AE69: cellGameGetList
       0x94E9F81D: cellGameGetHomeLaunchOptionPath
       0xCA872C41: cellGameExecGame
       0xF6ACD0BC: cellGameGetBootGameInfo
   cellGameStorage:
     functions:
       0x23EC78CE: ~
-      0x4240CF21: ~
+      0x4240CF21: cellGameStorageWritePerfExt
       0x50771F25: ~
       0x5ACD77EA: ~
       0x8DBD9594: ~
@@ -951,7 +951,7 @@ modules:
   cellHttp:
     functions:
       0x003F88AE: ~
-      0x009E4B77: ~
+      0x009E4B77: cellHttpInitExternalCache
       0x03F1AEF6: ~
       0x052A80D9: cellHttpCreateTransaction
       0x070F1020: cellHttpClientGetTotalPoolSize
@@ -1021,7 +1021,7 @@ modules:
       0x591C21A8: cellHttpClientGetKeepAlive
       0x595ADEE9: cellHttpClientSetPerHostKeepAliveMax
       0x5980A293: cellHttpClientGetAutoAuthentication
-      0x5C8AE162: ~
+      0x5C8AE162: cellHttpTransactionSetUri
       0x5D473170: cellHttpClientSetKeepAlive
       0x617EEC02: cellHttpClientDeleteHeader
       0x61B2BADE: cellHttpEndCookie
@@ -1040,11 +1040,11 @@ modules:
       0x85FB7363: cellHttpClientSetConnectionStateCallback
       0x8633468C: ~
       0x88B71A4C: cellHttpClientSetConnectionWaitStatus
-      0x88F79869: ~
+      0x88F79869: cellHttpClientSetCacheStatus
       0x895C604C: cellHttpTransactionGetSslCipherName
       0x8AA5FCD3: cellHttpClientSetTotalPoolSize
       0x8BEDEFA8: cellHttpGetCookie
-      0x8DC2D51D: ~
+      0x8DC2D51D: cellHttpFlushExternalCache
       0x8E3F7EE1: cellHttpRequestSetChunkedTransferStatus
       0x8EAF47A3: cellHttpClientSetAutoAuthentication
       0x8FC281F7: cellHttpCookieFlush
@@ -1098,7 +1098,7 @@ modules:
       0xD47CC666: cellHttpTransactionReleaseConnection
       0xD5198360: ~
       0xD5C9C1DF: ~
-      0xD632A727: ~
+      0xD632A727: cellHttpEndExternalCache
       0xD7471088: cellHttpClientSetConnTimeout
       0xD7D3CD5D: cellHttpClientSetProxy
       0xD8352A40: cellHttpClientSetSslClientCertificate
@@ -1210,7 +1210,7 @@ modules:
       0xA9F703E3: cellJpgDecExtOpen
       0xAF8BB012: cellJpgDecDecodeData
       0xB91EB3D2: cellJpgDecExtReadHeader
-      0xC73ED848: ~
+      0xC73ED848: cellJpgDecSpSetOpenMode
       0xCD06942A: ~
       0xD8EA91F8: cellJpgDecDestroy
       0xD92D2667: ~
@@ -1219,27 +1219,27 @@ modules:
       0xE08F3910: cellJpgDecSetParameter
   cellJpgEnc:
     functions:
-      0x09A4A040: ~
+      0x09A4A040: cellJpgEncCoreDestroy
       0x0CF2B78B: cellJpgEncReset
       0x0DB3FD1D: ~
       0x12D9B6C5: cellJpgEncQueryAttr
       0x2AE79BE8: cellJpgEncWaitForInput
       0x4262E880: cellJpgEncGetStreamInfo
-      0x51779828: ~
-      0x5C0C3486: ~
+      0x51779828: cellJpgEncCoreExtCreate
+      0x5C0C3486: cellJpgEncCoreWriteHeader
       0x636DC89E: cellJpgEncEncodePicture2
       0x6F2D371C: cellJpgEncOpenEx
-      0x7AA1AA12: ~
+      0x7AA1AA12: cellJpgEncCoreCreate
       0x969FC5F7: cellJpgEncClose
       0x9B4E3A74: cellJpgEncWaitForOutput
       0xA4BFAE51: cellJpgEncOpen
       0xA9E81214: cellJpgEncEncodePicture
-      0xBEB9EE7A: ~
-      0xC334F696: ~
+      0xBEB9EE7A: cellJpgEncCoreOpen
+      0xC334F696: cellJpgEncCoreEncodeData
       0xC606034C: ~
-      0xE3A0827E: ~
-      0xECE28921: ~
-      0xF0AECBC3: ~
+      0xE3A0827E: cellJpgEncCoreWriteHeader2
+      0xECE28921: cellJpgEncCoreEncodeData2
+      0xF0AECBC3: cellJpgEncCoreClose
   cellKey2char:
     functions:
       0x0DFBADFA: cellKey2CharSetArrangement
@@ -1425,119 +1425,119 @@ modules:
       0xFDBF6AC5: UTF8stoUCS2s
   cellM2AACenc:
     functions:
-      0x352D9BFD: ~
-      0x3DCC2354: ~
-      0x48E5EAA9: ~
+      0x352D9BFD: naacEncInit
+      0x3DCC2354: naacEncSetPCE
+      0x48E5EAA9: naacEncGetBufferRequest
       0x49C2841B: ~
-      0x7E8B6001: ~
-      0x7E9FA832: ~
-      0x82AAB310: ~
-      0x8549EE34: ~
-      0x893A7450: ~
-      0x9E460733: ~
-      0xB51A9CCB: ~
-      0xD46148F5: ~
-      0xD9E960B2: ~
-      0xDC57C0AC: ~
+      0x7E8B6001: naacEncGetPce
+      0x7E9FA832: naacEncEncode
+      0x82AAB310: naacEncQueryMemorySize
+      0x8549EE34: naacEncFlush
+      0x893A7450: naacEncClear
+      0x9E460733: naacEncCreateInstance
+      0xB51A9CCB: naacEncReleaseInstance
+      0xD46148F5: naacEncGetDelay
+      0xD9E960B2: naacEncGetAdifHeader
+      0xDC57C0AC: naacEncGetLibraryVersion
   cellM2AACenc_spurs:
     functions:
       0x10A0D883: ~
       0x22A568AF: ~
       0x23E72363: ~
       0x29E9B27B: ~
-      0x352D9BFD: ~
-      0x3DCC2354: ~
+      0x352D9BFD: naacEncInit
+      0x3DCC2354: naacEncSetPCE
       0x3FA9D239: ~
-      0x48E5EAA9: ~
+      0x48E5EAA9: naacEncGetBufferRequest
       0x4B308D69: ~
       0x4EE91779: ~
       0x5FC1AE9D: ~
       0x60F1F761: ~
       0x7D0CA860: ~
-      0x7E8B6001: ~
-      0x7E9FA832: ~
-      0x82AAB310: ~
-      0x8549EE34: ~
+      0x7E8B6001: naacEncGetPce
+      0x7E9FA832: naacEncEncode
+      0x82AAB310: naacEncQueryMemorySize
+      0x8549EE34: naacEncFlush
       0x867607D4: ~
-      0x893A7450: ~
+      0x893A7450: naacEncClear
       0x94026354: ~
       0x97511890: ~
       0x9FA1B428: ~
       0xA6AF1A6C: ~
       0xA8E09240: ~
-      0xB51A9CCB: ~
+      0xB51A9CCB: naacEncReleaseInstance
       0xBDE15C4C: ~
       0xC487F796: ~
-      0xD46148F5: ~
-      0xD9E960B2: ~
-      0xDC57C0AC: ~
+      0xD46148F5: naacEncGetDelay
+      0xD9E960B2: naacEncGetAdifHeader
+      0xDC57C0AC: naacEncGetLibraryVersion
       0xE6654A42: ~
   cellM2BCdec:
     functions:
-      0xEC7DE355: ~
+      0xEC7DE355: _SceAdecCorrectPtsValue_mpmc
     variables:
-      0x300AFE4D: ~
+      0x300AFE4D: adec_core_ops_mpmc
   cellM4AacDec:
     functions:
-      0x431A1DCA: ~
+      0x431A1DCA: _SceAdecCorrectPtsValue_M4Aac
     variables:
-      0xAB61278D: ~
+      0xAB61278D: adec_core_ops_M4Aac
   cellM4AacDec2ch:
     functions:
-      0x869E328D: ~
+      0x869E328D: _SceAdecCorrectPtsValue_M4Aac2ch
     variables:
-      0xE996C664: ~
+      0xE996C664: adec_core_ops_M4Aac2ch
   cellM4hdEnc:
     functions:
       0x0C06029F: ~
-      0x2A6F33B5: ~
-      0x3D32ADD6: ~
-      0x7555DAFB: ~
-      0x91A0D079: ~
-      0x9CA05AEC: ~
-      0xB7F4D418: ~
-      0xC1566DAE: ~
-      0xE394A3BD: ~
+      0x2A6F33B5: cellM4hdEncEncodeFrame
+      0x3D32ADD6: cellM4hdEncQueryResource
+      0x7555DAFB: cellM4hdEncOpenEx
+      0x91A0D079: cellM4hdEncClose
+      0x9CA05AEC: cellM4hdEncGetResult
+      0xB7F4D418: cellM4hdEncOpenEx2
+      0xC1566DAE: cellM4hdEncGetStream2
+      0xE394A3BD: cellM4hdEncGetAuInfo
   cellM4vEnc:
     functions:
       0x092B332D: ~
       0x0B195433: ~
       0x0EC868E9: ~
-      0x17E3A76C: ~
-      0x28B2977F: ~
-      0x3124A0E0: ~
-      0x3BE4620C: ~
-      0x4737F7FE: ~
-      0x4DE475D7: ~
+      0x17E3A76C: cellM4vEncGetResult
+      0x28B2977F: cellM4vEncGetFrameForInput
+      0x3124A0E0: cellM4vEncReopen
+      0x3BE4620C: cellM4vEncCancelFrame
+      0x4737F7FE: cellM4vEncOpen
+      0x4DE475D7: cellM4vEncGetStream
       0x507E60D8: ~
-      0x612F79B0: ~
+      0x612F79B0: cellM4vEncGetResult2
       0x7B7E9B4B: ~
-      0x7F9BAFED: ~
-      0x88902AC0: ~
-      0x8B31F735: ~
+      0x7F9BAFED: cellM4vEncGetVersion
+      0x88902AC0: cellM4vEncSetEndPoint
+      0x8B31F735: cellM4vEncCancelLocalDecodedFrame
       0x92BF1831: ~
       0x95D2B8F2: ~
-      0xA314D362: ~
+      0xA314D362: cellM4vEncClose
       0xA329CDA3: ~
       0xA3EDEAC9: ~
       0xAB3B08B2: ~
-      0xB82E6F27: ~
-      0xB9BE30C0: ~
-      0xBDB1E067: ~
-      0xC289D964: ~
-      0xC708618A: ~
-      0xC85CD08D: ~
+      0xB82E6F27: cellM4vEncGetAuInfo
+      0xB9BE30C0: cellM4vEncCancelAuInfo
+      0xBDB1E067: cellM4vEncOpenEx
+      0xC289D964: cellM4vEncEncodeFrame
+      0xC708618A: cellM4vEncGetLocalDecodedFrame
+      0xC85CD08D: cellM4vEncSendEncCommand
       0xCCFEC845: ~
-      0xD87822AB: ~
-      0xD8C9C9A3: ~
-      0xDB42EEE6: ~
-      0xDF3E7FDB: ~
-      0xEA99BEC1: ~
-      0xF8292A94: ~
+      0xD87822AB: cellM4vEncCancelStream
+      0xD8C9C9A3: cellM4vEncReleaseLocalDecodedFrame
+      0xDB42EEE6: cellM4vEncOpenExt
+      0xDF3E7FDB: cellM4vEncQueryResource
+      0xEA99BEC1: cellM4vEncTermIntercommuner
+      0xF8292A94: cellM4vEncQueryPresetParameter
       0xFFFC12F5: ~
   cellMP3dec:
     variables:
-      0x84276A23: ~
+      0x84276A23: adec_core_ops_mp3
   cellMPL1dec:
     functions:
       0xA4A9A309: ~
@@ -1588,18 +1588,18 @@ modules:
       0xFDBBE469: cellMicGetDeviceIdentifier
   cellMinisSaveData:
     functions:
-      0x0A516FFD: ~
-      0x22F2A553: ~
-      0x47BB3BC0: ~
-      0x66515C18: ~
-      0x6EB168B3: ~
-      0xA342A73F: ~
-      0xA931356E: ~
-      0xBA161D45: ~
-      0xE0AFD1E6: ~
-      0xE63EB964: ~
-      0xF3F974B8: ~
-      0xFC3045D9: ~
+      0x0A516FFD: cellMinisSaveDataAutoSave
+      0x22F2A553: cellMinisSaveDataListAutoLoad
+      0x47BB3BC0: cellMinisSaveDataSingleDelete
+      0x66515C18: cellMinisSaveDataFixedLoad
+      0x6EB168B3: cellMinisSaveDataDelete
+      0xA342A73F: cellMinisSaveDataListSave
+      0xA931356E: cellMinisSaveDataListAutoSave
+      0xBA161D45: cellMinisSaveDataListLoad
+      0xE0AFD1E6: cellMinisSaveDataAutoDelete
+      0xE63EB964: cellMinisSaveDataListDelete
+      0xF3F974B8: cellMinisSaveDataFixedSave
+      0xFC3045D9: cellMinisSaveDataAutoLoad
   cellMp4:
     functions:
       0x0B1E4B8F: ~
@@ -1706,10 +1706,10 @@ modules:
       0xFFA3D791: cellGameUpdateCheckFinishAsync
   cellNetCtlMintX:
     functions:
-      0x1466611F: ~
-      0x58F795C4: ~
-      0x5C95DF57: ~
-      0xA48E0236: ~
+      0x1466611F: cellNetCtlMintXGetState
+      0x58F795C4: cellNetCtlMintXDelHandler
+      0x5C95DF57: cellNetCtlMintXGetInfo
+      0xA48E0236: cellNetCtlMintXAddHandler
   cellOskExtUtility:
     functions:
       0x09565B21: cellOskDialogExtInputDeviceUnlock
@@ -1768,7 +1768,7 @@ modules:
       0x195716DB: cellPesmFinalize
       0x2821CBAA: cellPesmLoadAsync
       0x2C43AB76: cellPesmOpenDevice
-      0x6312A6CC: ~
+      0x6312A6CC: cellPesmGetVersion
       0x65F7338B: cellPesmEncryptSample
       0x8AB3156B: ~
       0x941F9C4E: cellPesmUnloadAsync
@@ -1852,16 +1852,16 @@ modules:
       0xF44B6C30: cellPngDecGetiCCP
   cellPngEnc:
     functions:
-      0x0695A4B8: ~
+      0x0695A4B8: cellPngEncCoreExtCreate
       0x117CD726: cellPngEncClose
       0x151A07D7: ~
       0x17D64665: ~
       0x19256DC5: cellPngEncOpen
       0x27C15E2E: ~
-      0x27E7BD51: ~
-      0x3C413AC6: ~
+      0x27E7BD51: cellPngEncCoreWriteHeader
+      0x3C413AC6: cellPngEncCoreCreate
       0x40F325FE: ~
-      0x44616414: ~
+      0x44616414: cellPngEncCoreClose
       0x496CFCD0: cellPngEncQueryAttr
       0x5440BFB6: ~
       0x585269BC: cellPngEncGetStreamInfo
@@ -1872,9 +1872,9 @@ modules:
       0x73C3C708: ~
       0x8343A1BF: ~
       0x89BE8E6A: ~
-      0x8A96E574: ~
+      0x8A96E574: cellPngEncCoreOpen
       0x90EF2963: cellPngEncWaitForOutput
-      0x99A14141: ~
+      0x99A14141: cellPngEncCoreEncodeData
       0xABFF71C8: ~
       0xC301A3D6: ~
       0xC82558CE: cellPngEncOpenEx
@@ -1883,8 +1883,8 @@ modules:
       0xDAF2709F: ~
       0xE4BBD3DC: ~
       0xE6154656: ~
-      0xE806D0F2: ~
-      0xF8418255: ~
+      0xE806D0F2: cellPngEncCoreOpen2
+      0xF8418255: cellPngEncCoreDestroy
       0xFB4A4BF0: ~
   cellPrintUtility:
     functions:
@@ -2394,7 +2394,7 @@ modules:
       0x8F122EF8: cellSpursTasksetAttributeSetTasksetSize
       0x8FDF50B2: cellSpursAddUrgentCall
       0x9034E538: cellSpursTaskGetContextSaveAreaSize
-      0x90C82BFC: ~
+      0x90C82BFC: cellSpursInitializeForSpuSharing
       0x91066667: cellSpursQueuePopBody
       0x9197915F: cellSpursTaskGenerateLsPattern
       0x92CFF6ED: cellSpursQueuePushBody
@@ -2575,7 +2575,7 @@ modules:
       0x60315DCA: SSL_state_string_long
       0x60A5D81F: SSLCERT_from_binary
       0x60ACD240: SSLCERT_get_basic_constraints_int
-      0x62236E88: ~
+      0x62236E88: SSLCERT_NAME_hash
       0x68D3409E: ~
       0x6BA92C44: SSL_CIPHER_description
       0x6CCAAE48: SSLCERT_get_pubkey
@@ -2638,7 +2638,7 @@ modules:
       0xFFC1A59A: R_time_export
   cellStorageData:
     functions:
-      0xFA87FA54: ~
+      0xFA87FA54: cellStorageDataExportDirectory
   cellSubDisplay:
     functions:
       0x415ED9DC: cellSubDisplayGetTouchInfo
@@ -3087,23 +3087,23 @@ modules:
       0x18D0ADA6: cellAudioOutGetDeviceInfo2
       0x1A324E03: cellVideoOutSetCopyControl
       0x1CFA1A11: cellVideoOutSetXVColor
-      0x21036F4E: ~
+      0x21036F4E: cellVideoOutGetResolutionAvailability2
       0x269FFEDD: cellVideoOutSetupDisplay
       0x2BAF4A33: ~
       0x341D9459: ~
       0x3D5730CE: cellAudioInGetDeviceInfo
-      0x44D2BA34: ~
+      0x44D2BA34: cellAudioOutGetConfiguration2
       0x4EC8C141: cellVideoOutConvertCursorColor
       0x655A0364: cellVideoOutGetGamma
       0x65BF9EA3: cellAudioInGetAvailableDeviceInfo
-      0x9FAA12BE: ~
+      0x9FAA12BE: cellVideoOutConfigure2
       0xC3273D9B: cellAudioOutGetAvailableDeviceInfo
       0xC7020F62: cellVideoOutSetGamma
       0xC7087631: cellAudioOutRegisterDevice
       0xE4645AF8: cellAudioOutSetDeviceMode
       0xEB6C50FB: cellAudioInSetDeviceMode
       0xEB6FCFF1: cellAudioInRegisterDevice
-      0xFA611DF4: ~
+      0xFA611DF4: cellAudioOutConfigure2
       0xFA6BCC17: cellAudioInUnregisterDevice
       0xFAA275A4: cellVideoOutGetScreenSize
   cellSysutilMisc:
@@ -3174,13 +3174,13 @@ modules:
       0x90460081: cellUsbdUnregisterExtraLdd
       0x9763E962: cellUsbdClosePipe
       0x97CF128E: cellUsbdControlTransfer
-      0xA0ED322E: ~
+      0xA0ED322E: cellUsbdGetFrameNumber
       0xA4088179: cellUsbdRegisterCompositeLdd
       0xAC77EB78: cellUsbdBulkTransfer
       0xBD554BCB: cellUsbdRegisterExtraLdd2
       0xBDBD2428: cellUsbdGetDeviceSpeed
       0xC24AF1D7: cellUsbdSetThreadPriority
-      0xC9FFC854: ~
+      0xC9FFC854: cellUsbdEnableWakeOn
       0xCE0773CF: ~
       0xD0E766FE: cellUsbdInit
       0xD5263DEA: cellUsbdGetThreadPriority
@@ -3205,62 +3205,62 @@ modules:
       0xC15BE817: cellVideoExportFinalize
   cellVideoPlayerUtility:
     functions:
-      0x07EE139A: ~
+      0x07EE139A: cellVideoPlayerOpenFileId
       0x09544995: ~
-      0x14358CCC: ~
+      0x14358CCC: cellVideoPlayerGetAudioTrackInfo
       0x4B77752F: cellVideoPlayerInitialize
-      0x507363CB: ~
+      0x507363CB: cellVideoPlayerOpenContentId
       0x5C1872F1: cellVideoPlayerSetStartPosition
-      0x5D02B091: ~
+      0x5D02B091: cellVideoPlayerGetAudioTrackNumber
       0x69452CBA: cellVideoPlayerGetVolume
-      0x6BBD3AC3: ~
+      0x6BBD3AC3: cellVideoPlayerSetSubtitleTrack
       0x72440039: cellVideoPlayerFinalize
       0x7C4BA244: cellVideoPlayerSetStopPosition
       0x801DB596: cellVideoPlayerClose
       0x8528C19A: cellVideoPlayerGetTransferPictureInfo
       0x8CBDCBAC: cellVideoPlayerSetDownloadPosition
       0xA2B8AF7C: cellVideoPlayerStartThumbnail
-      0xA85AED2E: ~
+      0xA85AED2E: cellVideoPlayerTransferPicture
       0xAFAFEDB1: cellVideoPlayerEndThumbnail
-      0xB312E53F: ~
+      0xB312E53F: cellVideoPlayerSetFileIoCallback
       0xB5542E5A: cellVideoPlayerOpen
-      0xBF1DC25B: ~
+      0xBF1DC25B: cellVideoPlayerGetSubtitleTrackInfo
       0xC50303B2: cellVideoPlayerSetVolume
-      0xD2E0318E: ~
+      0xD2E0318E: cellVideoPlayerSetAudioTrack
       0xD3B6BDC9: ~
-      0xD763903D: ~
+      0xD763903D: cellVideoPlayerGetSubtitleTrackNumber
       0xD9C63AFB: cellVideoPlayerGetOutputStereoPicture
       0xDC9462C5: cellVideoPlayerGetPlaybackStatus
       0xDD3D7EC0: cellVideoPlayerSetTransferComplete
       0xDF07BE79: cellVideoPlayerGetOutputPicture
-      0xF0C7C488: ~
+      0xF0C7C488: cellVideoPlayerInitializeStereoVideo
       0xF16D10CB: cellVideoPlayerPlaybackControl
   cellVideoPlayerUtilityStereoVideo:
     functions:
-      0x14358CCC: ~
-      0x507363CB: ~
-      0x5C1872F1: ~
-      0x5D02B091: ~
-      0x69452CBA: ~
-      0x6BBD3AC3: ~
-      0x72440039: ~
-      0x7C4BA244: ~
-      0x801DB596: ~
-      0x8528C19A: ~
-      0x8CBDCBAC: ~
-      0xA85AED2E: ~
-      0xB312E53F: ~
-      0xB5542E5A: ~
-      0xBF1DC25B: ~
-      0xC50303B2: ~
-      0xD2E0318E: ~
-      0xD763903D: ~
-      0xD9C63AFB: ~
-      0xDC9462C5: ~
-      0xDD3D7EC0: ~
-      0xDF07BE79: ~
-      0xF0C7C488: ~
-      0xF16D10CB: ~
+      0x14358CCC: cellVideoPlayerGetAudioTrackInfo
+      0x507363CB: cellVideoPlayerOpenContentId
+      0x5C1872F1: cellVideoPlayerSetStartPosition
+      0x5D02B091: cellVideoPlayerGetAudioTrackNumber
+      0x69452CBA: cellVideoPlayerGetVolume
+      0x6BBD3AC3: cellVideoPlayerSetSubtitleTrack
+      0x72440039: cellVideoPlayerFinalize
+      0x7C4BA244: cellVideoPlayerSetStopPosition
+      0x801DB596: cellVideoPlayerClose
+      0x8528C19A: cellVideoPlayerGetTransferPictureInfo
+      0x8CBDCBAC: cellVideoPlayerSetDownloadPosition
+      0xA85AED2E: cellVideoPlayerTransferPicture
+      0xB312E53F: cellVideoPlayerSetFileIoCallback
+      0xB5542E5A: cellVideoPlayerOpen
+      0xBF1DC25B: cellVideoPlayerGetSubtitleTrackInfo
+      0xC50303B2: cellVideoPlayerSetVolume
+      0xD2E0318E: cellVideoPlayerSetAudioTrack
+      0xD763903D: cellVideoPlayerGetSubtitleTrackNumber
+      0xD9C63AFB: cellVideoPlayerGetOutputStereoPicture
+      0xDC9462C5: cellVideoPlayerGetPlaybackStatus
+      0xDD3D7EC0: cellVideoPlayerSetTransferComplete
+      0xDF07BE79: cellVideoPlayerGetOutputPicture
+      0xF0C7C488: cellVideoPlayerInitializeStereoVideo
+      0xF16D10CB: cellVideoPlayerPlaybackControl
   cellVideoUpload:
     functions:
       0x122E0D0F: cellVideoUploadInitialize
@@ -3317,27 +3317,27 @@ modules:
       0xCA3CB5B5: cellVpost2Open
   cellWMAdec:
     functions:
-      0x46E6C806: ~
+      0x46E6C806: _SceAdecCorrectPtsValue_wma
     variables:
-      0x88320B10: ~
+      0x88320B10: adec_core_ops_wma
   cell_FreeType2:
     functions:
-      0x011687EE: ~
+      0x011687EE: FT_Get_Module_Interface
       0x0124A94B: FT_Done_Library
       0x04AF4D22: FT_Outline_GetOutsideBorder
       0x04DD4855: FT_Outline_Get_Orientation
-      0x0553AE54: ~
+      0x0553AE54: FT_Stream_ReadOffset
       0x055C1970: FT_New_Size
       0x06A553DF: FT_Activate_Size
       0x084EB81A: FT_Stream_OpenLZW
-      0x09D37F90: ~
+      0x09D37F90: ft_glyphslot_set_bitmap
       0x0AA1B8DE: FT_Vector_Rotate
       0x0AF56D94: FT_Set_MM_Design_Coordinates
       0x0B411261: FTC_Manager_LookupFace
       0x0C08DD3A: FTC_Manager_New
       0x0C8CAE53: FT_Stroker_Done
-      0x0FD3F094: ~
-      0x11385230: ~
+      0x0FD3F094: FT_Stream_ReleaseFrame
+      0x11385230: FT_Outline_New_Internal
       0x1171AA63: FT_Angle_Diff
       0x13268E21: FT_Bitmap_New
       0x15A11D97: FTC_SBitCache_New
@@ -3345,28 +3345,28 @@ modules:
       0x18484DC6: FT_Stroker_Export
       0x184A21DA: FT_Get_PFR_Advance
       0x18C23BDF: FT_Outline_Get_Bitmap
-      0x191899D0: ~
+      0x191899D0: FT_Stream_ReadAt
       0x1A789B68: FT_Realloc
       0x1AEB33A5: FT_Bitmap_Embolden
       0x1B6F28A5: FT_Outline_Get_CBox
       0x1BFBE848: FT_New_Memory_Face
       0x1CEDF8D0: FT_Done_Face
       0x1E287E88: FT_Get_Glyph_Name
-      0x1F9BCBE6: ~
+      0x1F9BCBE6: ft_validator_error
       0x1FCAEEBB: FT_Outline_Decompose
-      0x20F438AD: ~
+      0x20F438AD: FT_SqrtFixed
       0x211248E7: ~
-      0x21182419: ~
+      0x21182419: FT_Stream_ExtractFrame
       0x214FE115: ~
       0x26EAAFA7: ~
       0x2803ABD1: FT_FloorFix
-      0x29020E75: ~
+      0x29020E75: FT_Stream_Free
       0x2AA7A25F: ~
-      0x2B74D0B3: ~
-      0x2C272C13: ~
-      0x2E1F7D0A: ~
-      0x32A1BD52: ~
-      0x33F54920: ~
+      0x2B74D0B3: FT_CMap_Done
+      0x2C272C13: FT_Raccess_Guess
+      0x2E1F7D0A: FT_Raccess_Get_HeaderInfo
+      0x32A1BD52: FT_CMap_New
+      0x33F54920: FT_QAlloc
       0x3545BDC1: FT_Load_Sfnt_Table
       0x36F59828: FT_Get_Track_Kerning
       0x3701F938: FT_Sin
@@ -3379,7 +3379,7 @@ modules:
       0x3ECDC98B: ~
       0x3F2B82DF: FT_Outline_Done
       0x406D1E1A: FT_Matrix_Multiply
-      0x416CDBC4: ~
+      0x416CDBC4: ft_glyphslot_alloc_bitmap
       0x420DE176: FT_Glyph_Copy
       0x44951709: FT_Glyph_Get_CBox
       0x459907C4: FT_Stream_OpenGzip
@@ -3395,23 +3395,23 @@ modules:
       0x4DB200EF: FT_List_Find
       0x4EE1B202: FT_List_Finalize
       0x4F36CF3F: FT_Get_Char_Index
-      0x4F4D2E71: ~
-      0x501D1814: ~
-      0x5035C921: ~
+      0x4F4D2E71: FT_Stream_GetLong
+      0x501D1814: FT_GlyphLoader_CheckPoints
+      0x5035C921: FT_GlyphLoader_Add
       0x50EC3696: FT_Get_PFR_Metrics
       0x51B09E1D: FT_Open_Face
       0x52A1F1EC: FT_Outline_GetInsideBorder
-      0x52DD4E82: ~
+      0x52DD4E82: FT_Stream_GetOffset
       0x55104762: FT_Get_BDF_Charset_ID
-      0x552550E5: ~
+      0x552550E5: ft_highpow2
       0x576E31A5: FT_Select_Size
       0x58D00078: ~
       0x5923488B: FT_List_Insert
-      0x59394806: ~
-      0x5A23DB5B: ~
+      0x59394806: FT_Done_Memory
+      0x5A23DB5B: FT_Raccess_Get_DataOffsets
       0x5C36E44F: FT_Render_Glyph
-      0x5C4C5880: ~
-      0x5EBE9FD4: ~
+      0x5C4C5880: FT_GlyphLoader_CreateExtra
+      0x5EBE9FD4: FT_Stream_GetShortLE
       0x5F7F83AA: FTC_SBitCache_Lookup
       0x5F8370D7: FT_Get_Charmap_Index
       0x5F8BF2CC: ~
@@ -3431,7 +3431,7 @@ modules:
       0x6E560D59: FT_Attach_File
       0x6E565B59: ~
       0x6EF5D792: FT_Outline_Translate
-      0x6FA37EA0: ~
+      0x6FA37EA0: FT_Stream_TryRead
       0x72CF95FC: FT_Set_Debug_Hook
       0x773FF791: FT_Stroker_GetBorderCounts
       0x7E5F23A4: FT_Tan
@@ -3442,23 +3442,23 @@ modules:
       0x81EED68C: FT_Get_CMap_Language_ID
       0x838FE0A5: FT_Get_Sfnt_Name_Count
       0x84CE959C: FT_MulDiv
-      0x858DF484: ~
+      0x858DF484: ft_glyphslot_free_bitmap
       0x85A969B6: FT_Init_FreeType
       0x85C80B7F: FT_RoundFix
-      0x875D29D5: ~
+      0x875D29D5: FT_GlyphLoader_Prepare
       0x8835C3C2: FT_Get_MM_Var
       0x889C4159: FT_Outline_Get_BBox
       0x89FB856E: FT_Get_Sfnt_Table
       0x8B14BE9C: FTC_CMapCache_Lookup
       0x8B5D6149: ~
-      0x8BE132AB: ~
+      0x8BE132AB: FT_Stream_ExitFrame
       0x8D79A5F9: FT_Get_PS_Font_Info
       0x904CA41F: ~
       0x9164EFD1: FT_Set_Var_Blend_Coordinates
       0x917D6E9B: FT_Set_Renderer
       0x92342AA4: FT_Request_Size
       0x9295B0FD: FT_Done_Size
-      0x9666B4C0: ~
+      0x9666B4C0: FT_Stream_ReadShort
       0x98DB2F48: FT_Free
       0x99040A1D: FT_Remove_Module
       0x9A7A71B5: FT_Get_WinFNT_Header
@@ -3468,7 +3468,7 @@ modules:
       0x9DA74BB6: FT_Load_Char
       0x9E2B935A: FT_Get_Postscript_Name
       0x9EBA183C: FT_Library_Version
-      0x9FE3DDE6: ~
+      0x9FE3DDE6: FT_GlyphLoader_Reset
       0xA0237F5E: ~
       0xA11BA28B: FT_New_Library
       0xA26A2E9C: FT_Alloc
@@ -3476,33 +3476,33 @@ modules:
       0xA4AFEB98: FT_Stroker_BeginSubPath
       0xA4E6C423: FT_Select_Charmap
       0xA58C1554: FT_List_Iterate
-      0xA5B68C24: ~
+      0xA5B68C24: FT_Stream_ReadLong
       0xA60023EF: FT_Outline_New
       0xA6EB0B62: FT_Get_Kerning
       0xA6EC00F4: FT_Add_Module
       0xA742C04E: FT_OpenType_Validate
-      0xAB1E7527: ~
+      0xAB1E7527: FT_Stream_Pos
       0xAB4747B4: ~
-      0xAB8F6A87: ~
-      0xAC328493: ~
-      0xACFE51D8: ~
-      0xAE082411: ~
+      0xAB8F6A87: FT_GlyphLoader_CheckSubGlyphs
+      0xAC328493: FT_Done_GlyphSlot
+      0xACFE51D8: FT_GlyphLoader_Done
+      0xAE082411: FT_Stream_GetLongLE
       0xAED08DB1: FT_Has_PS_Glyph_Names
-      0xAEE8277C: ~
+      0xAEE8277C: ft_service_list_lookup
       0xAFE5EBC4: FT_CeilFix
-      0xB06BD868: ~
-      0xB1A33DEA: ~
+      0xB06BD868: FT_Stream_Skip
+      0xB1A33DEA: FT_Stream_ReadLongLE
       0xB229E6BF: FT_Load_Glyph
       0xB499D895: FT_Glyph_To_Bitmap
       0xB5BBFBEA: FT_OpenType_Free
-      0xB67050BC: ~
+      0xB67050BC: FT_GlyphLoader_CopyPoints
       0xB6AAB704: FT_List_Remove
       0xB9B430C2: FT_Set_Charmap
-      0xBA363B3E: ~
+      0xBA363B3E: FT_Stream_Seek
       0xBC8C081D: FTC_ImageCache_New
-      0xBD59BC75: ~
-      0xBE2789CC: ~
-      0xBE48875F: ~
+      0xBD59BC75: FT_GlyphLoader_Rewind
+      0xBE2789CC: FT_Stream_Close
+      0xBE48875F: FT_Stream_OpenMemory
       0xBF97B657: FT_New_Memory
       0xC141037D: FT_Get_PFR_Kerning
       0xC20A2975: FT_Stroker_GetCounts
@@ -3510,55 +3510,55 @@ modules:
       0xC24E39FC: FT_List_Add
       0xC3A7E8F2: FT_Stroker_ExportBorder
       0xC3B65D96: FT_Get_PS_Font_Private
-      0xC3E611C8: ~
-      0xC5792092: ~
+      0xC3E611C8: FT_Stream_GetShort
+      0xC5792092: FT_Render_Glyph_Internal
       0xC747F231: ~
       0xC8B94EE5: FT_Get_BDF_Property
       0xC938C83A: ~
-      0xC9E2965F: ~
+      0xC9E2965F: FT_Stream_New
       0xCC20195F: FT_New_Face
-      0xCDB50080: ~
+      0xCDB50080: FT_Stream_ReadShortLE
       0xCEE3C5A0: FT_Set_MM_Blend_Coordinates
       0xCFD82265: FT_Stroker_Rewind
-      0xD0E3CBB0: ~
+      0xD0E3CBB0: FT_Stream_ReadChar
       0xD12673A0: FT_Set_Pixel_Sizes
       0xD4770B4D: ~
-      0xD4C19FDB: ~
-      0xD56B3C5C: ~
-      0xD5BB8191: ~
+      0xD4C19FDB: FT_Sqrt32
+      0xD56B3C5C: FT_Stream_Read
+      0xD5BB8191: FT_New_GlyphSlot
       0xD719F8EE: ~
       0xD78B41CB: FT_Stroker_LineTo
       0xD7F0AFAA: FT_Vector_From_Polar
       0xD912B0F4: FT_Glyph_Transform
-      0xD9AB9AE4: ~
+      0xD9AB9AE4: ft_validator_init
       0xD9C9F093: FT_Stroker_New
       0xDB615095: FT_Done_Glyph
-      0xDD872661: ~
+      0xDD872661: FT_Stream_EnterFrame
       0xDD91F304: FT_Get_TrueType_Engine_Type
       0xDEC4091E: ~
       0xE4347E6B: ~
-      0xE45C32BD: ~
+      0xE45C32BD: FT_Stream_Open
       0xE46F3662: FT_Cos
       0xE4969D9D: FT_Vector_Unit
       0xE68E4744: FT_DivFix
-      0xE6DE720D: ~
+      0xE6DE720D: FT_GlyphLoader_New
       0xE7EBF1EF: FT_Stroker_Set
       0xE956BF64: FT_Done_FreeType
-      0xEAC06C4B: ~
+      0xEAC06C4B: FT_Lookup_Renderer
       0xEB3B1212: FT_Outline_Reverse
-      0xEE7B7AA7: ~
+      0xEE7B7AA7: FT_QRealloc
       0xEEB810EC: FT_Outline_Transform
-      0xF1AD8CA5: ~
-      0xF456AD89: ~
+      0xF1AD8CA5: ft_validator_run
+      0xF456AD89: ps_hints_apply
       0xF4CF5435: FTC_Manager_Done
       0xF5A883B6: ~
       0xF5E23DA4: ~
       0xF638C45E: FTC_Manager_LookupSize
       0xF67C1C4B: FT_Outline_Render
-      0xF70F8A7F: ~
+      0xF70F8A7F: FT_Stream_ReadFields
       0xF7261881: FT_Glyph_StrokeBorder
       0xF73FAA25: ~
-      0xF745465C: ~
+      0xF745465C: FT_Stream_GetChar
       0xF78A4A76: FT_Atan2
       0xF885420C: FT_Stroker_ConicTo
       0xF8D95C49: cellFreeType2Ex
@@ -3568,23 +3568,23 @@ modules:
       0xFA502B9B: ~
       0xFD5B7C04: FT_Bitmap_Convert
       0xFE7D5E4F: FT_Set_Var_Design_Coordinates
-      0xFE9BEE8C: ~
-      0xFEB2E30E: ~
+      0xFE9BEE8C: ft_module_get_service
+      0xFEB2E30E: FT_Outline_Done_Internal
       0xFF2D2F98: FT_Matrix_Invert
   cell_libac3dec:
     variables:
-      0xC58BB170: ~
+      0xC58BB170: adec_core_ops_ac3
   libad_async:
     functions:
       0x42FDBDFB: ~
       0x44946174: sceAdAsyncOpenContext
-      0x48B4DA2F: ~
+      0x48B4DA2F: sceAdAsyncCacheSpaces
       0x7A7A1ED3: sceAdAsyncConnectContext
       0x833F4516: sceAdAsyncSpaceOpen
-      0x853E785D: ~
+      0x853E785D: sceAdAsyncCacheSpacesCancel
       0x889864B4: ~
       0x9FD61D8E: sceAdAsyncFlushReports
-      0xA8096B3E: ~
+      0xA8096B3E: sceAdAsyncFlushReportsCancel
       0xC2DB09C5: sceAdAsyncSpaceClose
       0xCF1CBCF5: sceAdAsyncCloseContext
   libad_billboard_util:
@@ -3592,26 +3592,26 @@ modules:
       0x47BC7BED: ~
   libad_core:
     functions:
-      0x03C1A02F: ~
+      0x03C1A02F: sceAdGetSpaceMetadata
       0x0D884B17: sceAdOpenContext
-      0x1AC65942: ~
+      0x1AC65942: sceAdCacheSpacesPrepare
       0x1B6F5F4D: sceAdFlushReports
       0x260DB83D: ~
       0x29ACBC2F: ~
-      0x345C225A: ~
-      0x4D6EDF71: ~
+      0x345C225A: sceAdCacheSpacesCancel
+      0x4D6EDF71: sceAdFlushReportsPrepare
       0x4FE614D8: ~
       0x6AE5A677: ~
       0x78C41FF4: ~
       0x803CE9D2: ~
       0x9104F4BE: ~
       0x9374311F: ~
-      0x9AE33D35: ~
-      0x9FCCF8BB: ~
+      0x9AE33D35: sceAdGetConnectionMetadata
+      0x9FCCF8BB: sceAdFlushReportsCancel
       0xA642E894: ~
       0xAC495EB8: sceAdGetAssetInfo
       0xB00B4A26: ~
-      0xB35EA795: ~
+      0xB35EA795: sceAdWriteEventReport
       0xD0B097E3: ~
       0xD1ADA7AE: sceAdCloseContext
       0xD9D902B4: ~
@@ -3619,30 +3619,30 @@ modules:
       0xE2985E22: ~
       0xE73C90BA: sceAdGetConnectionInfo
       0xF930CC21: sceAdConnectContext
-      0xFE8B8022: ~
+      0xFE8B8022: sceAdCacheSpaces
   libavcdec:
     functions:
-      0x00E2D84B: ~
-      0x3A92F3DF: ~
-      0x5267175E: ~
-      0x765DE1B4: ~
-      0x9D523894: ~
-      0xC68B81BF: ~
-      0xD83259E8: ~
-      0xDF6F03FC: ~
-      0xE1134B5D: ~
-      0xF1A9AF6F: ~
+      0x00E2D84B: avcDecQueryCharacteristics
+      0x3A92F3DF: avcDecReset
+      0x5267175E: avcDecGetVersion
+      0x765DE1B4: avcDecFlush
+      0x9D523894: avcDecOpen
+      0xC68B81BF: avcDecClose
+      0xD83259E8: avcDecGetStatus
+      0xDF6F03FC: avcDecQueryMemory
+      0xE1134B5D: avcDecRlsFrame
+      0xF1A9AF6F: avcDecAccessUnit
   libdivxdec:
     functions:
-      0x2FA854AE: ~
-      0x4AC10F4F: ~
-      0x4D866CF0: ~
-      0x586EBC8A: ~
-      0x7CFD1C1F: ~
-      0x964AB1E7: ~
-      0xA9022CC5: ~
-      0xC6533FB2: ~
-      0xF6016B2D: ~
+      0x2FA854AE: divxDecReleasePicture
+      0x4AC10F4F: divxDecGetNumOfPictures
+      0x4D866CF0: divxDecGetPicture
+      0x586EBC8A: divxDecFlushPicture
+      0x7CFD1C1F: divxDecOpen
+      0x964AB1E7: divxDecDecodeAu
+      0xA9022CC5: divxDecQueryAttr
+      0xC6533FB2: divxDecClose
+      0xF6016B2D: divxDecReset
   libgem:
     functions:
       0x02EB41BB: cellGemGetEnvironmentLightingColor
@@ -3663,7 +3663,7 @@ modules:
       0x4219DE31: cellGemEnableCameraPitchAngleCorrection
       0x49609306: cellGemSetRumble
       0x615698B8: ~
-      0x633C3196: ~
+      0x633C3196: cellGemGetMagData
       0x6441D38D: cellGemGetState
       0x6A5B7048: cellGemGetAccelerometerPositionInDevice
       0x6DB6B007: cellGemGetRumble
@@ -3736,103 +3736,103 @@ modules:
       0xFD939B86: ~
   libmvcdec:
     functions:
-      0x53F2DED8: ~
-      0x6BE252E1: ~
-      0x739B99DF: ~
-      0x9A0E3C6E: ~
-      0xAC46F509: ~
-      0xC5C3B70A: ~
-      0xCB6494D5: ~
-      0xEAB40886: ~
-      0xEC29CAB1: ~
+      0x53F2DED8: mvcDecReset
+      0x6BE252E1: mvcDecQueryMemory
+      0x739B99DF: mvcDecClose
+      0x9A0E3C6E: mvcDecGetVersion
+      0xAC46F509: mvcDecAccessUnit
+      0xC5C3B70A: mvcDecOpen
+      0xCB6494D5: mvcDecFlush
+      0xEAB40886: mvcDecRlsFrame
+      0xEC29CAB1: mvcDecQueryCharacteristics
   libsjvtd:
     functions:
-      0x1B559A96: ~
-      0x33CF63E8: ~
-      0x3BAB4DB8: ~
-      0x437E1EB8: ~
-      0x4558A8E5: ~
-      0x50F8A377: ~
-      0x549F260D: ~
-      0x57EA9D70: ~
-      0x67555D2A: ~
-      0x68C6AA3F: ~
-      0x6E949735: ~
-      0x7D4375EB: ~
-      0x9069BDBB: ~
-      0x98B9408D: ~
-      0x9F8CD123: ~
-      0xA1912CAC: ~
-      0xA3683541: ~
-      0xA41952A4: ~
-      0xBA49D65A: ~
+      0x1B559A96: sjvtdGetSideInfoPic
+      0x33CF63E8: sjvtdSetDecodeMode
+      0x3BAB4DB8: sjvtdGetNumPicture
+      0x437E1EB8: sjvtdReleasePicture
+      0x4558A8E5: sjvtdGetPicture
+      0x50F8A377: sjvtdGetVersionNumber
+      0x549F260D: sjvtdDiscontinue
+      0x57EA9D70: sjvtdInitialize
+      0x67555D2A: sjvtdGetSideInfoSeq
+      0x68C6AA3F: sjvtdGetExistenceFlag
+      0x6E949735: sjvtdDecodePicture
+      0x7D4375EB: sjvtdCancelDecode
+      0x9069BDBB: sjvtdFlushPicture
+      0x98B9408D: sjvtdGetAuxData
+      0x9F8CD123: sjvtdGetMemorySize
+      0xA1912CAC: sjvtdGetMemorySize2
+      0xA3683541: sjvtdCreateInstance2
+      0xA41952A4: sjvtdReleaseInstance
+      0xBA49D65A: sjvtdSetAuxData
   libsmvd2:
     functions:
-      0x1A5B72DD: ~
-      0x32DA1344: ~
-      0x3B95270D: ~
-      0x4A1964A6: ~
-      0x52BB9416: ~
-      0x540B43AE: ~
-      0x5A0355CF: ~
-      0x60D0F4FA: ~
-      0x6B49A7C7: ~
-      0x6D1F7D3F: ~
-      0x96C2A2D9: ~
-      0xA0D447EB: ~
-      0xD09740F6: ~
-      0xD8D930BC: ~
-      0xDC6F4FF1: ~
-      0xE3072DF9: ~
-      0xE36F2A6C: ~
-      0xE9FFF717: ~
-      0xF007F937: ~
-      0xF4E8D559: ~
-      0xFF05DD1F: ~
+      0x1A5B72DD: smvd2DecodePicture2
+      0x32DA1344: smvd2GetAuxData
+      0x3B95270D: smvd2GetMemorySize
+      0x4A1964A6: smvd2GetSideInfoPic
+      0x52BB9416: smvd2GetVersionNumber
+      0x540B43AE: smvd2ReleaseInstance
+      0x5A0355CF: smvd2SetDecodeMode
+      0x60D0F4FA: smvd2DecodePicture
+      0x6B49A7C7: smvd2ReleasePicture
+      0x6D1F7D3F: smvd2GetExistenceFlag
+      0x96C2A2D9: smvd2SetAuxData
+      0xA0D447EB: smvd2GetPicture
+      0xD09740F6: smvd2GetMemorySize2
+      0xD8D930BC: smvd2Discontinue
+      0xDC6F4FF1: smvd2CreateInstance2
+      0xE3072DF9: smvd2Initialize
+      0xE36F2A6C: smvd2GetSideInfoSeq
+      0xE9FFF717: smvd2GetNumPicture
+      0xF007F937: smvd2FlushPicture
+      0xF4E8D559: smvd2GetBnrData
+      0xFF05DD1F: smvd2CancelDecode
   libsmvd4:
     functions:
-      0x06C9F85B: ~
-      0x1560605B: ~
-      0x17A51600: ~
-      0x4066EB75: ~
-      0x53BEF958: ~
-      0x75ECB783: ~
-      0x87AE5A06: ~
-      0x8A292735: ~
-      0x9A2EBFB5: ~
-      0xA4E5F5E2: ~
-      0xBEF20E62: ~
-      0xC1D6771B: ~
-      0xD85B4BED: ~
-      0xE200B0CE: ~
-      0xE3769B4A: ~
-      0xE6F4B68C: ~
-      0xF6ECD42C: ~
-      0xF93027E0: ~
+      0x06C9F85B: smvd4Discontinue
+      0x1560605B: smvd4SetAuxData
+      0x17A51600: smvd4GetAuxData
+      0x4066EB75: smvd4Initialize
+      0x53BEF958: smvd4GetNumPicture
+      0x75ECB783: smvd4CreateInstance2
+      0x87AE5A06: smvd4GetSideInfoSeq
+      0x8A292735: smvd4GetPicture
+      0x9A2EBFB5: smvd4FlushPicture
+      0xA4E5F5E2: smvd4GetSideInfoPic
+      0xBEF20E62: smvd4ReleaseInstance
+      0xC1D6771B: smvd4GetVersionNumber
+      0xD85B4BED: smvd4GetMemorySize2
+      0xE200B0CE: smvd4ReleasePicture
+      0xE3769B4A: smvd4GetExistenceFlag
+      0xE6F4B68C: smvd4DecodePicture
+      0xF6ECD42C: smvd4CancelDecode
+      0xF93027E0: smvd4GetMemorySize
   libsvc1d:
     functions:
-      0x0306A00D: ~
-      0x149555D0: ~
-      0x19610523: ~
-      0x3607BBF8: ~
-      0x3666354F: ~
-      0x383CBE2F: ~
-      0x4F4EEE83: ~
-      0x51C73000: ~
-      0x593E2315: ~
-      0x5E8AAE6A: ~
-      0x6C366C43: ~
-      0x7441419B: ~
-      0x76D867F4: ~
-      0x95665052: ~
-      0x9867CDC2: ~
-      0xA1468D7B: ~
-      0xA8E94A19: ~
-      0xD8465650: ~
-      0xD9CD56BA: ~
-      0xEBBFEAC3: ~
-      0xF106AAD3: ~
-      0xFE0E34B8: ~
+      0x0306A00D: svc1dDiscontinue
+      0x149555D0: svc1dGetNumPicture
+      0x19610523: svc1dFlushPicture
+      0x3607BBF8: svc1dInitialize
+      0x3666354F: svc1dCancelDecode
+      0x383CBE2F: svc1dSetAuxData
+      0x4F4EEE83: svc1dDecodePicture2
+      0x51C73000: svc1dDecodePicture
+      0x593E2315: svc1dGetMemorySize2
+      0x5E8AAE6A: svc1dCreateInstance2
+      0x6C366C43: svc1dGetVersionNumber
+      0x7441419B: svc1dGetSideInfoPic
+      0x76D867F4: svc1dGetExistenceFlag
+      0x95665052: svc1dReleasePicture
+      0x9867CDC2: svc1dDecodeSeqHeader
+      0xA1468D7B: svc1dGetAuxData
+      0xA8E94A19: svc1dSetPictureSize
+      0xD8465650: svc1dGetPicture
+      0xD9CD56BA: svc1dReleaseInstance
+      0xEBBFEAC3: svc1dGetSideInfoSeq
+      0xF106AAD3: svc1dGetMemorySize
+      0xFE0E34B8: svc1dSetDecodeMode
   libvdec:
     functions:
       0x0053E2D8: cellVdecOpenEx
@@ -3842,7 +3842,7 @@ modules:
       0x20DA0CFA: ~
       0x2BF4DDD2: cellVdecDecodeAu
       0x2CBD9806: cellVdecGetPicItemExt
-      0x3ACF7FF8: ~
+      0x3ACF7FF8: cellVdecGetInputStatus
       0x3CE2E4F8: cellVdecSetPts
       0x652B7BC0: ~
       0x807C861A: cellVdecGetPicture
@@ -3861,19 +3861,19 @@ modules:
       0x085A7ECB: _cell_vdec_prx_ver
   mios2_Client:
     functions:
-      0x0ED9FAD9: ~
-      0x1851073A: ~
+      0x0ED9FAD9: mios2_Client_SendAsync
+      0x1851073A: mios2_Client_VirtualDestroy
       0x1E100B60: ~
-      0x1F1778A0: ~
-      0x276E33DC: ~
-      0x3DC6D270: ~
+      0x1F1778A0: mios2_Client_Initialize
+      0x276E33DC: mios2_Client_Finalize
+      0x3DC6D270: mios2_Client_Send
       0x496A6DCD: ~
-      0x4C019248: ~
-      0x520FF627: ~
-      0x7B9DDCBC: ~
-      0x83490423: ~
-      0x97BF0029: ~
-      0x9E9005D5: ~
+      0x4C019248: mios2_Client_SharedMemoryFree
+      0x520FF627: mios2_Client_VirtualCreate
+      0x7B9DDCBC: mios2_Client_SendBlocking
+      0x83490423: mios2_Client_SharedMemoryAllocate
+      0x97BF0029: mios2_Client_SendAsyncWait
+      0x9E9005D5: mios2_Client_SharedMemoryMap
       0xDB53CB2C: ~
   sceNp:
     functions:
@@ -4315,24 +4315,24 @@ modules:
     functions:
       0x00826A2C: ~
       0x08286290: ~
-      0x0C156908: ~
+      0x0C156908: sceNpInstallerGetFacebookParam
       0x0D09EEE5: ~
       0x1E909446: ~
-      0x2652326B: ~
-      0x4343139D: ~
+      0x2652326B: sceNpInstallerGetNpEnv
+      0x4343139D: sceNpInstallerTellFriend
       0x5BCAA091: ~
       0x779A92E8: ~
       0xC76449A4: ~
-      0xC9C7A236: ~
-      0xDB8ABBF3: ~
-      0xDF328827: ~
-      0xE509DEEB: ~
-      0xF1A35C8C: ~
-      0xF87BFE48: ~
+      0xC9C7A236: sceNpInstallerTerm
+      0xDB8ABBF3: sceNpInstallerPreOrder
+      0xDF328827: sceNpInstallerGetGuestSignIn
+      0xE509DEEB: sceNpInstallerInit
+      0xF1A35C8C: sceNpInstallerExecDownload
+      0xF87BFE48: sceNpInstallerGetFacebookParam2
   sceNpManagerInt:
     functions:
-      0x3436C901: ~
-      0x6ACAC985: ~
+      0x3436C901: sceNpManagerGetPassword
+      0x6ACAC985: sceNpManagerSignout
   sceNpMatchingInt:
     functions:
       0x033D5BA0: sceNpMatchingCancelRequest
@@ -4364,7 +4364,7 @@ modules:
       0xC05545FD: sceNpSnsFbTerm
   sceNpTrophy:
     functions:
-      0x014786F2: ~
+      0x014786F2: sceNpTrophyNetworkSync
       0x079F0E87: sceNpTrophyGetGameProgress
       0x0C941692: ~
       0x1197B52C: sceNpTrophyRegisterContext
@@ -4641,7 +4641,7 @@ modules:
     functions:
       0x02671310: cellFsSetDefaultContainer
       0x06E681ED: cellFsAccess
-      0x0CDA14BA: ~
+      0x0CDA14BA: cellFsWidgetRmdir
       0x0D5B4A14: cellFsReadWithOffset
       0x0E2939E5: cellFsFtruncate
       0x103B8632: cellFsAllocateFileAreaWithInitialData
@@ -4663,7 +4663,7 @@ modules:
       0x2CF1296B: cellFsAllocateFileAreaByFdWithoutZeroFill
       0x3140F6E1: cellFsSetIoBuffer
       0x3394F037: cellFsAllocateFileAreaByFdWithInitialData
-      0x37907F9F: ~
+      0x37907F9F: cellFsWidgetStat
       0x384C65CF: cellFsMappedFree
       0x3A1C8393: cellFsTruncate2
       0x3AAA1BD0: cellFsLink
@@ -4682,7 +4682,7 @@ modules:
       0x718BF5F8: cellFsOpen
       0x75F16DC5: cellFsSetIoBufferFromDefaultContainer
       0x7A0329A1: cellFsAllocateFileAreaWithoutZeroFill
-      0x7DBB9A4D: ~
+      0x7DBB9A4D: cellFsWidgetOpen
       0x7DE6DCED: cellFsStat
       0x7F13FC8C: cellFsAioCancel
       0x7F4677A8: cellFsUnlink
@@ -4704,7 +4704,7 @@ modules:
       0xA01EE33A: cellFsRegisterConversionCallback
       0xA397D042: cellFsLseek
       0xAA3B4BCD: cellFsGetFreeSize
-      0xADDF33CD: ~
+      0xADDF33CD: cellFsWidgetOpendir
       0xAE4A225E: ~
       0xB1840B53: cellFsSdataOpen
       0xB3AFEE8B: cellFsStReadGetRingBuf
@@ -4712,10 +4712,10 @@ modules:
       0xBD273A88: cellFsStReadGetRegid
       0xBEF554A4: cellFsUtime
       0xC1C507E7: cellFsAioRead
-      0xC85C4DE7: ~
+      0xC85C4DE7: cellFsWidgetUnlink
       0xC9DC3AC5: cellFsTruncate
       0xCB588DBA: cellFsFGetBlockSize
-      0xCBF1758B: ~
+      0xCBF1758B: cellFsGetDirentCount
       0xCF34969C: cellFsStReadGetStatus
       0xD338A65A: cellFsFdatasync
       0xD73938DF: cellFsStReadFinish
@@ -4727,10 +4727,10 @@ modules:
       0xEF3EFA34: cellFsFstat
       0xF0A73832: cellFsLsnRead2
       0xF12EECC8: cellFsRename
-      0xF44C0E1D: ~
+      0xF44C0E1D: cellFsGetDirent
       0xF8E5D9A0: cellFsStReadStop
       0xF94BAA80: cellFsUnregisterL10nCallbacks
-      0xFF29F478: ~
+      0xFF29F478: cellFsWidgetRename
       0xFF42DCC3: cellFsClosedir
   sys_fs_ps2disc:
     functions:
@@ -4796,10 +4796,10 @@ modules:
       0xFF0A21B7: cellKbRead
   sys_io_debug:
     functions:
-      0x7C5D5FC1: ~
-      0x94B98E39: ~
-      0xA74396E5: ~
-      0xCF3051F7: ~
+      0x7C5D5FC1: cellPadDbgPeriphRegisterDevice
+      0x94B98E39: cellPadDbgLddSetDataInsertMode
+      0xA74396E5: cellPadDbgLddRegisterController
+      0xCF3051F7: cellPadDbgGetData
   sys_lv2coredump:
     functions:
       0xD725F320: ~
